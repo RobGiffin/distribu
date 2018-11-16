@@ -38,7 +38,7 @@
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane active" id="national" role="tabpanel" aria-labelledby="national-tab">
                     <div repeat.for="campaign of campaigns">
-                        <div class="campaign-box">
+                        <div class="campaign-box" if.bind="campaign.area == 'national'">
                             <div class="campaign-box-text">
                                 <h3>${campaign.name}</h3>
                                 <a class="btn btn-primary" href="#/campaign/${campaign.id}">Join this campaign</a>
@@ -46,26 +46,24 @@
                             <div class="campaign-box-image">
                                 <img src="${campaign.promoImage}" />
                             </div>
-                                <!-- <p>${campaign.description}</p>                      
-                                <p style="background-color:orange;"><em>${campaign.tags}</em></p>
-                                <p style="background-color:greenyellow;"><em>${campaign.jurisdiction}</em></p>
-                                <p>
-                                    ${campaign.createdBy.name}<br>
-                                    <a href="mailto:${campaign.createdBy.email}?subject=${campaign.name}">${campaign.createdBy.email}</a>
-                                </p>
-                
-                                <p>
-                                    <a href="#" click.delegate="shareOnTwitter(campaign)">Share on twitter</a><br>
-                                    <a href="#" click.delegate="shareOnFacebook(campaign)">Share on facebook</a><br>
-                                </p>         -->
                         </div>
                     </div>
                 </div>
                 <div class="tab-pane fade" id="local" role="tabpanel" aria-labelledby="local-tab">
-
+                    <div repeat.for="campaign of campaigns">
+                        <div class="campaign-box" if.bind="campaign.area == 'local'">
+                            <div class="campaign-box-text">
+                                <h3>${campaign.name}</h3>
+                                <a class="btn btn-primary" href="#/campaign/${campaign.id}">Join this campaign</a>
+                            </div>
+                            <div class="campaign-box-image">
+                                <img src="${campaign.promoImage}" />
+                            </div>
+                    </div>
                 </div>        
             </div>
         </div>
         <div class="clearfix"></div>
+        <div style="height:200px;"></div>
     </div>
 </template>
