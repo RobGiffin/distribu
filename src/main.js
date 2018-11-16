@@ -7,7 +7,10 @@ export function configure(aurelia) {
         .plugin("aurelia-validation")
         .plugin(PLATFORM.moduleName("aurelia-dialog"), config => {
             config.useDefaults();
-            config.settings.centerHorizontalOnly = true;
+            config.settings.lock = false;
+            config.settings.centerHorizontalOnly = false;
+            config.settings.startingZIndex = 5;
+            config.settings.keyboard = true;    
         })
         .feature("resources");
 
