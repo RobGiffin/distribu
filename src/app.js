@@ -1,7 +1,6 @@
 import { inject } from "aurelia-framework";
 import { EventAggregator } from "aurelia-event-aggregator";
 import { DialogService } from "aurelia-dialog";
-import { JobDetailsModal } from "job/job-details-modal";
 import { PLATFORM } from "aurelia-pal";
 import { HttpClient } from "aurelia-http-client";
 import { Redirect } from "aurelia-router";
@@ -15,12 +14,6 @@ export class App {
 
     activate() {
         this.ea.subscribe("app:view-job", job => {
-            let opts = {
-                viewModel: JobDetailsModal,
-                model: job
-            };
-    
-            this.dialogService.open(opts);
         });
     }
 
@@ -49,17 +42,19 @@ class AuthorizeStep {
         return new Promise(resolve => {
             let client = new HttpClient();
 
-            client.get("/api/has-been-setup").then(res => {
-                let parsedResponse = JSON.parse(res.response);
-                let currentRoute = navigationInstruction.config;
-                let loginRequired = currentRoute.auth && currentRoute.auth === true;
+            return resolve(next());
 
-                if (!parsedResponse.hasBeenSetup && loginRequired) {
-                    return resolve(next.cancel(new Redirect("setup")));
-                }
+            // client.get("/api/has-been-setup").then(res => {
+            //     let parsedResponse = JSON.parse(res.response);
+            //     let currentRoute = navigationInstruction.config;
+            //     let loginRequired = currentRoute.auth && currentRoute.auth === true;
 
-                return resolve(next());
-            });
+            //     if (!parsedResponse.hasBeenSetup && loginRequired) {
+            //         return resolve(next.cancel(new Redirect("setup")));
+            //     }
+
+            //     return resolve(next());
+            // });
         });
     }
 }

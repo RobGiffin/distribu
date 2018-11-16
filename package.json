@@ -1,5 +1,5 @@
 {
-  "name": "payrun-demo",
+  "name": "DistribYou",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,14 +9,14 @@
   "engineStrict": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/X-API/PayRunIO.Demo.UI.git"
+    "url": "git+https://github.com/robert-waggott/DistribYou.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/X-API/PayRunIO.Demo.UI/issues"
+    "url": "https://github.com/robert-waggott/DistribYou/issues"
   },
-  "homepage": "https://github.com/X-API/PayRunIO.Demo.UI#readme",
+  "homepage": "https://github.com/robert-waggott/DistribYou#readme",
   "dependencies": {
     "array-flatten": "^2.1.1",
     "aurelia-dialog": "^2.0.0-rc.3",

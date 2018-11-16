@@ -12,7 +12,6 @@ const path = require("path");
 const argv = require("minimist")(process.argv.slice(2));
 const Routes = require("./api/routes");
 const Raven = require("raven");
-const APILogger = require("./api/services/api-logger");
 
 let app = new Koa();
 let router = new Router();
@@ -30,7 +29,7 @@ app.keys = [
 ];
 
 if (env !== "dev") {
-    Raven.config("https://7059d23c62044480981159a1d386f7d0@sentry.io/1187976").install();
+    //Raven.config("https://7059d23c62044480981159a1d386f7d0@sentry.io/1187976").install();
 }
 
 app
@@ -41,7 +40,7 @@ app
     }, app))
     .use(async (ctx, next) => {
         if (ctx.path !== "/favicon.ico") {
-            APILogger.context = ctx;
+            //APILogger.context = ctx;
         }
 
         await next();
