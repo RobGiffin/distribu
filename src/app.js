@@ -22,8 +22,16 @@ export class App {
 
         config.map([
             { 
-                name: "campaigns",
+                name: "home",
                 route: "",
+                moduleId: PLATFORM.moduleName("home/home"),
+                title: "Home",
+                auth: false,
+                includeInBreadcrumbs: true
+            },
+            { 
+                name: "campaigns",
+                route: "campaigns",
                 moduleId: PLATFORM.moduleName("campaigns/campaigns"),
                 title: "Campaigns",
                 auth: false,
