@@ -1,12 +1,10 @@
 const BaseController = require("./base-controller");
-const path = require("path");
-const fs = require('fs');
+const CampaignsService = require("../services/campaigns-service");
 
 module.exports = class CampaignsController extends BaseController {
     async get(ctx) {
-        let file = path.join(__dirname, "../../data/campaigns.json");
-        let data = fs.readFileSync(file, "utf8");
+        let campaigns = new CampaignsService().campaigns();
 
-        ctx.body = data;
+        ctx.body = campaigns;
     }
 };
