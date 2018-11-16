@@ -38,20 +38,13 @@
     "moment": "^2.22.2",
     "nprogress": "^0.2.0",
     "oauth-1.0a": "^2.2.4",
-<<<<<<< HEAD
     "open-graph-scraper": "^3.5.1",
-=======
->>>>>>> c4464030a7ad6192144e7946646cdb9a6f43cc43
     "raven": "^2.5.0",
     "request": "^2.85.0",
     "request-debug": "^0.2.0",
     "request-promise": "^4.2.2",
-<<<<<<< HEAD
     "requirejs": "^2.3.6",
     "stripe": "^6.15.0"
-=======
-    "requirejs": "^2.3.6"
->>>>>>> c4464030a7ad6192144e7946646cdb9a6f43cc43
   },
   "devDependencies": {
     "aurelia-bootstrapper": "^2.3.0",
