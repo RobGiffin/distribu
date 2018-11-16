@@ -530,6 +530,38 @@ textarea.parsley-error {
     letter-spacing: normal;
     color: #4c8783;
     margin-top: 24px; }
+  .reports .campaign-box {
+    background-color: #14e2d5;
+    height: 380px;
+    width: 100%;
+    display: flex;
+    float: left;
+    margin: 20px;
+    position: relative; }
+    .reports .campaign-box .campaign-box-text {
+      padding: 30px;
+      width: 100%; }
+    .reports .campaign-box .campaign-box-image {
+      height: 380px;
+      width: 450px; }
+    .reports .campaign-box h3 {
+      color: #fff;
+      text-align: left; }
+    .reports .campaign-box p {
+      text-align: left;
+      color: #fff; }
+    .reports .campaign-box a {
+      margin-top: 20px;
+      border: solid 1px #ffffff;
+      background-color: #ffec00;
+      color: #4c8783;
+      font-size: 18px;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: bold;
+      border-radius: 3px;
+      position: absolute;
+      bottom: 30px;
+      left: 480px; }
 
 .header {
   margin-bottom: -11px; }
@@ -550,3 +582,14 @@ textarea.parsley-error {
     color: #e2e2e2 !important;
     border-color: #e2e2e2 !important;
     background-color: unset !important; }
+  .header .dropdown-toggle {
+    font-size: 25px;
+    background-color: transparent !important;
+    border: none; }
+    .header .dropdown-toggle:hover, .header .dropdown-toggle:active, .header .dropdown-toggle:focus {
+      background-color: transparent !important;
+      border: none !important;
+      box-shadow: none !important; }
+  .header .dropdown-menu-right {
+    right: 0;
+    left: auto; }

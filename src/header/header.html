@@ -18,7 +18,16 @@
                         <a class="nav-link" href="#/reports/">Successful Campaigns</a>
                     </li>
                 </ul>
-                <button class="distribu-login-btn btn btn-outline-success my-2 my-sm-0" type="submit">Log out</button>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user-circle"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <button class="dropdown-item" type="button">My account</button>
+                        <button class="dropdown-item" type="button" click.delegate="goToMySubscriptions()">My subscriptions</button>
+                        <button class="dropdown-item" type="button">Log out</button>
+                    </div>
+                </div>
             </div>
         </nav>
     </div>
