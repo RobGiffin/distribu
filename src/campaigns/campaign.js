@@ -3,6 +3,8 @@ import { HttpClient } from "aurelia-http-client";
 import { Router } from "aurelia-router";
 import { DialogService } from "aurelia-dialog";
 import { PledgeModal } from "./pledge-modal";
+import { ConfirmModal } from "./confirm-modal";
+import { ShareModal } from "./share-modal";
 
 @inject(DialogService, Router)
 export class Campaign {
@@ -52,8 +54,6 @@ export class Campaign {
     }
 
     joinCampaign(campaign) {
-        console.log(campaign);
-        
         let opts = {
             viewModel: PledgeModal,
             model: campaign
@@ -64,8 +64,35 @@ export class Campaign {
                 return;
             }
                 
-            // todo: move to the confirmation page.
+            this.openConfirmModal(campaign, response.paymentSchedule);
         });
+    }
+
+    openConfirmModal(campaign, paymentSchedule) {
+        let opts = {
+            viewModel: ConfirmModal,
+            model: {
+                campaign: campaign,
+                paymentSchedule: paymentSchedule
+            }
+        };
+
+        this.dialogService.open(opts).whenClosed(response => {
+            if (response.wasCancelled) {
+                return;
+            }
+             
+            this.openShareModal(campaign);
+        });        
+    }
+
+    openShareModal(campaign) {
+        let opts = {
+            viewModel: ShareModal,
+            model: campaign
+        };
+
+        this.dialogService.open(opts);
     }
 
     shareOnTwitter(campaign) {

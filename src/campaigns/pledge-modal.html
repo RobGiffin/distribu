@@ -4,6 +4,14 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-12">
+                        <div class="wizard-steps">
+                            <img src="/content/images/modal/1-selected.png">
+
+                            <img src="/content/images/modal/2-unselected.png">
+
+                            <img src="/content/images/modal/3-unselected.png">
+                        </div>
+
                         <h5>Select your pledge level</h5>
                     </div>
                 </div>
@@ -13,10 +21,28 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-12">
+                        <div class="payment-schedule" click.delegate="switchPaymentSchedule('yearly')">
+                            <img src="/content/images/modal/selected-radial.png" if.bind="paymentSchedule === 'yearly'">
+                            <img src="/content/images/modal/radial.png" if.bind="paymentSchedule !== 'yearly'">
 
-                        
+                            £1 per yer
+                        </div>
 
-                        <button>Continue</button>
+                        <div class="payment-schedule" click.delegate="switchPaymentSchedule('monthly')">
+                            <img src="/content/images/modal/selected-radial.png" if.bind="paymentSchedule === 'monthly'">
+                            <img src="/content/images/modal/radial.png" if.bind="paymentSchedule !== 'monthly'">
+
+                            £1 per month (£12)
+                        </div>
+
+                        <div class="payment-schedule" click.delegate="switchPaymentSchedule('daily')">
+                            <img src="/content/images/modal/selected-radial.png" if.bind="paymentSchedule === 'daily'">
+                            <img src="/content/images/modal/radial.png" if.bind="paymentSchedule !== 'daily'">
+
+                            £1 per week (£52)
+                        </div>                        
+
+                        <button click.delegate="continue()">Continue</button>
 
                     </div>
                 </div>

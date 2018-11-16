@@ -11,6 +11,26 @@ ux-dialog {
         margin: 0px !important;
         margin-left: 70px !important;
         margin-right: 70px !important;
+        border-bottom: none !important;
+
+        &:not(.no-border) {
+            .container-fluid {
+                border-bottom: solid 1px white !important;
+            }
+        }
+
+        .wizard-steps {
+            text-align: center;
+            margin-top: 50px;
+
+            img:first-child {
+                margin-right: 25px;
+            }
+
+            img:last-child {
+                margin-left: 25px;
+            }            
+        }
 
         h5 {
             font-family: 'Roboto Slab', serif;
@@ -25,6 +45,11 @@ ux-dialog {
             margin-bottom: 50px;
             text-align: center;
         }
+
+        .col-sm-12 {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
     }
 
     ux-dialog-body {
@@ -32,6 +57,27 @@ ux-dialog {
         margin: 0px !important;
         margin-left: 70px !important;
         margin-right: 70px !important;
+
+        .payment-schedule {
+            cursor: pointer;
+            height: 100px;
+            border-bottom: solid 1px white;
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 32px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: #ffffff;     
+            line-height: 100px;     
+
+            img {
+                float: left;
+                margin-right: 45px;
+                margin-top: 25px;
+            }
+        }
 
         button {
             font-family: 'IBM Plex Sans', sans-serif;
