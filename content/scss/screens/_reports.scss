@@ -1,0 +1,41 @@
+.reports {
+    margin-top: 100px;
+    margin-bottom: 50px;
+
+    .container {
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 54px;
+        color: $text-color;
+        font-family: 'Roboto Slab', serif;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;      
+    }
+
+    h3 {
+        font-family: 'Roboto Slab', serif;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #4c8783;      
+    }
+
+    p {
+        font-family: 'Roboto Slab', serif;
+        font-size: 20px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.6;
+        letter-spacing: normal;
+        color: #4c8783;
+        margin-top: 24px;    
+    }
+}
