@@ -20,12 +20,12 @@
             <div class="tab-pane fade show active" id="national" role="tabpanel" aria-labelledby="national-tab">
                 <div repeat.for="campaign of campaigns">
                     <div class="campaign-box">
-                        <div>
-                            <h3><a href="#/campaign/${campaign.id}">${campaign.name}</a></h3>
+                        <div class="campaign-box-text">
+                            <h3>${campaign.name}</h3>
                             <button class="btn btn-primary">Join this campaign</button>
                         </div>
-                        <div>
-                            <img src="" />
+                        <div class="campaign-box-image">
+                            <img src="${campaign.promoImage}" />
                         </div>
                             <!-- <p>${campaign.description}</p>                      
                             <p style="background-color:orange;"><em>${campaign.tags}</em></p>

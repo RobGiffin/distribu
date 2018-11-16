@@ -13,11 +13,19 @@
 
     .campaign-box {
         background-color: #14e2d5;
-        height: 226px;
+        height: 256px;
         width: 563px;
         display: flex;
         margin: 20px;
-        padding: 40px;
+
+        .campaign-box-text {
+            padding: 30px;
+        }
+
+        .campaign-box-image {
+            height: 260px;
+            width: 260px;
+        }
 
         button {
             width: 120px;
@@ -51,7 +59,7 @@
         font-stretch: normal;
         line-height: normal;
         letter-spacing: normal;
-        color: #4c8783;      
+        color: #fff;      
     }
 
     p {
