@@ -8,4 +8,10 @@ module.exports = class CampaignsService {
 
         return JSON.parse(data);
     }
+
+    get(id) {
+        let campaigns = this.campaigns();
+
+        return campaigns.find(x => x.id === id);
+    }
 };
