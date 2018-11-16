@@ -366,6 +366,56 @@ define('environment',["exports"], function (exports) {
     testing: true
   };
 });
+define('current-state',["exports"], function (exports) {
+    "use strict";
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+
+    function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+            throw new TypeError("Cannot call a class as a function");
+        }
+    }
+
+    var _createClass = function () {
+        function defineProperties(target, props) {
+            for (var i = 0; i < props.length; i++) {
+                var descriptor = props[i];
+                descriptor.enumerable = descriptor.enumerable || false;
+                descriptor.configurable = true;
+                if ("value" in descriptor) descriptor.writable = true;
+                Object.defineProperty(target, descriptor.key, descriptor);
+            }
+        }
+
+        return function (Constructor, protoProps, staticProps) {
+            if (protoProps) defineProperties(Constructor.prototype, protoProps);
+            if (staticProps) defineProperties(Constructor, staticProps);
+            return Constructor;
+        };
+    }();
+
+    var CurrentState = exports.CurrentState = function () {
+        function CurrentState() {
+            _classCallCheck(this, CurrentState);
+        }
+
+        _createClass(CurrentState, null, [{
+            key: "state",
+            get: function get() {
+                return {
+                    name: "Leonard Beck",
+                    email: "leonard.beck@gmail.com",
+                    address: "The Governor, Knox Road, Norwich, Norfolk, NR1 4LU"
+                };
+            }
+        }]);
+
+        return CurrentState;
+    }();
+});
 define('campaigns/share-modal',["exports", "aurelia-framework", "aurelia-dialog"], function (exports, _aureliaFramework, _aureliaDialog) {
     "use strict";
 
@@ -504,7 +554,7 @@ define('campaigns/confirmation',["exports", "aurelia-http-client"], function (ex
     }();
 });
 define('text!campaigns/confirmation.html', ['module'], function(module) { module.exports = "<template>\n    <div class=\"confirmation\">\n        <div class=\"container\">\n            <div class=\"row\">\n                <div class=\"col-sm-12\">\n                    <h3>Thank you</h3>\n\n                    <p>${this.campaign.thanks}</p>\n\n                    <p>\n                        <a href=\"#\" click.delegate=\"shareOnTwitter()\">Share on twitter</a>\n                    </p>\n\n                    <p>\n                        <a href=\"#\" click.delegate=\"shareOnFacebook()\">Share on facebook</a>\n                    </p>\n\n                    <p>\n                        <a href=\"#\" click.delegate=\"shareOnGoogle()\">Share on google+</a>\n                    </p>\n\n                    <p>\n                        <a href=\"#\" click.delegate=\"shareByEmail()\">Share by email</a>\n                    </p>                    \n                </div>\n            </div>\n        </div>\n    </div>\n</template>"; });
-define('campaigns/confirm-modal',["exports", "aurelia-framework", "aurelia-dialog"], function (exports, _aureliaFramework, _aureliaDialog) {
+define('campaigns/confirm-modal',["exports", "aurelia-framework", "aurelia-dialog", "../current-state"], function (exports, _aureliaFramework, _aureliaDialog, _currentState) {
     "use strict";
 
     Object.defineProperty(exports, "__esModule", {
@@ -530,10 +580,42 @@ define('campaigns/confirm-modal',["exports", "aurelia-framework", "aurelia-dialo
 
         ConfirmModal.prototype.activate = function activate(state) {
             this.state = state;
+
+            this.setupStripeHandler();
+        };
+
+        ConfirmModal.prototype.setupStripeHandler = function setupStripeHandler() {
+            var _this = this;
+
+            this.handler = StripeCheckout.configure({
+                key: 'pk_test_uP4xO5fMSTcUqez9MQ67b60X',
+                image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+                locale: 'auto',
+                token: function token(_token) {
+                    _this.dialogController.ok();
+                }
+            });
+
+            window.addEventListener('popstate', function () {
+                if (this.handler) {
+                    this.handler.close();
+                }
+            });
         };
 
         ConfirmModal.prototype.confirm = function confirm() {
-            this.dialogController.ok();
+            console.log(this.state);
+
+            this.handler.open({
+                name: 'Distribu',
+                description: "Subscription to support the " + this.state.campaign.name + " campaign",
+                amount: 100,
+                email: _currentState.CurrentState.state.email,
+                currency: "gbp",
+                billingAddress: false,
+                allowRememberMe: false,
+                panelLabel: "Pay {{amount}} monthly"
+            });
         };
 
         return ConfirmModal;
