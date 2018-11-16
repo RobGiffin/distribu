@@ -41,4 +41,48 @@
             z-index: 999;   
         }
     }
+
+    .how-it-works {
+        h2 {
+            margin-top: 10px;
+            text-align: center;
+            font-family: 'Roboto Slab', serif;
+            font-size: 54px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: #4c8783; 
+            margin-bottom: 30px;         
+        }
+
+        .step {
+            margin-bottom: 80px;
+
+            h3 {
+                font-family: 'Roboto Slab', serif;
+                font-size: 28px;
+                font-weight: 500;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.6;
+                letter-spacing: normal;
+                color: #4c8783;
+                padding-bottom: 0px;
+                margin-bottom: 0px;
+            }
+
+            p {
+                font-family: 'Roboto Slab', serif;
+                font-size: 20px;
+                font-weight: 500;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.6;
+                letter-spacing: normal;
+                color: #4c8783;              
+            }
+        }
+    }
 }
