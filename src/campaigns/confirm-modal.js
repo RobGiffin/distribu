@@ -5,6 +5,7 @@ import { DialogController } from "aurelia-dialog";
 export class ConfirmModal {
     constructor(dialogController) {
         this.dialogController = dialogController;
+        this.agreedToTermsAndConditions = false;
     }
 
     activate(state) {

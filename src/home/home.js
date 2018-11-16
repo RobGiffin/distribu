@@ -1,10 +1,17 @@
-import { HttpClient } from "aurelia-http-client";
+import { inject } from "aurelia-framework";
+import { Router } from "aurelia-router";
 
+@inject(Router)
 export class Campaign {
-    constructor() {
+    constructor(router) {
+        this.router = router;
     }
 
     activate(args) {
-        console.log(args);
+
+    }
+
+    findACampaign() {
+        this.router.navigate("campaigns");
     }
 }
