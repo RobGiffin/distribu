@@ -1,7 +1,14 @@
+import { inject } from "aurelia-framework";
 import { HttpClient } from "aurelia-http-client";
+import { Router } from "aurelia-router";
+import { DialogService } from "aurelia-dialog";
+import { PledgeModal } from "./pledge-modal";
 
+@inject(DialogService, Router)
 export class Campaign {
-    constructor() {
+    constructor(dialogService, router) {
+        this.dialogService = dialogService;
+        this.router = router;
     }
 
     activate(args) {
@@ -44,8 +51,21 @@ export class Campaign {
     deactivate() {
     }
 
-    joinCampaign() {
-        // todo: open a modal here. 
+    joinCampaign(campaign) {
+        console.log(campaign);
+        
+        let opts = {
+            viewModel: PledgeModal,
+            model: campaign
+        };
+
+        this.dialogService.open(opts).whenClosed(response => {
+            if (response.wasCancelled) {
+                return;
+            }
+                
+            // todo: move to the confirmation page.
+        });
     }
 
     shareOnTwitter(campaign) {

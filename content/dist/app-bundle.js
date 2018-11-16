@@ -357,6 +357,37 @@ define('environment',["exports"], function (exports) {
     testing: true
   };
 });
+define('campaigns/pledge-modal',["exports", "aurelia-framework", "aurelia-dialog"], function (exports, _aureliaFramework, _aureliaDialog) {
+    "use strict";
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.PledgeModal = undefined;
+
+    function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+            throw new TypeError("Cannot call a class as a function");
+        }
+    }
+
+    var _dec, _class;
+
+    var PledgeModal = exports.PledgeModal = (_dec = (0, _aureliaFramework.inject)(_aureliaDialog.DialogController), _dec(_class = function () {
+        function PledgeModal(dialogController) {
+            _classCallCheck(this, PledgeModal);
+
+            this.dialogController = dialogController;
+        }
+
+        PledgeModal.prototype.activate = function activate(campaign) {
+            this.campaign = campaign;
+        };
+
+        return PledgeModal;
+    }()) || _class);
+});
+define('text!campaigns/pledge-modal.html', ['module'], function(module) { module.exports = "<template>\n    <ux-dialog>\n        <ux-dialog-header>\n            <div class=\"container-fluid\">\n                <div class=\"row\">\n                    <div class=\"col-sm-12\">\n                        <h5>Pledge £1 to ${campaign.name}</h5>\n                    </div>\n                </div>\n            </div>\n        </ux-dialog-header>\n        <ux-dialog-body>\n            <div class=\"container-fluid\">\n                <div class=\"row\">\n                    <div class=\"col-sm-4\">            \n                        <button class=\"btn btn-primary\" click.trigger=\"donate('weekly')\">Donate weekly</button>\n                    </div>\n\n                    <div class=\"col-sm-4\">            \n                        <button class=\"btn btn-primary\" click.trigger=\"donate('monthly')\">Donate monthly</button>\n                    </div>\n\n                    <div class=\"col-sm-4\">            \n                        <button class=\"btn btn-primary\" click.trigger=\"donate('yearly')\">Donate yearly</button>\n                    </div>                    \n                </div>\n            </div>\n        </ux-dialog-body>\n    </ux-dialog>\n</template>"; });
 define('campaigns/confirmation',["exports", "aurelia-http-client"], function (exports, _aureliaHttpClient) {
     "use strict";
 
@@ -457,8 +488,8 @@ define('campaigns/campaigns',["exports", "aurelia-http-client"], function (expor
     }();
 });
 define('text!campaigns/campaigns.html', ['module'], function(module) { module.exports = "<template>\n    <h2>Find a campaign</h2>\n\n    <ul class=\"nav nav-tabs nav-fill\" id=\"myTab\" role=\"tablist\">\n        <li class=\"nav-item\">\n            <a class=\"nav-link active\" \n                id=\"national-tab\" \n                data-toggle=\"tab\" \n                href=\"#national\" \n                role=\"tab\" \n                aria-controls=\"national\" \n                aria-selected=\"true\">National</a>\n        </li>\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" \n                id=\"where-you-are-tab\" \n                data-toggle=\"tab\" \n                href=\"#where-you-are\" \n                role=\"tab\" \n                aria-controls=\"where-you-are\" \n                aria-selected=\"false\">Where you are</a>\n        </li>\n    </ul>\n    \n    <div class=\"tab-content\" id=\"myTabContent\">\n        <div class=\"tab-pane fade show active\" id=\"national\" role=\"tabpanel\" aria-labelledby=\"national-tab\">\n            <div repeat.for=\"campaign of campaigns\">\n                <h3><a href=\"#/campaign/${campaign.id}\">${campaign.name}</a></h3>\n        \n                <p>${campaign.description}</p>\n        \n                <p style=\"background-color:orange;\"><em>${campaign.tags}</em></p>\n        \n                <p style=\"background-color:greenyellow;\"><em>${campaign.jurisdiction}</em></p>\n        \n                <p>\n                    ${campaign.createdBy.name}<br>\n                    <a href=\"mailto:${campaign.createdBy.email}?subject=${campaign.name}\">${campaign.createdBy.email}</a>\n                </p>\n\n                <p>\n                    <a href=\"#\" click.delegate=\"shareOnTwitter(campaign)\">Share on twitter</a><br>\n                    <a href=\"#\" click.delegate=\"shareOnFacebook(campaign)\">Share on facebook</a><br>\n                </p>\n        \n                <hr>\n            </div>\n        </div>\n        <div class=\"tab-pane fade\" id=\"where-you-are\" role=\"tabpanel\" aria-labelledby=\"where-you-are-tab\">\n\n        </div>\n    </div>\n</template>"; });
-define('campaigns/campaign',['exports', 'aurelia-http-client'], function (exports, _aureliaHttpClient) {
-    'use strict';
+define('campaigns/campaign',["exports", "aurelia-framework", "aurelia-http-client", "aurelia-router", "aurelia-dialog", "./pledge-modal"], function (exports, _aureliaFramework, _aureliaHttpClient, _aureliaRouter, _aureliaDialog, _pledgeModal) {
+    "use strict";
 
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -471,9 +502,14 @@ define('campaigns/campaign',['exports', 'aurelia-http-client'], function (export
         }
     }
 
-    var Campaign = exports.Campaign = function () {
-        function Campaign() {
+    var _dec, _class;
+
+    var Campaign = exports.Campaign = (_dec = (0, _aureliaFramework.inject)(_aureliaDialog.DialogService, _aureliaRouter.Router), _dec(_class = function () {
+        function Campaign(dialogService, router) {
             _classCallCheck(this, Campaign);
+
+            this.dialogService = dialogService;
+            this.router = router;
         }
 
         Campaign.prototype.activate = function activate(args) {
@@ -484,7 +520,7 @@ define('campaigns/campaign',['exports', 'aurelia-http-client'], function (export
             return new Promise(function (resolve) {
                 var client = new _aureliaHttpClient.HttpClient();
 
-                client.get('/api/campaign/' + args.id).then(function (data) {
+                client.get("/api/campaign/" + args.id).then(function (data) {
                     _this.campaign = JSON.parse(data.response);
 
                     console.log(_this.campaign);
@@ -511,7 +547,20 @@ define('campaigns/campaign',['exports', 'aurelia-http-client'], function (export
 
         Campaign.prototype.deactivate = function deactivate() {};
 
-        Campaign.prototype.joinCampaign = function joinCampaign() {};
+        Campaign.prototype.joinCampaign = function joinCampaign(campaign) {
+            console.log(campaign);
+
+            var opts = {
+                viewModel: _pledgeModal.PledgeModal,
+                model: campaign
+            };
+
+            this.dialogService.open(opts).whenClosed(function (response) {
+                if (response.wasCancelled) {
+                    return;
+                }
+            });
+        };
 
         Campaign.prototype.shareOnTwitter = function shareOnTwitter(campaign) {
             var twitterWindow = window.open('https://twitter.com/share?text=Check out the ' + campaign.name + ' campaign on Distribu&url=' + document.URL, 'twitter-popup', 'height=350,width=600');
@@ -544,9 +593,9 @@ define('campaigns/campaign',['exports', 'aurelia-http-client'], function (export
         };
 
         return Campaign;
-    }();
+    }()) || _class);
 });
-define('text!campaigns/campaign.html', ['module'], function(module) { module.exports = "<template>\n    <div class=\"campaign\">\n        <div class=\"container\">\n            <div class=\"row\">\n                <div class=\"col-md-7\">\n                    <h2>${campaign.name}</h2>\n\n                    <h3>Closing date: 1 June 2019</h3>\n\n                    <p>${campaign.description}</p>\n                \n                    <!-- <p style=\"background-color:orange;\"><em>${campaign.tags}</em></p>\n                \n                    <p style=\"background-color:greenyellow;\"><em>${campaign.jurisdiction}</em></p>\n                \n                    <p>\n                        ${campaign.createdBy.name}<br>\n                        <a href=\"mailto:${campaign.createdBy.email}?subject=${campaign.name}\">${campaign.createdBy.email}</a>\n                    </p> -->\n                </div>\n                <div class=\"col-md-5\">\n                    <div class=\"pledge\">\n                        <div if.bind=\"campaign.media && campaign.media.youtube\">\n                            <iframe width=\"100%\" height=\"256px\" src=\"https://www.youtube.com/embed/${campaign.media.youtube}\" frameBorder=\"0\"></iframe>\n                        </div>\n\n                        <div class=\"text-center\">\n                            <button type=\"button\" class=\"btn btn-primary\" click.delegate=\"joinCampaign()\">Pledge to this campaign</button>\n                        </div>\n\n                        <div class=\"people-pledged\">\n                            1002 people have pledged so far\n                        </div>\n\n                        <div class=\"text-center\">\n                            <span class=\"figure\">\n                                £10,820\n                            </span>\n                        </div>\n                    </div>\n\n                    <div if.bind=\"campaign.location\">\n                        <div id=\"mapid\" class=\"map\"></div>\n                    </div>\n\n                    <div class=\"row social-media\">\n                        <div class=\"col-md-4\">\n                            <a href=\"#\" click.delegate=\"shareOnTwitter(campaign)\" title=\"Share on twitter\">\n                                <i class=\"fab fa-twitter-square\"></i>\n                            </a>                            \n                        </div>\n\n                        <div class=\"col-md-4 text-center\">\n                            <a href=\"#\" click.delegate=\"shareOnFacebook(campaign)\" title=\"Share on facebook\">\n                                <i class=\"fab fa-facebook-square\"></i>\n                            </a>                            \n                        </div>\n\n                        <div class=\"col-md-4 text-right\">\n                            <a href=\"#\" click.delegate=\"shareOnGoogle(campaign)\" title=\"Share on google+\">\n                                <i class=\"fab fa-google-plus-square\"></i>\n                            </a>                            \n                        </div>                        \n                    </div>                     \n\n                    <!-- <form>\n                        <div class=\"form-group\">\n                            <input type=\"text\" class=\"form-control\" id=\"name\" aria-describedby=\"name-help\" placeholder=\"Name\">\n                            <small id=\"email-help\" class=\"form-text text-muted\">We'll never share your name with anyone else.</small>\n                        </div>\n                \n                        <div class=\"form-group\">\n                            <input type=\"email\" class=\"form-control\" id=\"email\" aria-describedby=\"email-help\" placeholder=\"Email address\">\n                            <small id=\"email-help\" class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\n                        </div>\n\n                        <div class=\"form-check\">\n                            <input type=\"checkbox\" class=\"form-check-input\" id=\"keep-me-updated\">\n                            <label class=\"form-check-label\" for=\"keep-me-updated\">Keep updated with the campaign?</label>\n                        </div>\n\n                        <div class=\"form-group text-right\">\n                            <button type=\"submit\" class=\"btn btn-primary pull-right\">Join this campaign now</button>\n                        </div>\n                    </form> -->\n                </div>        \n            </div>\n        </div>\n    </div> \n</template>"; });
+define('text!campaigns/campaign.html', ['module'], function(module) { module.exports = "<template>\n    <div class=\"campaign\">\n        <div class=\"container\">\n            <div class=\"row\">\n                <div class=\"col-md-7\">\n                    <h2>${campaign.name}</h2>\n\n                    <h3>Closing date: 1 June 2019</h3>\n\n                    <p>${campaign.description}</p>\n                \n                    <!-- <p style=\"background-color:orange;\"><em>${campaign.tags}</em></p>\n                \n                    <p style=\"background-color:greenyellow;\"><em>${campaign.jurisdiction}</em></p>\n                \n                    <p>\n                        ${campaign.createdBy.name}<br>\n                        <a href=\"mailto:${campaign.createdBy.email}?subject=${campaign.name}\">${campaign.createdBy.email}</a>\n                    </p> -->\n                </div>\n                <div class=\"col-md-5\">\n                    <div class=\"pledge\">\n                        <div if.bind=\"campaign.media && campaign.media.youtube\">\n                            <iframe width=\"100%\" height=\"256px\" src=\"https://www.youtube.com/embed/${campaign.media.youtube}\" frameBorder=\"0\"></iframe>\n                        </div>\n\n                        <div class=\"text-center\">\n                            <button type=\"button\" class=\"btn btn-primary\" click.delegate=\"joinCampaign(campaign)\">Pledge to this campaign</button>\n                        </div>\n\n                        <div class=\"people-pledged\">\n                            1002 people have pledged so far\n                        </div>\n\n                        <div class=\"text-center\">\n                            <span class=\"figure\">\n                                £10,820\n                            </span>\n                        </div>\n                    </div>\n\n                    <div if.bind=\"campaign.location\">\n                        <div id=\"mapid\" class=\"map\"></div>\n                    </div>\n\n                    <div class=\"row social-media\">\n                        <div class=\"col-md-4\">\n                            <a href=\"#\" click.delegate=\"shareOnTwitter(campaign)\" title=\"Share on twitter\">\n                                <i class=\"fab fa-twitter-square\"></i>\n                            </a>                            \n                        </div>\n\n                        <div class=\"col-md-4 text-center\">\n                            <a href=\"#\" click.delegate=\"shareOnFacebook(campaign)\" title=\"Share on facebook\">\n                                <i class=\"fab fa-facebook-square\"></i>\n                            </a>                            \n                        </div>\n\n                        <div class=\"col-md-4 text-right\">\n                            <a href=\"#\" click.delegate=\"shareOnGoogle(campaign)\" title=\"Share on google+\">\n                                <i class=\"fab fa-google-plus-square\"></i>\n                            </a>                            \n                        </div>                        \n                    </div>                     \n\n                    <!-- <form>\n                        <div class=\"form-group\">\n                            <input type=\"text\" class=\"form-control\" id=\"name\" aria-describedby=\"name-help\" placeholder=\"Name\">\n                            <small id=\"email-help\" class=\"form-text text-muted\">We'll never share your name with anyone else.</small>\n                        </div>\n                \n                        <div class=\"form-group\">\n                            <input type=\"email\" class=\"form-control\" id=\"email\" aria-describedby=\"email-help\" placeholder=\"Email address\">\n                            <small id=\"email-help\" class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\n                        </div>\n\n                        <div class=\"form-check\">\n                            <input type=\"checkbox\" class=\"form-check-input\" id=\"keep-me-updated\">\n                            <label class=\"form-check-label\" for=\"keep-me-updated\">Keep updated with the campaign?</label>\n                        </div>\n\n                        <div class=\"form-group text-right\">\n                            <button type=\"submit\" class=\"btn btn-primary pull-right\">Join this campaign now</button>\n                        </div>\n                    </form> -->\n                </div>        \n            </div>\n        </div>\n    </div> \n</template>"; });
 define('base-view-model',["exports"], function (exports) {
     "use strict";
 
