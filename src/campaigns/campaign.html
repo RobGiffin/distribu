@@ -43,11 +43,25 @@
                         <div id="mapid" class="map"></div>
                     </div>
 
-                    <p>
-                        <a href="#" click.delegate="shareOnTwitter(campaign)">Share on twitter</a><br>
-                        <a href="#" click.delegate="shareOnFacebook(campaign)">Share on facebook</a><br>
-                        <a href="#" click.delegate="shareOnGoogle(campaign)">Share on google+</a><br>
-                    </p>                     
+                    <div class="row social-media">
+                        <div class="col-md-4">
+                            <a href="#" click.delegate="shareOnTwitter(campaign)" title="Share on twitter">
+                                <i class="fab fa-twitter-square"></i>
+                            </a>                            
+                        </div>
+
+                        <div class="col-md-4 text-center">
+                            <a href="#" click.delegate="shareOnFacebook(campaign)" title="Share on facebook">
+                                <i class="fab fa-facebook-square"></i>
+                            </a>                            
+                        </div>
+
+                        <div class="col-md-4 text-right">
+                            <a href="#" click.delegate="shareOnGoogle(campaign)" title="Share on google+">
+                                <i class="fab fa-google-plus-square"></i>
+                            </a>                            
+                        </div>                        
+                    </div>                     
 
                     <!-- <form>
                         <div class="form-group">
