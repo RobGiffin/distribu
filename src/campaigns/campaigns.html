@@ -11,7 +11,7 @@
                     <div class="col-md-6" style="display: block; margin: 0 auto;">
                         <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
                             <li class="nav-item">
-                                <a class="btn btn-outline-info header-button" id="national-tab" data-toggle="tab" href="#national"
+                                <a class="btn btn-outline-info header-button active show" id="national-tab" data-toggle="tab" href="#national"
                                     role="tab" aria-controls="national" aria-selected="true">National</a>
                             </li>
                             <li class="nav-item">
@@ -24,17 +24,21 @@
             </div>
         </div>
 
-        <div class="col-md-10" style="margin: 0 auto;">
+        <div class="col-md-12 centered">
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane active" id="national" role="tabpanel" aria-labelledby="national-tab">
-                    <div repeat.for="campaign of campaigns">
-                        <div class="campaign-box" if.bind="campaign.area == 'national'">
-                            <div class="campaign-box-text">
-                                <h3>${campaign.name}</h3>
-                                <a class="btn btn-primary" href="#/campaign/${campaign.id}">Join this campaign</a>
-                            </div>
-                            <div class="campaign-box-image">
-                                <img src="${campaign.promoImage}" />
+                    <div class="row">
+                        <div class="col-md-6" repeat.for="campaign of campaigns">
+                            <div>
+                                <div class="campaign-box" if.bind="campaign.area == 'national'">
+                                    <div class="campaign-box-text">
+                                        <h3>${campaign.name}</h3>
+                                        <a class="btn btn-primary" href="#/campaign/${campaign.id}">View campaign</a>
+                                    </div>
+                                    <div class="campaign-box-image">
+                                        <img src="${campaign.promoImage}" />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -42,12 +46,14 @@
                 <div class="tab-pane fade" id="local" role="tabpanel" aria-labelledby="local-tab">
                     <div repeat.for="campaign of campaigns">
                         <div class="campaign-box" if.bind="campaign.area == 'local'">
-                            <div class="campaign-box-text">
-                                <h3>${campaign.name}</h3>
-                                <a class="btn btn-primary" href="#/campaign/${campaign.id}">Join this campaign</a>
-                            </div>
-                            <div class="campaign-box-image">
-                                <img src="${campaign.promoImage}" />
+                            <div>
+                                <div class="campaign-box-text">
+                                    <h3>${campaign.name}</h3>
+                                    <a class="btn btn-primary" href="#/campaign/${campaign.id}">View campaign</a>
+                                </div>
+                                <div class="campaign-box-image">
+                                    <img src="${campaign.promoImage}" />
+                                </div>
                             </div>
                         </div>
                     </div>

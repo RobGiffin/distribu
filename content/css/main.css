@@ -291,6 +291,12 @@ textarea.parsley-error {
     font-size: 70px;
     color: #14e2d5; }
 
+.campaigns .container {
+  text-align: center; }
+
+.campaigns .nav-tabs {
+  border-bottom: none; }
+
 .campaigns .heading-text {
   margin-top: 100px;
   margin-bottom: 50px; }
