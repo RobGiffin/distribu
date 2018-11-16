@@ -227,6 +227,33 @@ define('main',["exports", "aurelia-pal", "./environment"], function (exports, _a
         });
     }
 });
+define('home/home',["exports", "aurelia-http-client"], function (exports, _aureliaHttpClient) {
+    "use strict";
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.Campaign = undefined;
+
+    function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+            throw new TypeError("Cannot call a class as a function");
+        }
+    }
+
+    var Campaign = exports.Campaign = function () {
+        function Campaign() {
+            _classCallCheck(this, Campaign);
+        }
+
+        Campaign.prototype.activate = function activate(args) {
+            console.log(args);
+        };
+
+        return Campaign;
+    }();
+});
+define('text!home/home.html', ['module'], function(module) { module.exports = "<template>\n<div>\n<h1>Home</h1>\n<a href=\"#/campaigns\">View Campaigns</a>\n</div>\n</template>\n"; });
 define('header/header',["exports", "aurelia-framework", "aurelia-event-aggregator", "aurelia-router"], function (exports, _aureliaFramework, _aureliaEventAggregator, _aureliaRouter) {
     "use strict";
 
@@ -521,8 +548,15 @@ define('app',["exports", "aurelia-framework", "aurelia-event-aggregator", "aurel
             config.title = "Distribu";
 
             config.map([{
-                name: "campaigns",
+                name: "home",
                 route: "",
+                moduleId: _aureliaPal.PLATFORM.moduleName("home/home"),
+                title: "Home",
+                auth: false,
+                includeInBreadcrumbs: true
+            }, {
+                name: "campaigns",
+                route: "campaigns",
                 moduleId: _aureliaPal.PLATFORM.moduleName("campaigns/campaigns"),
                 title: "Campaigns",
                 auth: false,
