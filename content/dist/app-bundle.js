@@ -388,7 +388,7 @@ define('campaigns/share-modal',["exports", "aurelia-framework", "aurelia-dialog"
         };
 
         ShareModal.prototype.shareOnTwitter = function shareOnTwitter() {
-            var twitterWindow = window.open('https://twitter.com/share?text=Check out the ' + campaign.name + ' campaign on Distribu&url=' + campaign.url, 'twitter-popup', 'height=350,width=600');
+            var twitterWindow = window.open('https://twitter.com/share?text=Check out the ' + this.campaign.name + ' campaign on Distribu&url=' + this.campaign.url, 'twitter-popup', 'height=350,width=600');
 
             if (twitterWindow.focus) {
                 twitterWindow.focus();
@@ -398,7 +398,7 @@ define('campaigns/share-modal',["exports", "aurelia-framework", "aurelia-dialog"
         };
 
         ShareModal.prototype.shareOnFacebook = function shareOnFacebook() {
-            var facebookWindow = window.open('https://www.facebook.com/sharer/sharer.php?quote=Check out the ' + campaign.name + ' campaign on Distribu&u=' + campaign.url, 'facebook-popup', 'height=350,width=600');
+            var facebookWindow = window.open('https://www.facebook.com/sharer/sharer.php?quote=Check out the ' + this.campaign.name + ' campaign on Distribu&u=' + this.campaign.url, 'facebook-popup', 'height=350,width=600');
 
             if (facebookWindow.focus) {
                 facebookWindow.focus();
@@ -414,7 +414,7 @@ define('campaigns/share-modal',["exports", "aurelia-framework", "aurelia-dialog"
         return ShareModal;
     }()) || _class);
 });
-define('text!campaigns/share-modal.html', ['module'], function(module) { module.exports = "<template>\n        <ux-dialog>\n            <ux-dialog-header class=\"no-border\">\n                <div class=\"container-fluid\">\n                    <div class=\"row\">\n                        <div class=\"col-sm-12\">\n                            <div class=\"wizard-steps\">\n                                <img src=\"/content/images/modal/1-unselected.png\">\n    \n                                <img src=\"/content/images/modal/2-unselected.png\">\n    \n                                <img src=\"/content/images/modal/3-selected.png\">\n                            </div>\n    \n                            <h5>Tell everybody about your pledge</h5>\n                        </div>\n                    </div>\n                </div>\n            </ux-dialog-header>\n            <ux-dialog-body>\n                <div class=\"container-fluid\">\n                    <div class=\"row\">\n                        <div class=\"col-sm-12\">\n                            <a href=\"#\" click.delegate=\"shareOnFacebook()\">Share on Facebook</a>\n    \n                            <a href=\"#\" click.delegate=\"shareOnTwitter()\">Share on Twiiter</a>\n    \n                            <button type=\"button\" click.delegate=\"finish()\">Finish</button>\n    \n                        </div>\n                    </div>\n                </div>\n            </ux-dialog-body>\n        </ux-dialog>\n    </template>"; });
+define('text!campaigns/share-modal.html', ['module'], function(module) { module.exports = "<template>\n        <ux-dialog>\n            <ux-dialog-header class=\"no-border\">\n                <div class=\"container-fluid\">\n                    <div class=\"row\">\n                        <div class=\"col-sm-12\">\n                            <div class=\"wizard-steps\">\n                                <img src=\"/content/images/modal/1-unselected.png\">\n    \n                                <img src=\"/content/images/modal/2-unselected.png\">\n    \n                                <img src=\"/content/images/modal/3-selected.png\">\n                            </div>\n    \n                            <h5>Tell everybody about your pledge</h5>\n                        </div>\n                    </div>\n                </div>\n            </ux-dialog-header>\n            <ux-dialog-body>\n                <div class=\"container-fluid\">\n                    <div class=\"row\">\n                        <div class=\"col-sm-12\">\n                            <img class=\"share\" src=\"/content/images/facebook_button.PNG\" click.delegate=\"shareOnFacebook()\">\n\n                            <img class=\"share\" src=\"/content/images/twitter_button.PNG\" click.delegate=\"shareOnTwitter()\">\n    \n                            <button type=\"button\" click.delegate=\"finish()\">Finish</button>\n                        </div>\n                    </div>\n                </div>\n            </ux-dialog-body>\n        </ux-dialog>\n    </template>"; });
 define('campaigns/pledge-modal',["exports", "aurelia-framework", "aurelia-dialog"], function (exports, _aureliaFramework, _aureliaDialog) {
     "use strict";
 

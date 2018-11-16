@@ -93,6 +93,12 @@ ux-dialog {
         float: left;
         margin-right: 45px;
         margin-top: 25px; }
+    ux-dialog ux-dialog-body img.share {
+      height: 80px;
+      margin: 0 auto;
+      display: block;
+      margin-bottom: 50px;
+      cursor: pointer; }
     ux-dialog ux-dialog-body button {
       font-family: 'IBM Plex Sans', sans-serif;
       display: block;

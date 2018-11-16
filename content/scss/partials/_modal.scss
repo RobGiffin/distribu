@@ -79,6 +79,14 @@ ux-dialog {
             }
         }
 
+        img.share {
+            height: 80px;
+            margin: 0 auto;
+            display: block;
+            margin-bottom: 50px;
+            cursor: pointer;
+        }
+
         button {
             font-family: 'IBM Plex Sans', sans-serif;
             display: block;

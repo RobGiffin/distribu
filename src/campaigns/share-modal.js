@@ -12,7 +12,7 @@ export class ShareModal {
     }
 
     shareOnTwitter() {
-        let twitterWindow = window.open('https://twitter.com/share?text=Check out the ' + campaign.name + ' campaign on Distribu&url=' + campaign.url, 'twitter-popup', 'height=350,width=600');
+        let twitterWindow = window.open('https://twitter.com/share?text=Check out the ' + this.campaign.name + ' campaign on Distribu&url=' + this.campaign.url, 'twitter-popup', 'height=350,width=600');
         
         if (twitterWindow.focus) { 
             twitterWindow.focus(); 
@@ -22,7 +22,7 @@ export class ShareModal {
     }
 
     shareOnFacebook() {
-        let facebookWindow = window.open('https://www.facebook.com/sharer/sharer.php?quote=Check out the ' + campaign.name + ' campaign on Distribu&u=' + campaign.url, 'facebook-popup', 'height=350,width=600');
+        let facebookWindow = window.open('https://www.facebook.com/sharer/sharer.php?quote=Check out the ' + this.campaign.name + ' campaign on Distribu&u=' + this.campaign.url, 'facebook-popup', 'height=350,width=600');
         
         if (facebookWindow.focus) { 
             facebookWindow.focus(); 
