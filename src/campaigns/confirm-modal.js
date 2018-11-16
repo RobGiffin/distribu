@@ -7,7 +7,11 @@ export class ConfirmModal {
         this.dialogController = dialogController;
     }
 
-    activate(campaign) {
-        this.campaign = campaign;
+    activate(state) {
+        this.state = state;
+    }
+
+    confirm() {
+        this.dialogController.ok();
     }
 }

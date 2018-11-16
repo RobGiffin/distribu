@@ -8,7 +8,8 @@
             "name": "Hannah Curtain",
             "email": "hannah.curtain@gmail.com"
         },
-        "promoImage" : "/content/images/NHS.png"
+        "promoImage" : "/content/images/NHS.png",
+        "url": "http://distribu.azurewebsites.net/#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3"
     },
     {
         "id": "f9677c7b-1fc7-4e26-b49c-d0c859eb0ckj",
@@ -19,7 +20,8 @@
             "name": "Amy Hawkins",
             "email": "amy.hawkins@gmail.com"
         },
-        "promoImage" : "/content/images/Soldier.png"
+        "promoImage" : "/content/images/Soldier.png",
+        "url": "http://distribu.azurewebsites.net/#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3"
     },
     {
         "id": "f9677c7b-1fc7-4e26-b49c-d0c859eb0ckb",
@@ -30,7 +32,8 @@
             "name": "Amy Hawkins",
             "email": "amy.hawkins@gmail.com"
         },
-        "promoImage" : "/content/images/Schools.png"
+        "promoImage" : "/content/images/Schools.png",
+        "url": "http://distribu.azurewebsites.net/#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3"
     },
     {
         "id": "f9677c7b-1fc7-4e26-b49c-d0c859eb0ckd",
@@ -41,7 +44,8 @@
             "name": "Amy Hawkins",
             "email": "amy.hawkins@gmail.com"
         },
-        "promoImage" : "/content/images/Trees.png"
+        "promoImage" : "/content/images/Trees.png",
+        "url": "http://distribu.azurewebsites.net/#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3"
     },
     {
         "id": "f9677c7b-1fc7-4e26-b49c-d0c859eb0ckf",
@@ -52,7 +56,8 @@
             "name": "Amy Hawkins",
             "email": "amy.hawkins@gmail.com"
         },
-        "promoImage" : "/content/images/Houseing.png"
+        "promoImage" : "/content/images/Houseing.png",
+        "url": "http://distribu.azurewebsites.net/#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3"
     },
     {
         "id": "f9677c7b-1fc7-4e26-b49c-d0c859eb0cke",
@@ -74,7 +79,8 @@
             "name": "Amy Hawkins",
             "email": "amy.hawkins@gmail.com"
         },
-        "promoImage" : "/content/images/fundingPlaceholder.png"
+        "promoImage" : "/content/images/fundingPlaceholder.png",
+        "url": "http://distribu.azurewebsites.net/#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3"
     },
     {
         "id": "2ef07c09-54ad-4833-95ba-14c26430b5e0",
@@ -137,6 +143,7 @@
             "monthly-plan-id": "plan_Dz72WHeyy6EpI2",
             "yearly-plan-id": "plan_Dz72dxAxsNVNUM"
         },
-        "promoImage" : "/content/images/fundingPlaceholder.png"
+        "promoImage" : "/content/images/fundingPlaceholder.png",
+        "url": "http://distribu.azurewebsites.net/#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3"
     }
 ]

@@ -283,7 +283,7 @@ define('home/home',["exports", "aurelia-http-client"], function (exports, _aurel
         return Campaign;
     }();
 });
-define('text!home/home.html', ['module'], function(module) { module.exports = "<template>\n    <div class=\"home\">\n        <div class=\"welcome\">\n            <div class=\"cut-away\"></div>\n\n            <img class=\"figure\" src=\"/content/images/bitmap.png\">\n\n            <div class=\"container\">\n                <div class=\"row\">\n                    <div class=\"col-sm-12\">\n                        <h1>\n                            Make your £1 pledge\n                            <br>and decide how it’s spent\n                        </h1>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"how-it-works\">\n            <div class=\"container\">\n                <div class=\"row\">\n                    <div class=\"col-sm-12\">\n                        <a name=\"how-it-works\"></a>\n\n                        <h2>How it works</h2>\n\n                        <div class=\"step\">\n                            <img src=\"/content/images/step-no.png\">\n\n                            <h3>Find your cause...</h3>\n                            <p>Whether it’s the NHS, Houseing or something more local you want to start, there’s a campaign that will match your values. Search our national and local campaigns and find your tribe.</p>\n                        </div>\n                        \n                        <div class=\"step\">\n                            <img src=\"/content/images/step-no-copy.png\">\n\n                            <h3>Choose your pledge amount</h3>\n                            <p>From as little as £1 you can pledge your support for a cause. There are 4 tiers, £1 per year, £1 per month (£12), £1 per week (£52).</p>\n                        </div>\n                        \n                        <div class=\"step\">\n                            <img src=\"/content/images/step-no-copy-2.png\">\n\n                            <h3>Share your cause...</h3>\n                            <p>Now it’s time to spread your message far and wide among your networks, family and friends. Maybe you want to become an ambassador for the cause.</p>\n                        </div>\n                        \n                        <div class=\"step\">\n                            <img src=\"/content/images/step-no-copy-3.png\">\n\n                            <h3>Receive updates...</h3>\n                            <p>We’ll make it known how the campaigns are doing via email and social media. Publicity is key.</p>\n                        </div>\n\n                        <div class=\"step\">\n                            <img src=\"/content/images/step-no-copy-4.png\">\n\n                            <h3>Government takes the money...</h3>\n                            <p>This is where the magic happens. The government decisdes to pull the trigger and spend your money exactly as you want it. Boom, people power has prevailed.</p>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</template>"; });
+define('text!home/home.html', ['module'], function(module) { module.exports = "<template>\n    <div class=\"home\">\n        <div class=\"welcome\">\n            <div class=\"cut-away\"></div>\n\n            <img class=\"figure\" src=\"/content/images/bitmap.png\">\n\n            <div class=\"container\">\n                <div class=\"row\">\n                    <div class=\"col-sm-12\">\n                        <h1>\n                            Make your £1 pledge\n                            <br>and decide how it’s spent\n                        </h1>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"how-it-works\">\n            <div class=\"container\">\n                <div class=\"row\">\n                    <div class=\"col-sm-12\">\n                        <a name=\"home-how-it-works\"></a>\n\n                        <h2>How it works</h2>\n\n                        <div class=\"step\">\n                            <img src=\"/content/images/step-no.png\">\n\n                            <h3>Find your cause...</h3>\n                            <p>Whether it’s the NHS, Houseing or something more local you want to start, there’s a campaign that will match your values. Search our national and local campaigns and find your tribe.</p>\n                        </div>\n                        \n                        <div class=\"step\">\n                            <img src=\"/content/images/step-no-copy.png\">\n\n                            <h3>Choose your pledge amount</h3>\n                            <p>From as little as £1 you can pledge your support for a cause. There are 4 tiers, £1 per year, £1 per month (£12), £1 per week (£52).</p>\n                        </div>\n                        \n                        <div class=\"step\">\n                            <img src=\"/content/images/step-no-copy-2.png\">\n\n                            <h3>Share your cause...</h3>\n                            <p>Now it’s time to spread your message far and wide among your networks, family and friends. Maybe you want to become an ambassador for the cause.</p>\n                        </div>\n                        \n                        <div class=\"step\">\n                            <img src=\"/content/images/step-no-copy-3.png\">\n\n                            <h3>Receive updates...</h3>\n                            <p>We’ll make it known how the campaigns are doing via email and social media. Publicity is key.</p>\n                        </div>\n\n                        <div class=\"step\">\n                            <img src=\"/content/images/step-no-copy-4.png\">\n\n                            <h3>Government takes the money...</h3>\n                            <p>This is where the magic happens. The government decisdes to pull the trigger and spend your money exactly as you want it. Boom, people power has prevailed.</p>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</template>"; });
 define('header/header',["exports", "aurelia-framework", "aurelia-event-aggregator", "aurelia-router"], function (exports, _aureliaFramework, _aureliaEventAggregator, _aureliaRouter) {
     "use strict";
 
@@ -319,7 +319,7 @@ define('header/header',["exports", "aurelia-framework", "aurelia-event-aggregato
         return Header;
     }()) || _class);
 });
-define('text!header/header.html', ['module'], function(module) { module.exports = "<template>\n    <div class=\"header\">\n        <nav class=\"distribu-nav navbar navbar-expand-lg navbar-light bg-light\">\n            <a class=\"navbar-brand\" href=\"#\"><img src=\"\\content\\images\\logo.png\" alt=\"Distribu\" /></a>\n            <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                <span class=\"navbar-toggler-icon\"></span>\n            </button>\n            \n            <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n                <ul class=\"navbar-nav mr-auto\">\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" href=\"#\">How it works</a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" href=\"#/campaigns/\">Find a Campaign</a>\n                </li>\n                <li class=\"nav-item\">\n                        <a class=\"nav-link\" href=\"#/reports/\">Successful Campaigns</a>\n                    </li>\n                </ul>\n                <button class=\"distribu-login-btn btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Log out</button>\n            </div>\n        </nav>\n    </div>\n</template>"; });
+define('text!header/header.html', ['module'], function(module) { module.exports = "<template>\n    <div class=\"header\">\n        <nav class=\"distribu-nav navbar navbar-expand-lg navbar-light bg-light\">\n            <a class=\"navbar-brand\" href=\"#\"><img src=\"\\content\\images\\logo.png\" alt=\"Distribu\" /></a>\n            <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                <span class=\"navbar-toggler-icon\"></span>\n            </button>\n            \n            <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n                <ul class=\"navbar-nav mr-auto\">\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" href=\"#home-how-it-works\">How it works</a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" href=\"#/campaigns/\">Find a Campaign</a>\n                </li>\n                <li class=\"nav-item\">\n                        <a class=\"nav-link\" href=\"#/reports/\">Successful Campaigns</a>\n                    </li>\n                </ul>\n                <button class=\"distribu-login-btn btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Log out</button>\n            </div>\n        </nav>\n    </div>\n</template>"; });
 define('footer/footer',["exports", "aurelia-framework", "aurelia-http-client", "aurelia-router"], function (exports, _aureliaFramework, _aureliaHttpClient, _aureliaRouter) {
     "use strict";
 
@@ -387,10 +387,34 @@ define('campaigns/share-modal',["exports", "aurelia-framework", "aurelia-dialog"
             this.campaign = campaign;
         };
 
+        ShareModal.prototype.shareOnTwitter = function shareOnTwitter() {
+            var twitterWindow = window.open('https://twitter.com/share?text=Check out the ' + campaign.name + ' campaign on Distribu&url=' + campaign.url, 'twitter-popup', 'height=350,width=600');
+
+            if (twitterWindow.focus) {
+                twitterWindow.focus();
+            }
+
+            return false;
+        };
+
+        ShareModal.prototype.shareOnFacebook = function shareOnFacebook() {
+            var facebookWindow = window.open('https://www.facebook.com/sharer/sharer.php?quote=Check out the ' + campaign.name + ' campaign on Distribu&u=' + campaign.url, 'facebook-popup', 'height=350,width=600');
+
+            if (facebookWindow.focus) {
+                facebookWindow.focus();
+            }
+
+            return false;
+        };
+
+        ShareModal.prototype.finish = function finish() {
+            this.dialogController.ok();
+        };
+
         return ShareModal;
     }()) || _class);
 });
-define('text!campaigns/share-modal.html', ['module'], function(module) { module.exports = "<template>\n        <ux-dialog>\n            <ux-dialog-header class=\"no-border\">\n                <div class=\"container-fluid\">\n                    <div class=\"row\">\n                        <div class=\"col-sm-12\">\n                            <div class=\"wizard-steps\">\n                                <img src=\"/content/images/modal/1-unselected.png\">\n    \n                                <img src=\"/content/images/modal/2-unselected.png\">\n    \n                                <img src=\"/content/images/modal/3-selected.png\">\n                            </div>\n    \n                            <h5>Tell everybody \u2028about your pledge</h5>\n                        </div>\n                    </div>\n                </div>\n            </ux-dialog-header>\n            <ux-dialog-body>\n                <div class=\"container-fluid\">\n                    <div class=\"row\">\n                        <div class=\"col-sm-12\">\n                            \n    \n    \n                            <button>Finish</button>\n    \n                        </div>\n                    </div>\n                </div>\n            </ux-dialog-body>\n        </ux-dialog>\n    </template>"; });
+define('text!campaigns/share-modal.html', ['module'], function(module) { module.exports = "<template>\n        <ux-dialog>\n            <ux-dialog-header class=\"no-border\">\n                <div class=\"container-fluid\">\n                    <div class=\"row\">\n                        <div class=\"col-sm-12\">\n                            <div class=\"wizard-steps\">\n                                <img src=\"/content/images/modal/1-unselected.png\">\n    \n                                <img src=\"/content/images/modal/2-unselected.png\">\n    \n                                <img src=\"/content/images/modal/3-selected.png\">\n                            </div>\n    \n                            <h5>Tell everybody about your pledge</h5>\n                        </div>\n                    </div>\n                </div>\n            </ux-dialog-header>\n            <ux-dialog-body>\n                <div class=\"container-fluid\">\n                    <div class=\"row\">\n                        <div class=\"col-sm-12\">\n                            \n    \n    \n                            <button click.delegate=\"finish()\">Finish</button>\n    \n                        </div>\n                    </div>\n                </div>\n            </ux-dialog-body>\n        </ux-dialog>\n    </template>"; });
 define('campaigns/pledge-modal',["exports", "aurelia-framework", "aurelia-dialog"], function (exports, _aureliaFramework, _aureliaDialog) {
     "use strict";
 
@@ -412,16 +436,27 @@ define('campaigns/pledge-modal',["exports", "aurelia-framework", "aurelia-dialog
             _classCallCheck(this, PledgeModal);
 
             this.dialogController = dialogController;
+            this.paymentSchedule = "yearly";
         }
 
         PledgeModal.prototype.activate = function activate(campaign) {
             this.campaign = campaign;
         };
 
+        PledgeModal.prototype.switchPaymentSchedule = function switchPaymentSchedule(paymentSchedule) {
+            this.paymentSchedule = paymentSchedule;
+        };
+
+        PledgeModal.prototype.continue = function _continue() {
+            this.dialogController.ok({
+                paymentSchedule: this.paymentSchedule
+            });
+        };
+
         return PledgeModal;
     }()) || _class);
 });
-define('text!campaigns/pledge-modal.html', ['module'], function(module) { module.exports = "<template>\n    <ux-dialog>\n        <ux-dialog-header>\n            <div class=\"container-fluid\">\n                <div class=\"row\">\n                    <div class=\"col-sm-12\">\n                        <div class=\"wizard-steps\">\n                            <img src=\"/content/images/modal/1-selected.png\">\n\n                            <img src=\"/content/images/modal/2-unselected.png\">\n\n                            <img src=\"/content/images/modal/3-unselected.png\">\n                        </div>\n\n                        <h5>Select your pledge level</h5>\n                    </div>\n                </div>\n            </div>\n        </ux-dialog-header>\n        <ux-dialog-body>\n            <div class=\"container-fluid\">\n                <div class=\"row\">\n                    <div class=\"col-sm-12\">\n\n\n\n                        <button>Continue</button>\n\n                    </div>\n                </div>\n            </div>\n        </ux-dialog-body>\n    </ux-dialog>\n</template>"; });
+define('text!campaigns/pledge-modal.html', ['module'], function(module) { module.exports = "<template>\n    <ux-dialog>\n        <ux-dialog-header>\n            <div class=\"container-fluid\">\n                <div class=\"row\">\n                    <div class=\"col-sm-12\">\n                        <div class=\"wizard-steps\">\n                            <img src=\"/content/images/modal/1-selected.png\">\n\n                            <img src=\"/content/images/modal/2-unselected.png\">\n\n                            <img src=\"/content/images/modal/3-unselected.png\">\n                        </div>\n\n                        <h5>Select your pledge level</h5>\n                    </div>\n                </div>\n            </div>\n        </ux-dialog-header>\n        <ux-dialog-body>\n            <div class=\"container-fluid\">\n                <div class=\"row\">\n                    <div class=\"col-sm-12\">\n                        <div class=\"payment-schedule\" click.delegate=\"switchPaymentSchedule('yearly')\">\n                            <img src=\"/content/images/modal/selected-radial.png\" if.bind=\"paymentSchedule === 'yearly'\">\n                            <img src=\"/content/images/modal/radial.png\" if.bind=\"paymentSchedule !== 'yearly'\">\n\n                            £1 per yer\n                        </div>\n\n                        <div class=\"payment-schedule\" click.delegate=\"switchPaymentSchedule('monthly')\">\n                            <img src=\"/content/images/modal/selected-radial.png\" if.bind=\"paymentSchedule === 'monthly'\">\n                            <img src=\"/content/images/modal/radial.png\" if.bind=\"paymentSchedule !== 'monthly'\">\n\n                            £1 per month (£12)\n                        </div>\n\n                        <div class=\"payment-schedule\" click.delegate=\"switchPaymentSchedule('daily')\">\n                            <img src=\"/content/images/modal/selected-radial.png\" if.bind=\"paymentSchedule === 'daily'\">\n                            <img src=\"/content/images/modal/radial.png\" if.bind=\"paymentSchedule !== 'daily'\">\n\n                            £1 per week (£52)\n                        </div>                        \n\n                        <button click.delegate=\"continue()\">Continue</button>\n\n                    </div>\n                </div>\n            </div>\n        </ux-dialog-body>\n    </ux-dialog>\n</template>"; });
 define('campaigns/confirmation',["exports", "aurelia-http-client"], function (exports, _aureliaHttpClient) {
     "use strict";
 
@@ -486,14 +521,18 @@ define('campaigns/confirm-modal',["exports", "aurelia-framework", "aurelia-dialo
             this.dialogController = dialogController;
         }
 
-        ConfirmModal.prototype.activate = function activate(campaign) {
-            this.campaign = campaign;
+        ConfirmModal.prototype.activate = function activate(state) {
+            this.state = state;
+        };
+
+        ConfirmModal.prototype.confirm = function confirm() {
+            this.dialogController.ok();
         };
 
         return ConfirmModal;
     }()) || _class);
 });
-define('text!campaigns/confirm-modal.html', ['module'], function(module) { module.exports = "<template>\n        <ux-dialog>\n            <ux-dialog-header class=\"no-border\">\n                <div class=\"container-fluid\">\n                    <div class=\"row\">\n                        <div class=\"col-sm-12\">\n                            <div class=\"wizard-steps\">\n                                <img src=\"/content/images/modal/1-unselected.png\">\n    \n                                <img src=\"/content/images/modal/2-selected.png\">\n    \n                                <img src=\"/content/images/modal/3-unselected.png\">\n                            </div>\n    \n                            <h5>Confirm your pledge</h5>\n                        </div>\n                    </div>\n                </div>\n            </ux-dialog-header>\n            <ux-dialog-body>\n                <div class=\"container-fluid\">\n                    <div class=\"row\">\n                        <div class=\"col-sm-12\">\n    \n    \n    \n                            <button>Confirm</button>\n    \n                        </div>\n                    </div>\n                </div>\n            </ux-dialog-body>\n        </ux-dialog>\n    </template>"; });
+define('text!campaigns/confirm-modal.html', ['module'], function(module) { module.exports = "<template>\n        <ux-dialog>\n            <ux-dialog-header class=\"no-border\">\n                <div class=\"container-fluid\">\n                    <div class=\"row\">\n                        <div class=\"col-sm-12\">\n                            <div class=\"wizard-steps\">\n                                <img src=\"/content/images/modal/1-unselected.png\">\n    \n                                <img src=\"/content/images/modal/2-selected.png\">\n    \n                                <img src=\"/content/images/modal/3-unselected.png\">\n                            </div>\n    \n                            <h5>Confirm your pledge</h5>\n                        </div>\n                    </div>\n                </div>\n            </ux-dialog-header>\n            <ux-dialog-body>\n                <div class=\"container-fluid\">\n                    <div class=\"row\">\n                        <div class=\"col-sm-12\">\n    \n    \n    \n                            <button click.delegate=\"confirm()\">Confirm</button>\n    \n                        </div>\n                    </div>\n                </div>\n            </ux-dialog-body>\n        </ux-dialog>\n    </template>"; });
 define('campaigns/campaigns',["exports", "aurelia-http-client"], function (exports, _aureliaHttpClient) {
     "use strict";
 
@@ -552,8 +591,8 @@ define('campaigns/campaigns',["exports", "aurelia-http-client"], function (expor
         return Campaigns;
     }();
 });
-define('text!campaigns/campaigns.html', ['module'], function(module) { module.exports = "<template>\n    <div class=\"campaigns\">\n        <div class=\"container\">\n            <div class=\"heading-text\">\n                <div class=\"row\">\n                    <div class=\"col-md-12\">\n                        <h2>Find a campaign</h2>\n                    </div>\n                </div>\n                <div class=\"row\">\n                    <div class=\"col-md-6\" style=\"display: block; margin: 0 auto;\">\n                        <button class=\"btn btn-outline-info header-button\">National</button>\n                        <button class=\"btn btn-outline-info header-button\">Local</button>\n                    </div>\n                </div>\n            </div>\n        </div>\n        \n        <div class=\"tab-content\" id=\"myTabContent\">\n            <div class=\"tab-pane fade show active\" id=\"national\" role=\"tabpanel\" aria-labelledby=\"national-tab\">\n                <div repeat.for=\"campaign of campaigns\">\n                    <div class=\"campaign-box\">\n                        <div class=\"campaign-box-text\">\n                            <h3>${campaign.name}</h3>\n                            <button class=\"btn btn-primary\">Join this campaign</button>\n                        </div>\n                        <div class=\"campaign-box-image\">\n                            <img src=\"${campaign.promoImage}\" />\n                        </div>\n                            <!-- <p>${campaign.description}</p>                      \n                            <p style=\"background-color:orange;\"><em>${campaign.tags}</em></p>\n                            <p style=\"background-color:greenyellow;\"><em>${campaign.jurisdiction}</em></p>\n                            <p>\n                                ${campaign.createdBy.name}<br>\n                                <a href=\"mailto:${campaign.createdBy.email}?subject=${campaign.name}\">${campaign.createdBy.email}</a>\n                            </p>\n            \n                            <p>\n                                <a href=\"#\" click.delegate=\"shareOnTwitter(campaign)\">Share on twitter</a><br>\n                                <a href=\"#\" click.delegate=\"shareOnFacebook(campaign)\">Share on facebook</a><br>\n                            </p>         -->\n                    </div>\n                </div>\n            </div>\n            <div class=\"tab-pane fade\" id=\"where-you-are\" role=\"tabpanel\" aria-labelledby=\"where-you-are-tab\">\n\n            </div>\n        </div>\n    </div>\n</template>"; });
-define('campaigns/campaign',["exports", "aurelia-framework", "aurelia-http-client", "aurelia-router", "aurelia-dialog", "./pledge-modal"], function (exports, _aureliaFramework, _aureliaHttpClient, _aureliaRouter, _aureliaDialog, _pledgeModal) {
+define('text!campaigns/campaigns.html', ['module'], function(module) { module.exports = "<template>\n    <div class=\"campaigns\">\n        <div class=\"container\">\n            <div class=\"heading-text\">\n                <div class=\"row\">\n                    <div class=\"col-md-12\">\n                        <h2>Find a campaign</h2>\n                    </div>\n                </div>\n                <div class=\"row\">\n                    <div class=\"col-md-6\" style=\"display: block; margin: 0 auto;\">\n                        <button class=\"btn btn-outline-info header-button\">National</button>\n                        <button class=\"btn btn-outline-info header-button\">Local</button>\n                    </div>\n                </div>\n            </div>\n        </div>\n        \n        <div class=\"tab-content\" id=\"myTabContent\">\n            <div class=\"tab-pane fade show active\" id=\"national\" role=\"tabpanel\" aria-labelledby=\"national-tab\">\n                <div repeat.for=\"campaign of campaigns\">\n                    <div class=\"campaign-box\">\n                        <div class=\"campaign-box-text\">\n                            <h3>${campaign.name}</h3>\n                            <a class=\"btn btn-primary\" href=\"#/campaign/${campaign.id}\">Join this campaign</a>\n                        </div>\n                        <div class=\"campaign-box-image\">\n                            <img src=\"${campaign.promoImage}\" />\n                        </div>\n                            <!-- <p>${campaign.description}</p>                      \n                            <p style=\"background-color:orange;\"><em>${campaign.tags}</em></p>\n                            <p style=\"background-color:greenyellow;\"><em>${campaign.jurisdiction}</em></p>\n                            <p>\n                                ${campaign.createdBy.name}<br>\n                                <a href=\"mailto:${campaign.createdBy.email}?subject=${campaign.name}\">${campaign.createdBy.email}</a>\n                            </p>\n            \n                            <p>\n                                <a href=\"#\" click.delegate=\"shareOnTwitter(campaign)\">Share on twitter</a><br>\n                                <a href=\"#\" click.delegate=\"shareOnFacebook(campaign)\">Share on facebook</a><br>\n                            </p>         -->\n                    </div>\n                </div>\n            </div>\n            <div class=\"tab-pane fade\" id=\"where-you-are\" role=\"tabpanel\" aria-labelledby=\"where-you-are-tab\">\n\n            </div>\n        </div>\n    </div>\n</template>"; });
+define('campaigns/campaign',["exports", "aurelia-framework", "aurelia-http-client", "aurelia-router", "aurelia-dialog", "./pledge-modal", "./confirm-modal", "./share-modal"], function (exports, _aureliaFramework, _aureliaHttpClient, _aureliaRouter, _aureliaDialog, _pledgeModal, _confirmModal, _shareModal) {
     "use strict";
 
     Object.defineProperty(exports, "__esModule", {
@@ -613,7 +652,7 @@ define('campaigns/campaign',["exports", "aurelia-framework", "aurelia-http-clien
         Campaign.prototype.deactivate = function deactivate() {};
 
         Campaign.prototype.joinCampaign = function joinCampaign(campaign) {
-            console.log(campaign);
+            var _this2 = this;
 
             var opts = {
                 viewModel: _pledgeModal.PledgeModal,
@@ -624,7 +663,38 @@ define('campaigns/campaign',["exports", "aurelia-framework", "aurelia-http-clien
                 if (response.wasCancelled) {
                     return;
                 }
+
+                _this2.openConfirmModal(campaign, response.paymentSchedule);
             });
+        };
+
+        Campaign.prototype.openConfirmModal = function openConfirmModal(campaign, paymentSchedule) {
+            var _this3 = this;
+
+            var opts = {
+                viewModel: _confirmModal.ConfirmModal,
+                model: {
+                    campaign: campaign,
+                    paymentSchedule: paymentSchedule
+                }
+            };
+
+            this.dialogService.open(opts).whenClosed(function (response) {
+                if (response.wasCancelled) {
+                    return;
+                }
+
+                _this3.openShareModal(campaign);
+            });
+        };
+
+        Campaign.prototype.openShareModal = function openShareModal(campaign) {
+            var opts = {
+                viewModel: _shareModal.ShareModal,
+                model: campaign
+            };
+
+            this.dialogService.open(opts);
         };
 
         Campaign.prototype.shareOnTwitter = function shareOnTwitter(campaign) {
@@ -725,7 +795,7 @@ define('app',["exports", "aurelia-framework", "aurelia-event-aggregator", "aurel
 
             config.map([{
                 name: "home",
-                route: "",
+                route: ["", "home", "home-how-it-works"],
                 moduleId: _aureliaPal.PLATFORM.moduleName("home/home"),
                 title: "Home",
                 auth: false,

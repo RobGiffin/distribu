@@ -45,9 +45,10 @@ ux-dialog {
     padding: 0px !important;
     margin: 0px !important;
     margin-left: 70px !important;
-    margin-right: 70px !important; }
-    ux-dialog ux-dialog-header.no-border {
-      border-bottom: none !important; }
+    margin-right: 70px !important;
+    border-bottom: none !important; }
+    ux-dialog ux-dialog-header:not(.no-border) .container-fluid {
+      border-bottom: solid 1px white !important; }
     ux-dialog ux-dialog-header .wizard-steps {
       text-align: center;
       margin-top: 50px; }
@@ -67,11 +68,31 @@ ux-dialog {
       margin-top: 50px;
       margin-bottom: 50px;
       text-align: center; }
+    ux-dialog ux-dialog-header .col-sm-12 {
+      padding-left: 0px;
+      padding-right: 0px; }
   ux-dialog ux-dialog-body {
     padding: 0px !important;
     margin: 0px !important;
     margin-left: 70px !important;
     margin-right: 70px !important; }
+    ux-dialog ux-dialog-body .payment-schedule {
+      cursor: pointer;
+      height: 100px;
+      border-bottom: solid 1px white;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 32px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #ffffff;
+      line-height: 100px; }
+      ux-dialog ux-dialog-body .payment-schedule img {
+        float: left;
+        margin-right: 45px;
+        margin-top: 25px; }
     ux-dialog ux-dialog-body button {
       font-family: 'IBM Plex Sans', sans-serif;
       display: block;
@@ -289,9 +310,8 @@ textarea.parsley-error {
   .campaigns .campaign-box .campaign-box-image {
     height: 260px;
     width: 260px; }
-  .campaigns .campaign-box button {
-    width: 120px;
-    height: 60px;
+  .campaigns .campaign-box a {
+    margin-top: 20px;
     border: solid 1px #ffffff;
     background-color: #ffec00;
     color: #4c8783;
