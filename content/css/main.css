@@ -230,7 +230,7 @@ textarea.parsley-error {
     opacity: 1; }
 
 .campaign {
-  margin-top: 200px;
+  margin-top: 180px;
   margin-bottom: 50px; }
   .campaign h2 {
     font-size: 54px;
@@ -491,6 +491,39 @@ textarea.parsley-error {
     line-height: 1.6;
     letter-spacing: normal;
     color: #4c8783; }
+
+.reports {
+  margin-top: 100px;
+  margin-bottom: 50px; }
+  .reports .container {
+    text-align: center; }
+  .reports h2 {
+    font-size: 54px;
+    color: #4c8783;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal; }
+  .reports h3 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4c8783; }
+  .reports p {
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #4c8783;
+    margin-top: 24px; }
 
 .header {
   margin-bottom: -11px; }
