@@ -354,7 +354,7 @@ define('footer/footer',["exports", "aurelia-framework", "aurelia-http-client", "
         return Footer;
     }()) || _class);
 });
-define('text!footer/footer.html', ['module'], function(module) { module.exports = "<template>\r\n    <div class=\"make-my-pledge\">\r\n        <div class=\"container\">\r\n            <div class=\"row\">\r\n                <div class=\"col-sm-12 text-center\">\r\n                    <button style=\"width:350px;\">Create a new Campaign</button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</template>"; });
+define('text!footer/footer.html', ['module'], function(module) { module.exports = "<template>\r\n    <div class=\"make-my-pledge footer\">\r\n        <div class=\"container\">\r\n            <div class=\"row\">\r\n                <div class=\"col-sm-12 text-center\" style=\"margin-top:100px;\">\r\n                    <a href=\"#/newcampaign/\" class=\"btn\" style=\"width:350px;\">Create a new campaign</a>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</template>"; });
 define('environment',["exports"], function (exports) {
   "use strict";
 
