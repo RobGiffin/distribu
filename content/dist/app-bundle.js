@@ -514,7 +514,7 @@ define('campaigns/campaign',['exports', 'aurelia-http-client'], function (export
         Campaign.prototype.joinCampaign = function joinCampaign() {};
 
         Campaign.prototype.shareOnTwitter = function shareOnTwitter(campaign) {
-            var twitterWindow = window.open('https://twitter.com/share?url=' + document.URL, 'twitter-popup', 'height=350,width=600');
+            var twitterWindow = window.open('https://twitter.com/share?text=Check out the ' + campaign.name + ' campaign on Distribu&url=' + document.URL, 'twitter-popup', 'height=350,width=600');
 
             if (twitterWindow.focus) {
                 twitterWindow.focus();
@@ -524,7 +524,7 @@ define('campaigns/campaign',['exports', 'aurelia-http-client'], function (export
         };
 
         Campaign.prototype.shareOnFacebook = function shareOnFacebook(campaign) {
-            var facebookWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + document.URL, 'facebook-popup', 'height=350,width=600');
+            var facebookWindow = window.open('https://www.facebook.com/sharer/sharer.php?quote=Check out the ' + campaign.name + ' campaign on Distribu&u=' + document.URL, 'facebook-popup', 'height=350,width=600');
 
             if (facebookWindow.focus) {
                 facebookWindow.focus();
