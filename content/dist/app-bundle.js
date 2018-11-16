@@ -280,7 +280,7 @@ define('home/home',["exports", "aurelia-http-client"], function (exports, _aurel
         return Campaign;
     }();
 });
-define('text!home/home.html', ['module'], function(module) { module.exports = "<template>\n    <div class=\"home\">\n        <h1>Home</h1>\n        <a href=\"#/campaigns\">View Campaigns</a>\n        <a href=\"#/reports\">Where your money goes</a>\n    </div>\n</template>\n"; });
+define('text!home/home.html', ['module'], function(module) { module.exports = "<template>\n    <div class=\"home\">\n        <div class=\"welcome\">\n            <div class=\"cut-away\"></div>\n\n            <img class=\"figure\" src=\"/content/images/bitmap.png\">\n\n            <div class=\"container\">\n                <div class=\"row\">\n                    <div class=\"col-sm-12\">\n                        <h1>\n                            Make your £1 pledge\n                            <br>and decide how it’s spent\n                        </h1>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"home\">\n            <h1>Home</h1>\n            <a href=\"#/campaigns\">View Campaigns</a>\n            <a href=\"#/reports\">Where your money goes</a>\n        </div>\n    </div>\n</template>\n"; });
 define('header/header',["exports", "aurelia-framework", "aurelia-event-aggregator", "aurelia-router"], function (exports, _aureliaFramework, _aureliaEventAggregator, _aureliaRouter) {
     "use strict";
 
