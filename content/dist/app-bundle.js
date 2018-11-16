@@ -1,30 +1,3 @@
-define('welcome/welcome',["exports", "aurelia-http-client"], function (exports, _aureliaHttpClient) {
-    "use strict";
-
-    Object.defineProperty(exports, "__esModule", {
-        value: true
-    });
-    exports.Welcome = undefined;
-
-    function _classCallCheck(instance, Constructor) {
-        if (!(instance instanceof Constructor)) {
-            throw new TypeError("Cannot call a class as a function");
-        }
-    }
-
-    var Welcome = exports.Welcome = function () {
-        function Welcome() {
-            _classCallCheck(this, Welcome);
-        }
-
-        Welcome.prototype.activate = function activate() {};
-
-        Welcome.prototype.deactivate = function deactivate() {};
-
-        return Welcome;
-    }();
-});
-define('text!welcome/welcome.html', ['module'], function(module) { module.exports = "<template>\n    <h1 class=\"display-4\">DistribYou</h1>\n  \n    <p class=\"lead\">\n        A few things to note before getting started:\n        \n        Get started by clicking on `Get started` below.\n    </p>\n\n    <p class=\"lead\">\n        <a class=\"btn btn-primary btn-lg\" href=\"#employers\" role=\"button\" if.bind=\"state.hasBeenSetup\">Get started</a>\n        <a class=\"btn btn-primary btn-lg\" href=\"#setup\" role=\"button\" if.bind=\"!state.hasBeenSetup\">Get started</a>\n    </p>\n</template>"; });
 define('resources/index',["exports"], function (exports) {
     "use strict";
 
@@ -289,7 +262,7 @@ define('header/header',["exports", "aurelia-framework", "aurelia-event-aggregato
         return Header;
     }()) || _class);
 });
-define('text!header/header.html', ['module'], function(module) { module.exports = "<template>\n    <div class=\"container\">\n        <nav class=\"navbar\">\n            <a class=\"navbar-brand\" href=\"/#employers\">\n            </a>\n\n            <div class=\"justify-content-end\" id=\"navbarCollapse\" if.bind=\"showApiCallsButton\">\n                <ul class=\"navbar-nav\">\n                    <li class=\"nav-item d-none d-md-block\">\n                    </li>\n                </ul>\n            </div>\n        </nav>\n    </div>    \n</template>"; });
+define('text!header/header.html', ['module'], function(module) { module.exports = "<template>\n    <div class=\"container\">\n        <nav class=\"navbar\">\n            <a class=\"navbar-brand\" href=\"/#campaigns\">\n            </a>\n\n            <div class=\"justify-content-end\" id=\"navbarCollapse\" if.bind=\"showApiCallsButton\">\n                <ul class=\"navbar-nav\">\n                    <li class=\"nav-item d-none d-md-block\">\n                    </li>\n                </ul>\n            </div>\n        </nav>\n    </div>    \n</template>"; });
 define('footer/footer',["exports", "aurelia-framework", "aurelia-http-client", "aurelia-router"], function (exports, _aureliaFramework, _aureliaHttpClient, _aureliaRouter) {
     "use strict";
 
@@ -384,7 +357,7 @@ define('campaigns/campaigns',["exports", "aurelia-http-client"], function (expor
         return Campaigns;
     }();
 });
-define('text!campaigns/campaigns.html', ['module'], function(module) { module.exports = "<template>\n    <h2>Campaigns</h2>\n\n    <div repeat.for=\"campaign of campaigns\">\n        <span>${campaign.name}</span>\n    </div>\n</template>"; });
+define('text!campaigns/campaigns.html', ['module'], function(module) { module.exports = "<template>\n    <h2>Find a campaign</h2>\n\n    <ul class=\"nav nav-tabs nav-fill\" id=\"myTab\" role=\"tablist\">\n        <li class=\"nav-item\">\n            <a class=\"nav-link active\" \n                id=\"national-tab\" \n                data-toggle=\"tab\" \n                href=\"#national\" \n                role=\"tab\" \n                aria-controls=\"national\" \n                aria-selected=\"true\">National</a>\n        </li>\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" \n                id=\"where-you-are-tab\" \n                data-toggle=\"tab\" \n                href=\"#where-you-are\" \n                role=\"tab\" \n                aria-controls=\"where-you-are\" \n                aria-selected=\"false\">Where you are</a>\n        </li>\n    </ul>\n    \n    <div class=\"tab-content\" id=\"myTabContent\">\n        <div class=\"tab-pane fade show active\" id=\"national\" role=\"tabpanel\" aria-labelledby=\"national-tab\">\n            <div repeat.for=\"campaign of campaigns\">\n                <h3>${campaign.name}</h3>\n        \n                <p>${campaign.description}</p>\n        \n                <p style=\"background-color:orange;\"><em>${campaign.tags}</em></p>\n        \n                <p style=\"background-color:greenyellow;\"><em>${campaign.jurisdiction}</em></p>\n        \n                <p>\n                    ${campaign.createdBy.name}<br>\n                    <a href=\"mailto:${campaign.createdBy.email}?subject=${campaign.name}\">${campaign.createdBy.email}</a>\n                </p>\n        \n                <hr>\n            </div>\n        </div>\n        <div class=\"tab-pane fade\" id=\"where-you-are\" role=\"tabpanel\" aria-labelledby=\"where-you-are-tab\">\n\n        </div>\n    </div>              \n</template>"; });
 define('base-view-model',["exports"], function (exports) {
     "use strict";
 
@@ -445,13 +418,13 @@ define('app',["exports", "aurelia-framework", "aurelia-event-aggregator", "aurel
         };
 
         App.prototype.configureRouter = function configureRouter(config, router) {
-            config.title = "DistribYou";
+            config.title = "Distribu";
 
             config.map([{
-                name: "get-started",
+                name: "campaigns",
                 route: "",
-                moduleId: _aureliaPal.PLATFORM.moduleName("welcome/welcome"),
-                title: "Get started",
+                moduleId: _aureliaPal.PLATFORM.moduleName("campaigns/campaigns"),
+                title: "Campaigns",
                 auth: false,
                 includeInBreadcrumbs: true
             }]);
@@ -480,5 +453,5 @@ define('app',["exports", "aurelia-framework", "aurelia-event-aggregator", "aurel
         return AuthorizeStep;
     }();
 });
-define('text!app.html', ['module'], function(module) { module.exports = "<template>\n\t<require from=\"./header/header\"></require>\t\n\t<require from=\"./footer/footer\"></require>\n\t<require from=\"./resources/elements/router-progress-indicator/router-progress-indicator\"></require>\n\t<require from=\"./resources/elements/breadcrumbs/breadcrumbs\"></require>\n\t<require from=\"./resources/elements/request-indicator/request-indicator\"></require>\n\n\t<router-progress-indicator></router-progress-indicator>\n\n\t<header></header>\n\n\t<breadcrumbs></breadcrumbs>\n\n\t<div class=\"container content-container\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-sm-12\">\n\t\t\t\t<router-view></router-view>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\n\t<footer></footer>\n\n\t<request-indicator></request-indicator>\n</template>"; });
+define('text!app.html', ['module'], function(module) { module.exports = "<template>\n\t<require from=\"./header/header\"></require>\t\n\t<require from=\"./footer/footer\"></require>\n\t<require from=\"./resources/elements/router-progress-indicator/router-progress-indicator\"></require>\n\t<require from=\"./resources/elements/breadcrumbs/breadcrumbs\"></require>\n\t<require from=\"./resources/elements/request-indicator/request-indicator\"></require>\n\n\t<router-progress-indicator></router-progress-indicator>\n\n\t<header></header>\n\n\t<div class=\"container content-container\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-sm-12\">\n\t\t\t\t<router-view></router-view>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\n\t<!-- <footer></footer> -->\n\n\t<request-indicator></request-indicator>\n</template>"; });
 //# sourceMappingURL=app-bundle.js.map

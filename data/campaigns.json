@@ -3,7 +3,7 @@
         "id": "cfa9396f-2ed9-4190-bafe-3f9c448e17c3",
         "name": "Fund our NHS properly",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed bibendum lorem, at posuere neque. Mauris efficitur vulputate commodo. Duis vulputate nisl enim, id vestibulum eros consectetur a. Ut ut magna ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut quis posuere erat. Cras a porttitor nulla. Duis fringilla lorem non suscipit consequat. Ut id eros eget est elementum porta vitae eu urna.",
-        "tags": ["national", "health", "nhs"],
+        "tags": ["national", "health", "nhs", "hospitals"],
         "jurisdictions": ["national"],
         "createdBy": {
             "name": "Hannah Curtain",
