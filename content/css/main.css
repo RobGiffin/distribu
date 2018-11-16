@@ -250,7 +250,7 @@ textarea.parsley-error {
     line-height: normal;
     letter-spacing: normal;
     color: #4c8783; }
-  .campaign p {
+  .campaign p, .campaign .campaign-text {
     font-family: 'Roboto Slab', serif;
     font-size: 20px;
     font-weight: 500;
