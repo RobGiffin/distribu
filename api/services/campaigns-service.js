@@ -14,4 +14,8 @@ module.exports = class CampaignsService {
 
         return campaigns.find(x => x.id === id);
     }
+
+    addPatron(id, patron) {
+
+    }
 };

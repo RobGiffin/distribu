@@ -30,6 +30,29 @@
         "createdBy": {
             "name": "Glenda Gross",
             "email": "glenda.gross@gmail.com"
-        }        
+        },
+        "patrons": [
+            {
+                "id": "74e58e16-741d-49ca-ba04-6c3103718ecf",
+                "name": "Dominic Gutierrez",
+                "pledged": {
+                    "amount": "50.00"
+                }
+            },
+            {
+                "id": "95e040db-b1fc-4314-983e-109525e973da",
+                "name": "Heather Pittman",
+                "pledged": {
+                    "amount": "10.00"
+                }
+            },
+            {
+                "id": "c16c57ff-7207-40d8-807c-00802f78ec00",
+                "name": "Kevin Strickland",
+                "pledged": {
+                    "amount": "5.00"
+                }
+            }             
+        ]
     }
 ]
