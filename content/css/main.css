@@ -57,7 +57,7 @@ body.api-calls-open {
   /* Fancy blur effect */
   /* Remove these to get rid of the spinner */ }
   #nprogress .bar {
-    background: #00b100;
+    background: #ffec00;
     position: fixed;
     z-index: 1031;
     top: 0;
@@ -70,7 +70,7 @@ body.api-calls-open {
     right: 0px;
     width: 100px;
     height: 100%;
-    box-shadow: 0 0 10px #00b100, 0 0 5px #00b100;
+    box-shadow: 0 0 10px #ffec00, 0 0 5px #ffec00;
     opacity: 1.0;
     -webkit-transform: rotate(3deg) translate(0px, -4px);
     -ms-transform: rotate(3deg) translate(0px, -4px);
@@ -86,8 +86,8 @@ body.api-calls-open {
     height: 18px;
     box-sizing: border-box;
     border: solid 2px transparent;
-    border-top-color: #00b100;
-    border-left-color: #00b100;
+    border-top-color: #ffec00;
+    border-left-color: #ffec00;
     border-radius: 50%;
     -webkit-animation: nprogress-spinner 400ms linear infinite;
     animation: nprogress-spinner 400ms linear infinite; }

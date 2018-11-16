@@ -1,11 +1,11 @@
-$primary-color: #00b100;
+$nprogress-color: #ffec00;
 
 /* Make clicks pass-through */
 #nprogress {
     pointer-events: none;
 
     .bar {
-        background: $primary-color;
+        background: $nprogress-color;
     
         position: fixed;
         z-index: 1031;
@@ -23,7 +23,7 @@ $primary-color: #00b100;
         right: 0px;
         width: 100px;
         height: 100%;
-        box-shadow: 0 0 10px $primary-color, 0 0 5px $primary-color;
+        box-shadow: 0 0 10px $nprogress-color, 0 0 5px $nprogress-color;
         opacity: 1.0;
     
         -webkit-transform: rotate(3deg) translate(0px, -4px);
@@ -46,8 +46,8 @@ $primary-color: #00b100;
         box-sizing: border-box;
     
         border: solid 2px transparent;
-        border-top-color: $primary-color;
-        border-left-color: $primary-color;
+        border-top-color: $nprogress-color;
+        border-left-color: $nprogress-color;
         border-radius: 50%;
     
         -webkit-animation: nprogress-spinner 400ms linear infinite;
