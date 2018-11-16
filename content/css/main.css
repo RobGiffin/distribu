@@ -130,6 +130,9 @@ ux-dialog-overlay.active {
   background-color: black !important;
   opacity: 0.8 !important; }
 
+ux-dialog-container.active {
+  z-index: 10 !important; }
+
 .make-my-pledge {
   background-color: #14e2d5;
   height: 315px; }

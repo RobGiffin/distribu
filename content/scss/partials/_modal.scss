@@ -125,3 +125,7 @@ ux-dialog-overlay.active {
     background-color: black !important;
     opacity: 0.8 !important;
 }
+
+ux-dialog-container.active {
+    z-index: 10 !important;
+}
