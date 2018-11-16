@@ -240,7 +240,7 @@ textarea.parsley-error {
     height: 550px;
     background-repeat: no-repeat;
     right: 150px;
-    bottom: 150px;
+    bottom: 65px;
     z-index: 999; }
 
 .home .how-it-works h2 {
@@ -257,7 +257,11 @@ textarea.parsley-error {
   margin-bottom: 30px; }
 
 .home .how-it-works .step {
-  margin-bottom: 80px; }
+  margin-bottom: 80px;
+  height: 150px; }
+  .home .how-it-works .step img {
+    float: left;
+    margin-right: 80px; }
   .home .how-it-works .step h3 {
     font-family: 'Roboto Slab', serif;
     font-size: 28px;
@@ -278,3 +282,23 @@ textarea.parsley-error {
     line-height: 1.6;
     letter-spacing: normal;
     color: #4c8783; }
+
+.header {
+  margin-bottom: -11px; }
+  .header .distribu-nav {
+    background-color: #14e2d5 !important; }
+  .header ul li .nav-link {
+    color: #fff !important;
+    font-size: 18px;
+    margin-right: 20px; }
+  .header ul li .nav-link:hover {
+    color: #e2e2e2 !important; }
+  .header .distribu-login-btn {
+    color: #fff !important;
+    border-color: #fff !important;
+    width: 84px;
+    font-size: 18px; }
+  .header .distribu-login-btn:hover {
+    color: #e2e2e2 !important;
+    border-color: #e2e2e2 !important;
+    background-color: unset !important; }

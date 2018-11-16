@@ -37,7 +37,7 @@
             height: 550px;
             background-repeat: no-repeat;
             right: 150px;
-            bottom: 150px;
+            bottom: 65px;
             z-index: 999;   
         }
     }
@@ -59,6 +59,12 @@
 
         .step {
             margin-bottom: 80px;
+            height: 150px;
+
+            img {
+                float: left;
+                margin-right: 80px;                
+            }
 
             h3 {
                 font-family: 'Roboto Slab', serif;
