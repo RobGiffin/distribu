@@ -378,8 +378,8 @@ define('campaigns/campaigns',["exports", "aurelia-http-client"], function (expor
     }();
 });
 define('text!campaigns/campaigns.html', ['module'], function(module) { module.exports = "<template>\n    <h2>Find a campaign</h2>\n\n    <ul class=\"nav nav-tabs nav-fill\" id=\"myTab\" role=\"tablist\">\n        <li class=\"nav-item\">\n            <a class=\"nav-link active\" \n                id=\"national-tab\" \n                data-toggle=\"tab\" \n                href=\"#national\" \n                role=\"tab\" \n                aria-controls=\"national\" \n                aria-selected=\"true\">National</a>\n        </li>\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" \n                id=\"where-you-are-tab\" \n                data-toggle=\"tab\" \n                href=\"#where-you-are\" \n                role=\"tab\" \n                aria-controls=\"where-you-are\" \n                aria-selected=\"false\">Where you are</a>\n        </li>\n    </ul>\n    \n    <div class=\"tab-content\" id=\"myTabContent\">\n        <div class=\"tab-pane fade show active\" id=\"national\" role=\"tabpanel\" aria-labelledby=\"national-tab\">\n            <div repeat.for=\"campaign of campaigns\">\n                <h3><a href=\"#/campaign/${campaign.id}\">${campaign.name}</a></h3>\n        \n                <p>${campaign.description}</p>\n        \n                <p style=\"background-color:orange;\"><em>${campaign.tags}</em></p>\n        \n                <p style=\"background-color:greenyellow;\"><em>${campaign.jurisdiction}</em></p>\n        \n                <p>\n                    ${campaign.createdBy.name}<br>\n                    <a href=\"mailto:${campaign.createdBy.email}?subject=${campaign.name}\">${campaign.createdBy.email}</a>\n                </p>\n\n                <p>\n                    <a href=\"#\" click.delegate=\"shareOnTwitter(campaign)\">Share on twitter</a><br>\n                    <a href=\"#\" click.delegate=\"shareOnFacebook(campaign)\">Share on facebook</a><br>\n                </p>\n        \n                <hr>\n            </div>\n        </div>\n        <div class=\"tab-pane fade\" id=\"where-you-are\" role=\"tabpanel\" aria-labelledby=\"where-you-are-tab\">\n\n        </div>\n    </div>              \n</template>"; });
-define('campaigns/campaign',["exports", "aurelia-http-client"], function (exports, _aureliaHttpClient) {
-    "use strict";
+define('campaigns/campaign',['exports', 'aurelia-http-client'], function (exports, _aureliaHttpClient) {
+    'use strict';
 
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -405,7 +405,7 @@ define('campaigns/campaign',["exports", "aurelia-http-client"], function (export
             return new Promise(function (resolve) {
                 var client = new _aureliaHttpClient.HttpClient();
 
-                client.get("/api/campaign/" + args.id).then(function (data) {
+                client.get('/api/campaign/' + args.id).then(function (data) {
                     _this.campaign = JSON.parse(data.response);
 
                     console.log(_this.campaign);
@@ -416,8 +416,6 @@ define('campaigns/campaign',["exports", "aurelia-http-client"], function (export
         };
 
         Campaign.prototype.attached = function attached() {
-            console.log("attached!");
-
             if (this.campaign.location) {
                 var mymap = L.map('mapid').setView([parseFloat(this.campaign.location.lat), parseFloat(this.campaign.location.lng)], 13);
 

@@ -21,8 +21,6 @@ export class Campaign {
     }
 
     attached() {
-        console.log("attached!");
-
         if (this.campaign.location) {
             var mymap = L.map('mapid').setView([
                 parseFloat(this.campaign.location.lat), 
@@ -47,7 +45,6 @@ export class Campaign {
     }
 
     joinCampaign() {
-
     }
 
     shareOnTwitter(campaign) {
