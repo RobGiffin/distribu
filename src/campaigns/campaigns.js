@@ -20,6 +20,15 @@ export class Campaigns {
     deactivate() {
     }
 
+    handlePostcodeKeydown(e) {
+        if (e.code !== "Enter") {
+            return true;
+        }
+
+        this.searchByPostcode();
+        return true;
+    }
+
     searchByPostcode() {
         if (!this.postcode) {
             this.setDefaultLocalCampaigns();
@@ -30,10 +39,10 @@ export class Campaigns {
             postcode: this.postcode
         };
 
+        let client = new HttpClient();
+
         client.post("/api/postcode/search", data).then(data => {
             this.localCampaigns = JSON.parse(data.response);
-
-            resolve();
         });        
     }
 

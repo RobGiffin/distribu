@@ -23,19 +23,20 @@
     .campaign-box {
         background-color: #14e2d5;
         height: 256px;
-        display: flex;
         float: left;
-        margin: 20px;
+        width: 100%;
+        margin-bottom: 30px;
         position: relative;
 
         .campaign-box-text {
             padding: 30px;
-            width: calc(100% - 260px);
+            width: calc(100% - 265px);
+            float: left;
         }
 
         .campaign-box-image {
             height: 260px;
-            width: 260px;
+            float: right;
         }
 
         a {
@@ -87,32 +88,38 @@
     }
 
     .postcode-search {
-        background-color: #F0F0F0;
         text-align: center;
+        margin-top: -30px;
+        margin-bottom: 40px;
 
         input {
             width: 200px;
             height: 50px;
-            font-size: 18px;            
-        }
-
-        button {
-            font-family: 'IBM Plex Sans', sans-serif;
-            margin: 0 auto;
-            margin-top: 40px;
-            margin-bottom: 40px;
-            width: 150px;
-            height: 50px;
-            border: solid 1px #ffffff;
-            background-color: #ffec00;
-            border-radius: 3px;
             font-size: 18px;
-            font-weight: bold;
+            height: 70px;
+            width: 272px;
+            border: solid 1px #4c8783;
+            border-radius: 3px;
+            text-align: center;
+            font-family: 'IBM Plex Sans', sans-serif;
+            color: #9b9b9b;
+            font-size: 24px;
+        }
+    }
+
+    .no-local-campaigns {
+        p {
+            font-family: 'Roboto Slab', serif;
+            font-weight: bold !important;
+            font-size: 28px;
+            font-weight: 500;
             font-style: normal;
             font-stretch: normal;
-            line-height: normal;
+            line-height: 1.6;
             letter-spacing: normal;
-            color: #4c8783;           
+            color: #4c8783;
+            margin-top: 40px;
+            text-align: center;
         }
     }
 }
