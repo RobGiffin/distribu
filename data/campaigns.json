@@ -35,6 +35,17 @@
             "https://www.thewestmorlandgazette.co.uk/news/15063431.support-growing-for-a-restored-pool-at-grange-over-sands-lido/"
         ],
         "location": {
+            "country": "England",
+            "nhs_ha": "North West",
+            "european_electoral_region": "North West",
+            "primary_care_trust": "Cumbria Teaching",
+            "region": "North West",
+            "parliamentary_constituency": "Westmorland and Lonsdale",
+            "admin_district": "South Lakeland",
+            "parish": "Grange-over-Sands",
+            "admin_county": "Cumbria",
+            "admin_ward": "Grange",
+            "ccg": "NHS Morecambe Bay",    
             "lat": "54.199008",
             "lng": "-2.905937"
         },
