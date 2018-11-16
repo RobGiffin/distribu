@@ -346,6 +346,45 @@ define('environment',["exports"], function (exports) {
     testing: true
   };
 });
+define('campaigns/campaigns',["exports", "aurelia-http-client"], function (exports, _aureliaHttpClient) {
+    "use strict";
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.Campaigns = undefined;
+
+    function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+            throw new TypeError("Cannot call a class as a function");
+        }
+    }
+
+    var Campaigns = exports.Campaigns = function () {
+        function Campaigns() {
+            _classCallCheck(this, Campaigns);
+        }
+
+        Campaigns.prototype.activate = function activate() {
+            var _this = this;
+
+            return new Promise(function (resolve) {
+                var client = new _aureliaHttpClient.HttpClient();
+
+                client.get("/api/campaigns").then(function (data) {
+                    _this.campaigns = JSON.parse(data.response);
+
+                    resolve();
+                });
+            });
+        };
+
+        Campaigns.prototype.deactivate = function deactivate() {};
+
+        return Campaigns;
+    }();
+});
+define('text!campaigns/campaigns.html', ['module'], function(module) { module.exports = "<template>\n    <h2>Campaigns</h2>\n\n    <div repeat.for=\"campaign of campaigns\">\n        <span>${campaign.name}</span>\n    </div>\n</template>"; });
 define('base-view-model',["exports"], function (exports) {
     "use strict";
 
