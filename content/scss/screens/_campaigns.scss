@@ -7,12 +7,37 @@
         .header-button {
             width: 220px;
             margin: 20px;
+            font-size: 24px;
         }
     }
 
     .campaign-box {
         background-color: #14e2d5;
-        height: 100px;
+        height: 256px;
+        width: 563px;
+        display: flex;
+        margin: 20px;
+
+        .campaign-box-text {
+            padding: 30px;
+        }
+
+        .campaign-box-image {
+            height: 260px;
+            width: 260px;
+        }
+
+        button {
+            width: 120px;
+            height: 60px;
+            border: solid 1px #ffffff;
+            background-color: $secondary-color;
+            color: $text-color;
+            font-size: 18px;
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: bold;
+            border-radius: 3px;    
+        }
     }
 
     h2 {
@@ -34,7 +59,7 @@
         font-stretch: normal;
         line-height: normal;
         letter-spacing: normal;
-        color: #4c8783;      
+        color: #fff;      
     }
 
     p {
