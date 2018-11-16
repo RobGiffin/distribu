@@ -23,7 +23,7 @@ export class App {
         config.map([
             { 
                 name: "home",
-                route: "",
+                route: ["","home","home-how-it-works"],
                 moduleId: PLATFORM.moduleName("home/home"),
                 title: "Home",
                 auth: false,
