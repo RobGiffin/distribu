@@ -13,7 +13,7 @@ export class Header {
         this.showApiCallsButton = this.router.currentInstruction.config.auth;
     }
 
-    toggleAPICalls() {
-        this.ea.publish("toggleAPICalls");
+    goToMySubscriptions() {
+        this.router.navigate("my-subscriptions");
     }
 }

@@ -582,3 +582,14 @@ textarea.parsley-error {
     color: #e2e2e2 !important;
     border-color: #e2e2e2 !important;
     background-color: unset !important; }
+  .header .dropdown-toggle {
+    font-size: 25px;
+    background-color: transparent !important;
+    border: none; }
+    .header .dropdown-toggle:hover, .header .dropdown-toggle:active, .header .dropdown-toggle:focus {
+      background-color: transparent !important;
+      border: none !important;
+      box-shadow: none !important; }
+  .header .dropdown-menu-right {
+    right: 0;
+    left: auto; }

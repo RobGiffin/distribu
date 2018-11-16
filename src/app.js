@@ -52,6 +52,14 @@ export class App {
                 title: "Reports",
                 auth: false,
                 includeInBreadcrumbs: true
+            },
+            { 
+                name: "my-subscriptions",
+                route: "my-subscriptions",
+                moduleId: PLATFORM.moduleName("account/subscriptions"),
+                title: "Subscriptions",
+                auth: false,
+                includeInBreadcrumbs: true
             }
         ]);
 
