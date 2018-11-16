@@ -10,7 +10,9 @@
         },
         "promoImage" : "/content/images/NHS.png",
         "url": "http://distribu.azurewebsites.net/#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3",
-        "area" : "national"
+        "area" : "national",
+        "noPledges" : "10345",
+        "totalPledged" : "2500"
     },
     {
         "id": "f9677c7b-1fc7-4e26-b49c-d0c859eb0ckj",
@@ -23,7 +25,9 @@
         },
         "promoImage" : "/content/images/Soldier.png",
         "url": "http://distribu.azurewebsites.net/#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3",
-        "area" : "national"
+        "area" : "national",
+        "noPledges" : "45",
+        "totalPledged" : "500"
     },
     {
         "id": "f9677c7b-1fc7-4e26-b49c-d0c859eb0ckb",
@@ -36,7 +40,9 @@
         },
         "promoImage" : "/content/images/Schools.png",
         "url": "http://distribu.azurewebsites.net/#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3",
-        "area" : "national"
+        "area" : "national",
+        "noPledges" : "789",
+        "totalPledged" : "5080"
     },
     {
         "id": "f9677c7b-1fc7-4e26-b49c-d0c859eb0ckd",
@@ -49,7 +55,9 @@
         },
         "promoImage" : "/content/images/Trees.png",
         "url": "http://distribu.azurewebsites.net/#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3",
-        "area" : "national"
+        "area" : "national",
+        "noPledges" : "409",
+        "totalPledged" : "59860"
     },
     {
         "id": "f9677c7b-1fc7-4e26-b49c-d0c859eb0ckf",
@@ -62,7 +70,9 @@
         },
         "promoImage" : "/content/images/Houseing.png",
         "url": "http://distribu.azurewebsites.net/#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3",
-        "area" : "national"
+        "area" : "national",
+        "noPledges" : "87",
+        "totalPledged" : "9070"
     },
     {
         "id": "f9677c7b-1fc7-4e26-b49c-d0c859eb0cke",
@@ -74,7 +84,9 @@
             "email": "amy.hawkins@gmail.com"
         },
         "promoImage" : "/content/images/Broadband.png",
-        "area" : "national"
+        "area" : "national",
+        "noPledges" : "25",
+        "totalPledged" : "58780"
     },
     {
         "id": "f9677c7b-1fc7-4e26-b49c-d0c859eb0cad",
@@ -87,7 +99,9 @@
         },
         "promoImage" : "/content/images/fundingPlaceholder.png",
         "url": "http://distribu.azurewebsites.net/#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3",
-        "area" : "local"
+        "area" : "local",
+        "noPledges" : "45",
+        "totalPledged" : "500"
     },
     {
         "id": "2ef07c09-54ad-4833-95ba-14c26430b5e0",
@@ -152,6 +166,8 @@
         },
         "promoImage" : "/content/images/fundingPlaceholder.png",
         "url": "http://distribu.azurewebsites.net/#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3",
-        "area" : "local"
+        "area" : "local",
+        "noPledges" : "45",
+        "totalPledged" : "500"
     }
 ]

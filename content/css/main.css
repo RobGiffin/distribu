@@ -306,7 +306,8 @@ textarea.parsley-error {
   width: 563px;
   display: flex;
   float: left;
-  margin: 20px; }
+  margin: 20px;
+  position: relative; }
   .campaigns .campaign-box .campaign-box-text {
     padding: 30px; }
   .campaigns .campaign-box .campaign-box-image {
@@ -320,7 +321,9 @@ textarea.parsley-error {
     font-size: 18px;
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: bold;
-    border-radius: 3px; }
+    border-radius: 3px;
+    position: absolute;
+    bottom: 30px; }
 
 .campaigns h2 {
   font-size: 54px;
