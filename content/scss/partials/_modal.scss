@@ -79,12 +79,20 @@ ux-dialog {
             }
         }
 
+        img.share {
+            height: 80px;
+            margin: 0 auto;
+            display: block;
+            margin-bottom: 50px;
+            cursor: pointer;
+        }
+
         button {
             font-family: 'IBM Plex Sans', sans-serif;
             display: block;
             margin: 0 auto;
-            margin-top: 80px;
-            margin-bottom: 80px;
+            margin-top: 40px;
+            margin-bottom: 40px;
             width: 284px;
             height: 70px;
             border: solid 1px #ffffff;
@@ -96,7 +104,18 @@ ux-dialog {
             font-stretch: normal;
             line-height: normal;
             letter-spacing: normal;
-            color: #4c8783;      
+            color: #4c8783;
+
+            &:disabled {
+                opacity: 0.5;
+            }
+        }
+
+        .form-check {
+            font-family: 'Roboto Slab', serif;
+            text-align: center;
+            color: white;
+            font-size: 18px;
         }
     }
 }

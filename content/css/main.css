@@ -93,12 +93,18 @@ ux-dialog {
         float: left;
         margin-right: 45px;
         margin-top: 25px; }
+    ux-dialog ux-dialog-body img.share {
+      height: 80px;
+      margin: 0 auto;
+      display: block;
+      margin-bottom: 50px;
+      cursor: pointer; }
     ux-dialog ux-dialog-body button {
       font-family: 'IBM Plex Sans', sans-serif;
       display: block;
       margin: 0 auto;
-      margin-top: 80px;
-      margin-bottom: 80px;
+      margin-top: 40px;
+      margin-bottom: 40px;
       width: 284px;
       height: 70px;
       border: solid 1px #ffffff;
@@ -111,6 +117,13 @@ ux-dialog {
       line-height: normal;
       letter-spacing: normal;
       color: #4c8783; }
+      ux-dialog ux-dialog-body button:disabled {
+        opacity: 0.5; }
+    ux-dialog ux-dialog-body .form-check {
+      font-family: 'Roboto Slab', serif;
+      text-align: center;
+      color: white;
+      font-size: 18px; }
 
 ux-dialog-overlay.active {
   background-color: black !important;
@@ -383,6 +396,23 @@ textarea.parsley-error {
     letter-spacing: normal;
     color: #ffffff;
     margin-top: 90px; }
+  .home .welcome button {
+    font-family: 'IBM Plex Sans', sans-serif;
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 284px;
+    height: 70px;
+    border: solid 1px #ffffff;
+    background-color: #ffec00;
+    border-radius: 3px;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4c8783; }
   .home .welcome .cut-away {
     position: absolute;
     width: 100%;
