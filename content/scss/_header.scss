@@ -1,4 +1,6 @@
 .header {
+    margin-bottom: -11px;
+
     .distribu-nav {
         background-color: #14e2d5 !important;
     }
@@ -8,10 +10,20 @@
         font-size: 18px;
     }
 
+    ul li .nav-link:hover {
+        color: #e2e2e2 !important;
+    }
+
     .distribu-login-btn {
         color: #fff !important;
         border-color: #fff !important;
         width: 84px;
         font-size: 18px;
+    }
+
+    .distribu-login-btn:hover {
+        color: #e2e2e2 !important;
+        border-color: #e2e2e2 !important;
+        background-color: unset !important;
     }
 }
