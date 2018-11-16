@@ -46,15 +46,16 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="postcode-search">
-                                <input type="text" placeholder="Filter by post code" value.bind="postcode"> 
-                                <button type="button" click.delegate="searchByPostcode()">Search</button>
+                                <input type="text" placeholder="Enter your postcode" value.bind="postcode" keydown.trigger="handlePostcodeKeydown($event)"> 
                             </div>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-6" repeat.for="campaign of campaigns">
-                            <div class="campaign-box" if.bind="campaign.area == 'local'">
+                    <div class="row ${localCampaigns.length === 1 ? 'justify-content-center' : ''}">
+                        <div class="col-md-6" 
+                            repeat.for="campaign of localCampaigns" 
+                            if.bind="localCampaigns.length > 0">
+                            <div class="campaign-box">
                                 <div class="campaign-box-text">
                                     <h3>${campaign.name}</h3>
                                     <a class="btn btn-primary" href="#/campaign/${campaign.id}">View campaign</a>
@@ -63,6 +64,12 @@
                                     <img src="${campaign.promoImage}" />
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="col-md-12 no-local-campaigns" if.bind="localCampaigns.length === 0">
+                            <p>
+                                Sorry there are no campaigns local to you, why not create one now?
+                            </p>
                         </div>
                     </div>
                 </div>
