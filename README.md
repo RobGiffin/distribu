@@ -1,4 +1,4 @@
-# DistribYou
+# Distribu
 
 The demo is written as a node app, with a thin client written in handlebars and styling written with sass. 
 

@@ -18,14 +18,14 @@ export class App {
     }
 
     configureRouter(config, router) {
-        config.title = "DistribYou";
+        config.title = "Distribu";
 
         config.map([
             { 
-                name: "get-started",
+                name: "campaigns",
                 route: "",
-                moduleId: PLATFORM.moduleName("welcome/welcome"),
-                title: "Get started",
+                moduleId: PLATFORM.moduleName("campaigns/campaigns"),
+                title: "Campaigns",
                 auth: false,
                 includeInBreadcrumbs: true
             }

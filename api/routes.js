@@ -20,7 +20,7 @@ router
     .get("/api/campaign/:campaignId", async ctx => campaignController.get(ctx))
 
     // patron
-    .post("/api/campaign/:campaignId/support", async ctx => patronController.supportCampaign(ctx))
+    .post("/api/campaign/:campaignId/support/:patronId", async ctx => patronController.supportCampaign(ctx))
 ;
 
 module.exports = router.routes();
