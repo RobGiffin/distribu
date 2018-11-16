@@ -406,8 +406,8 @@ define('current-state',["exports"], function (exports) {
             key: "state",
             get: function get() {
                 return {
-                    name: "Leonard Beck",
-                    email: "leonard.beck@gmail.com",
+                    name: "Rob Giffin",
+                    email: "rob.giffin@earthware.co.uk",
                     address: "The Governor, Knox Road, Norwich, Norfolk, NR1 4LU"
                 };
             }
@@ -554,7 +554,7 @@ define('campaigns/confirmation',["exports", "aurelia-http-client"], function (ex
     }();
 });
 define('text!campaigns/confirmation.html', ['module'], function(module) { module.exports = "<template>\n    <div class=\"confirmation\">\n        <div class=\"container\">\n            <div class=\"row\">\n                <div class=\"col-sm-12\">\n                    <h3>Thank you</h3>\n\n                    <p>${this.campaign.thanks}</p>\n\n                    <p>\n                        <a href=\"#\" click.delegate=\"shareOnTwitter()\">Share on twitter</a>\n                    </p>\n\n                    <p>\n                        <a href=\"#\" click.delegate=\"shareOnFacebook()\">Share on facebook</a>\n                    </p>\n\n                    <p>\n                        <a href=\"#\" click.delegate=\"shareOnGoogle()\">Share on google+</a>\n                    </p>\n\n                    <p>\n                        <a href=\"#\" click.delegate=\"shareByEmail()\">Share by email</a>\n                    </p>                    \n                </div>\n            </div>\n        </div>\n    </div>\n</template>"; });
-define('campaigns/confirm-modal',["exports", "aurelia-framework", "aurelia-dialog", "../current-state"], function (exports, _aureliaFramework, _aureliaDialog, _currentState) {
+define('campaigns/confirm-modal',["exports", "aurelia-framework", "aurelia-dialog", "../current-state", "aurelia-http-client"], function (exports, _aureliaFramework, _aureliaDialog, _currentState, _aureliaHttpClient) {
     "use strict";
 
     Object.defineProperty(exports, "__esModule", {
@@ -592,6 +592,8 @@ define('campaigns/confirm-modal',["exports", "aurelia-framework", "aurelia-dialo
                 image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
                 locale: 'auto',
                 token: function token(_token) {
+                    _this.sendConfirmationEmail();
+
                     _this.dialogController.ok();
                 }
             });
@@ -604,8 +606,6 @@ define('campaigns/confirm-modal',["exports", "aurelia-framework", "aurelia-dialo
         };
 
         ConfirmModal.prototype.confirm = function confirm() {
-            console.log(this.state);
-
             this.handler.open({
                 name: 'Distribu',
                 description: "Subscription to support the " + this.state.campaign.name + " campaign",
@@ -616,6 +616,16 @@ define('campaigns/confirm-modal',["exports", "aurelia-framework", "aurelia-dialo
                 allowRememberMe: false,
                 panelLabel: "Pay {{amount}} monthly"
             });
+        };
+
+        ConfirmModal.prototype.sendConfirmationEmail = function sendConfirmationEmail() {
+            var client = new _aureliaHttpClient.HttpClient();
+            var data = {
+                email: _currentState.CurrentState.state.email,
+                campaign: this.state.campaign
+            };
+
+            client.post("/api/campaign/confirmation", data);
         };
 
         return ConfirmModal;

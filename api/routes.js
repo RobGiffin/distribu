@@ -20,6 +20,7 @@ router
 
     // campaign
     .get("/api/campaign/:campaignId", async ctx => campaignController.get(ctx))
+    .post("/api/campaign/confirmation", async ctx => campaignController.emailConfirmation(ctx))
 
     // patron
     .post("/api/campaign/:campaignId/support/:patronId", async ctx => patronController.supportCampaign(ctx))
