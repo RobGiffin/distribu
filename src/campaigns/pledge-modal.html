@@ -1,0 +1,30 @@
+<template>
+    <ux-dialog>
+        <ux-dialog-header>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h5>Pledge £1 to ${campaign.name}</h5>
+                    </div>
+                </div>
+            </div>
+        </ux-dialog-header>
+        <ux-dialog-body>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-4">            
+                        <button class="btn btn-primary" click.trigger="donate('weekly')">Donate weekly</button>
+                    </div>
+
+                    <div class="col-sm-4">            
+                        <button class="btn btn-primary" click.trigger="donate('monthly')">Donate monthly</button>
+                    </div>
+
+                    <div class="col-sm-4">            
+                        <button class="btn btn-primary" click.trigger="donate('yearly')">Donate yearly</button>
+                    </div>                    
+                </div>
+            </div>
+        </ux-dialog-body>
+    </ux-dialog>
+</template>

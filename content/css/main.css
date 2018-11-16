@@ -207,6 +207,9 @@ textarea.parsley-error {
     margin-top: 20px;
     height: 256px;
     width: 100%; }
+  .campaign .social-media a {
+    font-size: 70px;
+    color: #14e2d5; }
 
 .home a {
   display: block;
