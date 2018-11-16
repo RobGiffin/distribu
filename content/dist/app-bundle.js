@@ -955,6 +955,13 @@ define('app',["exports", "aurelia-framework", "aurelia-event-aggregator", "aurel
                 title: "Reports",
                 auth: false,
                 includeInBreadcrumbs: true
+            }, {
+                name: "my-subscriptions",
+                route: "my-subscriptions",
+                moduleId: _aureliaPal.PLATFORM.moduleName("account/subscriptions"),
+                title: "Subscriptions",
+                auth: false,
+                includeInBreadcrumbs: true
             }]);
 
             config.addPipelineStep("authorize", AuthorizeStep);
@@ -982,4 +989,29 @@ define('app',["exports", "aurelia-framework", "aurelia-event-aggregator", "aurel
     }();
 });
 define('text!app.html', ['module'], function(module) { module.exports = "<template>\n\t<require from=\"./header/header\"></require>\t\n\t<require from=\"./footer/footer\"></require>\n\t<require from=\"./resources/elements/router-progress-indicator/router-progress-indicator\"></require>\n\t<require from=\"./resources/elements/breadcrumbs/breadcrumbs\"></require>\n\t<require from=\"./resources/elements/request-indicator/request-indicator\"></require>\n\n\t<router-progress-indicator></router-progress-indicator>\n\n\t<header></header>\n\n\t<router-view></router-view>\n\n\t<footer></footer> \n\n\t<request-indicator></request-indicator>\n</template>"; });
+define('account/subscriptions',["exports", "aurelia-framework"], function (exports, _aureliaFramework) {
+    "use strict";
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.Subscriptions = undefined;
+
+    function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+            throw new TypeError("Cannot call a class as a function");
+        }
+    }
+
+    var Subscriptions = exports.Subscriptions = function () {
+        function Subscriptions() {
+            _classCallCheck(this, Subscriptions);
+        }
+
+        Subscriptions.prototype.activate = function activate() {};
+
+        return Subscriptions;
+    }();
+});
+define('text!account/subscriptions.html', ['module'], function(module) { module.exports = "<template>\n    \n</template>"; });
 //# sourceMappingURL=app-bundle.js.map
