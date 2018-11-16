@@ -11,8 +11,8 @@
         "promoImage" : "/content/images/NHS.png",
         "url": "http://distribu.azurewebsites.net/#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3",
         "area" : "national",
-        "noPledges" : "10345",
-        "totalPledged" : "2500"
+        "noPledges" : "10,345",
+        "totalPledged" : "250,550"
     },
     {
         "id": "f9677c7b-1fc7-4e26-b49c-d0c859eb0ckj",
@@ -42,7 +42,7 @@
         "url": "http://distribu.azurewebsites.net/#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3",
         "area" : "national",
         "noPledges" : "789",
-        "totalPledged" : "5080"
+        "totalPledged" : "5,080"
     },
     {
         "id": "f9677c7b-1fc7-4e26-b49c-d0c859eb0ckd",
@@ -57,7 +57,7 @@
         "url": "http://distribu.azurewebsites.net/#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3",
         "area" : "national",
         "noPledges" : "409",
-        "totalPledged" : "59860"
+        "totalPledged" : "59,860"
     },
     {
         "id": "f9677c7b-1fc7-4e26-b49c-d0c859eb0ckf",
@@ -72,7 +72,7 @@
         "url": "http://distribu.azurewebsites.net/#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3",
         "area" : "national",
         "noPledges" : "87",
-        "totalPledged" : "9070"
+        "totalPledged" : "9,070"
     },
     {
         "id": "f9677c7b-1fc7-4e26-b49c-d0c859eb0cke",
@@ -86,7 +86,7 @@
         "promoImage" : "/content/images/Broadband.png",
         "area" : "national",
         "noPledges" : "25",
-        "totalPledged" : "58780"
+        "totalPledged" : "58,780"
     },
     {
         "id": "f9677c7b-1fc7-4e26-b49c-d0c859eb0cad",
