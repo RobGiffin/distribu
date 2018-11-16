@@ -12,7 +12,8 @@
         "url": "http://distribu.azurewebsites.net/#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3",
         "area" : "national",
         "noPledges" : "10,345",
-        "totalPledged" : "250,550"
+        "totalPledged" : "250,550",
+        "closeDate" : "31st December 2018"
     },
     {
         "id": "f9677c7b-1fc7-4e26-b49c-d0c859eb0ckj",
@@ -27,7 +28,8 @@
         "url": "http://distribu.azurewebsites.net/#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3",
         "area" : "national",
         "noPledges" : "45",
-        "totalPledged" : "500"
+        "totalPledged" : "500",
+        "closeDate" : "31st December 2018"
     },
     {
         "id": "f9677c7b-1fc7-4e26-b49c-d0c859eb0ckb",
@@ -42,7 +44,8 @@
         "url": "http://distribu.azurewebsites.net/#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3",
         "area" : "national",
         "noPledges" : "789",
-        "totalPledged" : "5,080"
+        "totalPledged" : "5,080",
+        "closeDate" : "1st June 2019"
     },
     {
         "id": "f9677c7b-1fc7-4e26-b49c-d0c859eb0ckd",
@@ -57,7 +60,8 @@
         "url": "http://distribu.azurewebsites.net/#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3",
         "area" : "national",
         "noPledges" : "409",
-        "totalPledged" : "59,860"
+        "totalPledged" : "59,860",
+        "closeDate" : "1st June 2019"
     },
     {
         "id": "f9677c7b-1fc7-4e26-b49c-d0c859eb0ckf",
@@ -72,7 +76,8 @@
         "url": "http://distribu.azurewebsites.net/#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3",
         "area" : "national",
         "noPledges" : "87",
-        "totalPledged" : "9,070"
+        "totalPledged" : "9,070",
+        "closeDate" : "1st May 2019"
     },
     {
         "id": "f9677c7b-1fc7-4e26-b49c-d0c859eb0cke",
@@ -86,7 +91,8 @@
         "promoImage" : "/content/images/Broadband.png",
         "area" : "national",
         "noPledges" : "25",
-        "totalPledged" : "58,780"
+        "totalPledged" : "58,780",
+        "closeDate" : "1st August 2019"
     },
     {
         "id": "f9677c7b-1fc7-4e26-b49c-d0c859eb0cad",
@@ -97,11 +103,27 @@
             "name": "Amy Hawkins",
             "email": "amy.hawkins@gmail.com"
         },
+        "location": {
+            "country": "England",
+            "nhs_ha": "North West",
+            "european_electoral_region": "Eastern",
+            "primary_care_trust": "Norfolk",
+            "region": "East of England",
+            "parliamentary_constituency": "Norwich South",
+            "admin_district": "Norwich",
+            "parish": "Norwich, unparished area",
+            "admin_county": "Norfolk",
+            "admin_ward": "Thorpe Hamlet",
+            "ccg": "NHS Norwich",    
+            "lat": "54.199008",
+            "lng": "-2.905937"
+        },
         "promoImage" : "/content/images/fundingPlaceholder.png",
         "url": "http://distribu.azurewebsites.net/#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3",
         "area" : "local",
         "noPledges" : "45",
-        "totalPledged" : "500"
+        "totalPledged" : "500",
+        "closeDate" : "1st June 2019"
     },
     {
         "id": "2ef07c09-54ad-4833-95ba-14c26430b5e0",
@@ -168,6 +190,7 @@
         "url": "http://distribu.azurewebsites.net/#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3",
         "area" : "local",
         "noPledges" : "45",
-        "totalPledged" : "500"
+        "totalPledged" : "500",
+        "closeDate" : "1st May 2019"
     }
 ]
