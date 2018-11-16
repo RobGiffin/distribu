@@ -1,0 +1,61 @@
+ux-dialog {
+    background-color: #14e2d5 !important;
+    width: 731px !important;
+
+    .dialog-close {
+        display: none !important;
+    }
+
+    ux-dialog-header {
+        padding: 0px !important;
+        margin: 0px !important;
+        margin-left: 70px !important;
+        margin-right: 70px !important;
+
+        h5 {
+            font-family: 'Roboto Slab', serif;
+            font-size: 35px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: #ffffff;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+    }
+
+    ux-dialog-body {
+        padding: 0px !important;
+        margin: 0px !important;
+        margin-left: 70px !important;
+        margin-right: 70px !important;
+
+        button {
+            font-family: 'IBM Plex Sans', sans-serif;
+            display: block;
+            margin: 0 auto;
+            margin-top: 80px;
+            margin-bottom: 80px;
+            width: 284px;
+            height: 70px;
+            border: solid 1px #ffffff;
+            background-color: #ffec00;
+            border-radius: 3px;
+            font-size: 24px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: #4c8783;      
+        }
+    }
+}
+
+ux-dialog-overlay.active {
+    background-color: black !important;
+    opacity: 0.8 !important;
+}
