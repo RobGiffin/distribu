@@ -355,10 +355,10 @@ define('campaigns/campaigns',["exports", "aurelia-http-client"], function (expor
         Campaigns.prototype.deactivate = function deactivate() {};
 
         Campaigns.prototype.shareOnTwitter = function shareOnTwitter(campaign) {
-            var facebookWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + document.URL, 'facebook-popup', 'height=350,width=600');
+            var twitterWindow = window.open('https://twitter.com/share?url=' + document.URL, 'twitter-popup', 'height=350,width=600');
 
-            if (facebookWindow.focus) {
-                facebookWindow.focus();
+            if (twitterWindow.focus) {
+                twitterWindow.focus();
             }
 
             return false;
