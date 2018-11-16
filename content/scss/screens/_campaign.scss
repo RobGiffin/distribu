@@ -1,0 +1,88 @@
+.campaign {
+    margin-top: 200px;
+    margin-bottom: 50px;
+
+    h2 {
+        font-size: 54px;
+        color: $text-color;
+        font-family: 'Roboto Slab', serif;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;      
+    }
+
+    h3 {
+        font-family: 'Roboto Slab', serif;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #4c8783;      
+    }
+
+    p {
+        font-family: 'Roboto Slab', serif;
+        font-size: 20px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.6;
+        letter-spacing: normal;
+        color: #4c8783;
+        margin-top: 24px;    
+    }
+
+    .pledge {
+        width: 100%;
+        background-color: #14e2d5;
+        padding-bottom: 20px;
+
+        button {
+            margin-top: 26px;
+            width: 307px;
+            height: 55px;
+            border: solid 1px #ffffff;
+            background-color: $secondary-color;
+            color: $text-color;
+            font-size: 18px;
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: bold;
+            border-radius: 3px;    
+        }
+
+        .people-pledged {
+            margin-top: 20px;
+            padding-left: 30px;
+            padding-right: 30px;
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 30px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: #ffffff;          
+        }
+
+        .figure {
+            font-family: 'Roboto Slab', serif;
+            font-size: 70px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: center;
+            color: #ffffff;          
+        }
+    }
+
+    .map {
+        margin-top: 20px;
+        height:256px;
+        width:100%;        
+    }
+}
