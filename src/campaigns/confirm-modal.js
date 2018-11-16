@@ -44,7 +44,7 @@ export class ConfirmModal {
             currency: "gbp",
             billingAddress: false,
             allowRememberMe: false,
-            panelLabel: "Pay {{amount}} monthly"
+            panelLabel: "Pay {{amount}} yearly"
         });      
     }
 

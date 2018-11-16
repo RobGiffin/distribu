@@ -614,7 +614,7 @@ define('campaigns/confirm-modal',["exports", "aurelia-framework", "aurelia-dialo
                 currency: "gbp",
                 billingAddress: false,
                 allowRememberMe: false,
-                panelLabel: "Pay {{amount}} monthly"
+                panelLabel: "Pay {{amount}} yearly"
             });
         };
 
