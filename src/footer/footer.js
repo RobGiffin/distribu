@@ -9,18 +9,18 @@ export class Footer {
     }
 
     attached() {
-        this.showVersionInfo = this.router.currentInstruction.config.auth;
+        // this.showVersionInfo = this.router.currentInstruction.config.auth;
 
-        GitHubButtons.render();
+        // GitHubButtons.render();
 
-        return new Promise(resolve => {
-            let client = new HttpClient();
+        // return new Promise(resolve => {
+        //     let client = new HttpClient();
 
-            client.get("/api/version").then(data => {
-                this.state = JSON.parse(data.response);
+        //     client.get("/api/version").then(data => {
+        //         this.state = JSON.parse(data.response);
 
-                resolve();
-            });
-        });
+        //         resolve();
+        //     });
+        // });
     }
 }
