@@ -1,0 +1,105 @@
+.api-calls {
+    height: 300px;
+    position: fixed;
+    bottom: 0;
+    background: white;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+
+    .resize-handle {
+        background-color: #dcdcdc;
+        background-image: url('../images/resizeable.png');
+        background-repeat: no-repeat;
+        background-position: center -26px;
+        height: 8px;
+        cursor: row-resize;        
+    }
+
+    .title {
+        background-color: #dcdcdc;
+        height: 28px;
+        padding-top: 3px;
+        font-size: 14px;
+        margin-bottom: 10px;
+
+        .close-api-calls {
+            cursor: pointer;
+        }
+    }
+
+    .api-calls-container {
+        height: 264px;
+        overflow-x: hidden;
+
+        .summary {
+            font-family: monospace;
+            font-size: 14px;
+            cursor: pointer;
+
+            em {
+                float: right;
+                margin-top: 1px;
+            }
+        }
+
+        .request-and-response {
+            padding-bottom: 30px;
+
+            h4 {
+                font-family: 'Courier New', Courier, monospace;
+                margin-top: 0px;
+                margin-bottom: 20px;
+            }
+
+            .initial-request-and-response-explanation {
+                text-align: center;
+                padding-top: 20px;
+                font-weight: bold;
+            }
+        }
+
+        .nav-tabs {
+            height: 36px;
+            font-size: 13px;
+        }
+
+        .code-container {
+            padding: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 13px;
+            overflow-x: hidden;
+            position: relative;
+
+            .btn-copy {
+                display: none;
+                position: absolute;
+                right: 0;
+                margin-right: 5px;
+            }
+
+            &:hover {
+                .btn-copy {
+                    display: block;
+                }                
+            }
+
+            code {
+                color: black;
+
+                span {
+                    display: block;
+                    white-space: nowrap;
+
+                    margin-left: 25px;
+                }
+            }
+        }
+
+        hr:last-child {
+            visibility: collapse;
+        }
+    }
+}
