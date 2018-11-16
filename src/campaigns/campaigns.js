@@ -11,12 +11,34 @@ export class Campaigns {
             client.get("/api/campaigns").then(data => {
                 this.campaigns = JSON.parse(data.response);
 
+                this.setDefaultLocalCampaigns();
                 resolve();
             });
         });
     }
 
     deactivate() {
+    }
+
+    searchByPostcode() {
+        if (!this.postcode) {
+            this.setDefaultLocalCampaigns();
+            return;
+        }
+
+        let data = {
+            postcode: this.postcode
+        };
+
+        client.post("/api/postcode/search", data).then(data => {
+            this.localCampaigns = JSON.parse(data.response);
+
+            resolve();
+        });        
+    }
+
+    setDefaultLocalCampaigns() {
+        this.localCampaigns = this.campaigns.filter(c => c.area === "local");
     }
 
     shareOnTwitter(campaign) {
