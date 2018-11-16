@@ -38,4 +38,48 @@
         color: #4c8783;
         margin-top: 24px;    
     }
+
+    .campaign-box {
+        background-color: #14e2d5;
+        height: 380px;
+        width: 100%;
+        display: flex;
+        float: left;
+        margin: 20px;
+        position: relative;
+
+        .campaign-box-text {
+            padding: 30px;
+            width: 100%;
+        }
+
+        .campaign-box-image {
+            height: 380px;
+            width: 450px;
+        }
+
+        h3 {
+            color: #fff;
+            text-align: left;
+        }
+
+        p {
+            text-align: left;
+            color: #fff;
+        }
+
+        a {
+            margin-top: 20px;
+            border: solid 1px #ffffff;
+            background-color: $secondary-color;
+            color: $text-color;
+            font-size: 18px;
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: bold;
+            border-radius: 3px;    
+            position: absolute;
+            bottom: 30px;
+            left: 480px;
+        }
+    }
 }
