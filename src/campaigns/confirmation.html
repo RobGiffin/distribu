@@ -1,0 +1,29 @@
+<template>
+    <div class="confirmation">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3>Thank you</h3>
+
+                    <p>${this.campaign.thanks}</p>
+
+                    <p>
+                        <a href="#" click.delegate="shareOnTwitter()">Share on twitter</a>
+                    </p>
+
+                    <p>
+                        <a href="#" click.delegate="shareOnFacebook()">Share on facebook</a>
+                    </p>
+
+                    <p>
+                        <a href="#" click.delegate="shareOnGoogle()">Share on google+</a>
+                    </p>
+
+                    <p>
+                        <a href="#" click.delegate="shareByEmail()">Share by email</a>
+                    </p>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

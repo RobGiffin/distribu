@@ -357,6 +357,47 @@ define('environment',["exports"], function (exports) {
     testing: true
   };
 });
+define('campaigns/confirmation',["exports", "aurelia-http-client"], function (exports, _aureliaHttpClient) {
+    "use strict";
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.Campaign = undefined;
+
+    function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+            throw new TypeError("Cannot call a class as a function");
+        }
+    }
+
+    var Campaign = exports.Campaign = function () {
+        function Campaign() {
+            _classCallCheck(this, Campaign);
+        }
+
+        Campaign.prototype.activate = function activate(args) {
+            var _this = this;
+
+            console.log(args);
+
+            return new Promise(function (resolve) {
+                var client = new _aureliaHttpClient.HttpClient();
+
+                client.get("/api/campaign/" + args.id).then(function (data) {
+                    _this.campaign = JSON.parse(data.response);
+
+                    resolve();
+                });
+            });
+        };
+
+        Campaign.prototype.attached = function attached() {};
+
+        return Campaign;
+    }();
+});
+define('text!campaigns/confirmation.html', ['module'], function(module) { module.exports = "<template>\n    <div class=\"confirmation\">\n        <div class=\"container\">\n            <div class=\"row\">\n                <div class=\"col-sm-12\">\n                    <h3>Thank you</h3>\n\n                    <p>${this.campaign.thanks}</p>\n\n                    <p>\n                        <a href=\"#\" click.delegate=\"shareOnTwitter()\">Share on twitter</a>\n                    </p>\n\n                    <p>\n                        <a href=\"#\" click.delegate=\"shareOnFacebook()\">Share on facebook</a>\n                    </p>\n\n                    <p>\n                        <a href=\"#\" click.delegate=\"shareOnGoogle()\">Share on google+</a>\n                    </p>\n\n                    <p>\n                        <a href=\"#\" click.delegate=\"shareByEmail()\">Share by email</a>\n                    </p>                    \n                </div>\n            </div>\n        </div>\n    </div>\n</template>"; });
 define('campaigns/campaigns',["exports", "aurelia-http-client"], function (exports, _aureliaHttpClient) {
     "use strict";
 
