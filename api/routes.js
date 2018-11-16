@@ -25,6 +25,7 @@ router
     .post("/api/campaign/:campaignId/support/:patronId", async ctx => patronController.supportCampaign(ctx))
 
     // postcode
+    .post("/api/postcode/search", async ctx => postcodeController.search(ctx))
     .post("/api/postcode/validate", async ctx => postcodeController.validate(ctx))
 ;
 
