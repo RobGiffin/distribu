@@ -67,4 +67,14 @@ export class Campaign {
 
         return false;
     }
+
+    shareOnGoogle(campaign) {
+        let googleWindow = window.open('https://plus.google.com/share?text=Check out the ' + campaign.name + ' campaign on Distribu&url=' + document.URL, 'google-popup', 'height=350,width=600');
+        
+        if (googleWindow.focus) { 
+            googleWindow.focus(); 
+        }
+
+        return false;
+    }
 }
