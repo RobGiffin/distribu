@@ -73,6 +73,12 @@
                     "amount": "5.00"
                 }
             }             
-        ]
+        ],
+        "pricing": {
+            "product-id": "prod_Dz71GU6vSKGwZR",
+            "weekly-plan-id": "plan_Dz71ljTHvUrU2a",
+            "monthly-plan-id": "plan_Dz72WHeyy6EpI2",
+            "yearly-plan-id": "plan_Dz72dxAxsNVNUM"
+        }
     }
 ]
