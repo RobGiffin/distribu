@@ -8,7 +8,12 @@
             width: 220px;
             margin: 20px;
             font-size: 24px;
+            border-radius: 30px;
         }
+
+        // .header-button-active {
+        //     border: solid 5px #4c8783;
+        // }
     }
 
     .campaign-box {
@@ -16,6 +21,7 @@
         height: 256px;
         width: 563px;
         display: flex;
+        float: left;
         margin: 20px;
 
         .campaign-box-text {

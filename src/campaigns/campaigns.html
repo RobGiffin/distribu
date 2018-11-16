@@ -9,42 +9,63 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6" style="display: block; margin: 0 auto;">
-                        <button class="btn btn-outline-info header-button">National</button>
-                        <button class="btn btn-outline-info header-button">Local</button>
+                        <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="btn btn-outline-info header-button"
+                                    id="national-tab"
+                                    data-toggle="tab"
+                                    href="#national"
+                                    role="tab"
+                                    aria-controls="national"
+                                    aria-selected="true">National</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn btn-outline-info header-button"
+                                    id="local-tab"
+                                    data-toggle="tab"
+                                    href="#local"
+                                    role="tab"
+                                    aria-controls="local"
+                                    aria-selected="false">Local</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="national" role="tabpanel" aria-labelledby="national-tab">
-                <div repeat.for="campaign of campaigns">
-                    <div class="campaign-box">
-                        <div class="campaign-box-text">
-                            <h3>${campaign.name}</h3>
-                            <a class="btn btn-primary" href="#/campaign/${campaign.id}">Join this campaign</a>
-                        </div>
-                        <div class="campaign-box-image">
-                            <img src="${campaign.promoImage}" />
-                        </div>
-                            <!-- <p>${campaign.description}</p>                      
-                            <p style="background-color:orange;"><em>${campaign.tags}</em></p>
-                            <p style="background-color:greenyellow;"><em>${campaign.jurisdiction}</em></p>
-                            <p>
-                                ${campaign.createdBy.name}<br>
-                                <a href="mailto:${campaign.createdBy.email}?subject=${campaign.name}">${campaign.createdBy.email}</a>
-                            </p>
-            
-                            <p>
-                                <a href="#" click.delegate="shareOnTwitter(campaign)">Share on twitter</a><br>
-                                <a href="#" click.delegate="shareOnFacebook(campaign)">Share on facebook</a><br>
-                            </p>         -->
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="where-you-are" role="tabpanel" aria-labelledby="where-you-are-tab">
 
+        <div class="col-md-10" style="margin: 0 auto;">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane active" id="national" role="tabpanel" aria-labelledby="national-tab">
+                    <div repeat.for="campaign of campaigns">
+                        <div class="campaign-box">
+                            <div class="campaign-box-text">
+                                <h3>${campaign.name}</h3>
+                                <a class="btn btn-primary" href="#/campaign/${campaign.id}">Join this campaign</a>
+                            </div>
+                            <div class="campaign-box-image">
+                                <img src="${campaign.promoImage}" />
+                            </div>
+                                <!-- <p>${campaign.description}</p>                      
+                                <p style="background-color:orange;"><em>${campaign.tags}</em></p>
+                                <p style="background-color:greenyellow;"><em>${campaign.jurisdiction}</em></p>
+                                <p>
+                                    ${campaign.createdBy.name}<br>
+                                    <a href="mailto:${campaign.createdBy.email}?subject=${campaign.name}">${campaign.createdBy.email}</a>
+                                </p>
+                
+                                <p>
+                                    <a href="#" click.delegate="shareOnTwitter(campaign)">Share on twitter</a><br>
+                                    <a href="#" click.delegate="shareOnFacebook(campaign)">Share on facebook</a><br>
+                                </p>         -->
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="local" role="tabpanel" aria-labelledby="local-tab">
+
+                </div>        
             </div>
         </div>
+        <div class="clearfix"></div>
     </div>
 </template>
