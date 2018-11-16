@@ -25,7 +25,7 @@ export class Campaigns {
         if (twitterWindow.focus) { 
             twitterWindow.focus(); 
         }
-        
+
         return false;
     }
 

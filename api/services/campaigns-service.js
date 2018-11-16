@@ -31,7 +31,6 @@ module.exports = class CampaignsService {
 
     async get(id) {
         let campaigns = this.campaigns();
-
         
         // let response = await ogs({
         //     url: 'https://www.thewestmorlandgazette.co.uk/news/15063431.support-growing-for-a-restored-pool-at-grange-over-sands-lido/'
