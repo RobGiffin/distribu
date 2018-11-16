@@ -10,6 +10,7 @@
         background-image: url('../images/crowd.png');
         background-size: cover;
         background-repeat: no-repeat;
+        position: relative;
 
         h1 {
             font-family: 'Roboto Slab', serif;
@@ -33,11 +34,10 @@
 
         .figure {
             position: absolute;
-            width: 340px;
-            height: 550px;
+            height: 580px;
             background-repeat: no-repeat;
-            right: 150px;
-            bottom: 65px;
+            right: 250px;
+            bottom: 0px;
             z-index: 999;   
         }
     }
