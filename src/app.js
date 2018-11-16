@@ -44,6 +44,14 @@ export class App {
                 title: "Campaign",
                 auth: false,
                 includeInBreadcrumbs: true
+            },
+            { 
+                name: "reports",
+                route: "reports",
+                moduleId: PLATFORM.moduleName("reports/reports"),
+                title: "Reports",
+                auth: false,
+                includeInBreadcrumbs: true
             }
         ]);
 
