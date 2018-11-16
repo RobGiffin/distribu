@@ -219,6 +219,87 @@ define('reports/reports',["exports", "aurelia-http-client"], function (exports, 
     }();
 });
 define('text!reports/reports.html', ['module'], function(module) { module.exports = "<template>\r\n    <div class=\"reports\">\r\n        <div class=\"container\">\r\n            <div class=\"heading-text\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                        <h2>Successful campaigns</h2>\r\n                    </div>\r\n                </div>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                        <h3>How you chose to spend</h3>\r\n                    </div>\r\n                </div>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-6\" style=\"display: block; margin: 0 auto;\">\r\n                       <img src=\"/content/images/group-2@2x.png\" style=\"width:520px;margin-top:50px;\" />\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"row\" style=\"margin-top:50px;\">\r\n                <div class=\"col-md-10\" style=\"margin: 0 auto;\">\r\n                    <div class=\"campaign-box\">\r\n                        <div class=\"campaign-box-image-container\">\r\n                            <img class=\"campaign-box-image\" src=\"\\content\\images\\docs.png\" />\r\n                        </div>\r\n                        <div class=\"campaign-box-text\">\r\n                            <h3>Fund our NHS properly</h3>\r\n                            <p>Support the NHS but helping to raise money which is needed to improve facilities, fund new equipment, provide important additional services. </p>\r\n                            <a class=\"btn btn-primary\" href=\"#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3\">View campaign</a>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"clearfix\"></div>\r\n</template>\r\n"; });
+define('reports - Copy/reports',["exports", "aurelia-http-client"], function (exports, _aureliaHttpClient) {
+    "use strict";
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.Campaign = undefined;
+
+    function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+            throw new TypeError("Cannot call a class as a function");
+        }
+    }
+
+    var Campaign = exports.Campaign = function () {
+        function Campaign() {
+            _classCallCheck(this, Campaign);
+        }
+
+        Campaign.prototype.activate = function activate(args) {
+            console.log(args);
+        };
+
+        return Campaign;
+    }();
+});
+define('text!reports - Copy/reports.html', ['module'], function(module) { module.exports = "<template>\r\n    <div class=\"reports\">\r\n        <div class=\"container\">\r\n            <div class=\"heading-text\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                        <h2>Successful campaigns</h2>\r\n                    </div>\r\n                </div>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                        <h3>How you chose to spend</h3>\r\n                    </div>\r\n                </div>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-6\" style=\"display: block; margin: 0 auto;\">\r\n                       <img src=\"/content/images/group-2@2x.png\" style=\"width:520px;margin-top:50px;\" />\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"row\" style=\"margin-top:50px;\">\r\n                <div class=\"col-md-10\" style=\"margin: 0 auto;\">\r\n                    <div class=\"campaign-box\">\r\n                        <div class=\"campaign-box-image-container\">\r\n                            <img class=\"campaign-box-image\" src=\"\\content\\images\\docs.png\" />\r\n                        </div>\r\n                        <div class=\"campaign-box-text\">\r\n                            <h3>Fund our NHS properly</h3>\r\n                            <p>Support the NHS but helping to raise money which is needed to improve facilities, fund new equipment, provide important additional services. </p>\r\n                            <a class=\"btn btn-primary\" href=\"#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3\">View campaign</a>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"clearfix\"></div>\r\n</template>\r\n"; });
+define('newcampaign/reports',["exports", "aurelia-http-client"], function (exports, _aureliaHttpClient) {
+    "use strict";
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.Campaign = undefined;
+
+    function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+            throw new TypeError("Cannot call a class as a function");
+        }
+    }
+
+    var Campaign = exports.Campaign = function () {
+        function Campaign() {
+            _classCallCheck(this, Campaign);
+        }
+
+        Campaign.prototype.activate = function activate(args) {
+            console.log(args);
+        };
+
+        return Campaign;
+    }();
+});
+define('text!newcampaign/reports.html', ['module'], function(module) { module.exports = "<template>\r\n    <div class=\"reports\">\r\n        <div class=\"container\">\r\n            <div class=\"heading-text\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                        <h2>Successful campaigns</h2>\r\n                    </div>\r\n                </div>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                        <h3>How you chose to spend</h3>\r\n                    </div>\r\n                </div>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-6\" style=\"display: block; margin: 0 auto;\">\r\n                       <img src=\"/content/images/group-2@2x.png\" style=\"width:520px;margin-top:50px;\" />\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"row\" style=\"margin-top:50px;\">\r\n                <div class=\"col-md-10\" style=\"margin: 0 auto;\">\r\n                    <div class=\"campaign-box\">\r\n                        <div class=\"campaign-box-image-container\">\r\n                            <img class=\"campaign-box-image\" src=\"\\content\\images\\docs.png\" />\r\n                        </div>\r\n                        <div class=\"campaign-box-text\">\r\n                            <h3>Fund our NHS properly</h3>\r\n                            <p>Support the NHS but helping to raise money which is needed to improve facilities, fund new equipment, provide important additional services. </p>\r\n                            <a class=\"btn btn-primary\" href=\"#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3\">View campaign</a>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"clearfix\"></div>\r\n</template>\r\n"; });
+define('newcampaign/newcampaign',["exports", "aurelia-http-client"], function (exports, _aureliaHttpClient) {
+    "use strict";
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.Campaign = undefined;
+
+    function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+            throw new TypeError("Cannot call a class as a function");
+        }
+    }
+
+    var Campaign = exports.Campaign = function () {
+        function Campaign() {
+            _classCallCheck(this, Campaign);
+        }
+
+        Campaign.prototype.activate = function activate(args) {
+            console.log(args);
+        };
+
+        return Campaign;
+    }();
+});
+define('text!newcampaign/newcampaign.html', ['module'], function(module) { module.exports = "<template>\r\n    <div class=\"newcampaign\">\r\n        <div class=\"container\">\r\n            <div class=\"heading-text\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                        <h2>Create a new campaign</h2>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"row\" style=\"margin-top:50px;\">\r\n                <div class=\"col-md-10\" style=\"margin: 0 auto;\">\r\n                    <form>\r\n                        <!-- <div class=\"form-group\">\r\n                            <label for=\"exampleInputEmail1\">Email address</label>\r\n                            <input type=\"email\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\" placeholder=\"Enter email\">\r\n                            <small id=\"emailHelp\" class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\r\n                        </div> -->\r\n                        <!-- <div class=\"form-group\">\r\n                            <label for=\"exampleSelect2\">Tags</label>\r\n                            <select multiple class=\"form-control\" id=\"exampleSelect2\">\r\n                            <option>1</option>\r\n                            <option>2</option>\r\n                            <option>3</option>\r\n                            <option>4</option>\r\n                            <option>5</option>\r\n                            </select>\r\n                        </div> -->\r\n                        <div class=\"form-group\">\r\n                            <label for=\"exampleTextarea\">Title</label>\r\n                            <textarea class=\"form-control\" id=\"exampleTextarea\" rows=\"1\"></textarea>\r\n                        </div>\r\n                        <div class=\"form-group\">\r\n                            <label for=\"exampleTextarea\">Description</label>\r\n                            <textarea class=\"form-control\" id=\"exampleTextarea\" rows=\"3\"></textarea>\r\n                        </div>\r\n                        <!-- <fieldset class=\"form-group\">\r\n                            <legend>Radio buttons</legend>\r\n                            <div class=\"form-check\">\r\n                            <label class=\"form-check-label\">\r\n                                <input type=\"radio\" class=\"form-check-input\" name=\"optionsRadios\" id=\"optionsRadios1\" value=\"option1\" checked>\r\n                                Option one is this and that&mdash;be sure to include why it's great\r\n                            </label>\r\n                            </div>\r\n                            <div class=\"form-check\">\r\n                            <label class=\"form-check-label\">\r\n                                <input type=\"radio\" class=\"form-check-input\" name=\"optionsRadios\" id=\"optionsRadios2\" value=\"option2\">\r\n                                Option two can be something else and selecting it will deselect option one\r\n                            </label>\r\n                            </div>\r\n                            <div class=\"form-check disabled\">\r\n                            <label class=\"form-check-label\">\r\n                                <input type=\"radio\" class=\"form-check-input\" name=\"optionsRadios\" id=\"optionsRadios3\" value=\"option3\" disabled>\r\n                                Option three is disabled\r\n                            </label>\r\n                            </div>\r\n                        </fieldset> -->\r\n\r\n                        <div class=\"form-check\">\r\n                            <label class=\"form-check-label\">\r\n                            <input type=\"checkbox\" class=\"form-check-input\">\r\n                            I have read the <a href=\"#\">terms and conditions.</a>\r\n                            </label>\r\n                        </div>\r\n                        <button type=\"submit\" class=\"btn btn-primary\">Sumbit for review</button>\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"clearfix\"></div>\r\n</template>\r\n"; });
 define('main',["exports", "aurelia-pal", "./environment"], function (exports, _aureliaPal, _environment) {
     "use strict";
 
@@ -960,6 +1041,13 @@ define('app',["exports", "aurelia-framework", "aurelia-event-aggregator", "aurel
                 route: "my-subscriptions",
                 moduleId: _aureliaPal.PLATFORM.moduleName("account/subscriptions"),
                 title: "Subscriptions",
+                auth: false,
+                includeInBreadcrumbs: true
+            }, {
+                name: "newcampaign",
+                route: "newcampaign",
+                moduleId: _aureliaPal.PLATFORM.moduleName("newcampaign/newcampaign"),
+                title: "New Campaign",
                 auth: false,
                 includeInBreadcrumbs: true
             }]);

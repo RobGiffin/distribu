@@ -60,6 +60,14 @@ export class App {
                 title: "Subscriptions",
                 auth: false,
                 includeInBreadcrumbs: true
+            },
+            { 
+                name: "newcampaign",
+                route: "newcampaign",
+                moduleId: PLATFORM.moduleName("newcampaign/newcampaign"),
+                title: "New Campaign",
+                auth: false,
+                includeInBreadcrumbs: true
             }
         ]);
 

@@ -577,6 +577,55 @@ textarea.parsley-error {
       bottom: 30px;
       left: 480px; }
 
+.newcampaign {
+  margin-top: 100px;
+  margin-bottom: 50px; }
+  .newcampaign .container {
+    text-align: center; }
+  .newcampaign h2 {
+    font-size: 54px;
+    color: #4c8783;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal; }
+  .newcampaign h3 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4c8783; }
+  .newcampaign p {
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #4c8783;
+    margin-top: 24px; }
+  .newcampaign button {
+    font-family: 'IBM Plex Sans', sans-serif;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 284px;
+    height: 70px;
+    border: solid 1px #ffffff;
+    background-color: #ffec00;
+    border-radius: 3px;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4c8783; }
+
 .header {
   margin-bottom: -11px; }
   .header .distribu-nav {
@@ -626,4 +675,4 @@ textarea.parsley-error {
   letter-spacing: normal;
   color: #4c8783;
   margin: auto;
-  line-height: 50px; }
+  line-height: 55px; }
