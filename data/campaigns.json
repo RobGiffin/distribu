@@ -22,11 +22,22 @@
         }
     },
     {
-        "id": "f9677c7b-1fc7-4e26-b49c-d0c859eb0cad",
+        "id": "2ef07c09-54ad-4833-95ba-14c26430b5e0",
         "name": "Re-open Grange-over-sands lido",
         "description": "Suspendisse lacinia accumsan semper. Aliquam volutpat arcu nec erat interdum, eu bibendum nisi ultrices. Praesent congue hendrerit est, sed suscipit lorem rhoncus tristique. Pellentesque commodo quam non massa varius, nec maximus ex volutpat. Sed volutpat orci non tellus dictum varius. Sed bibendum metus et ligula lobortis commodo. Vivamus non aliquam sem. Curabitur sem enim, feugiat ac nisi a, egestas imperdiet justo. Nam luctus ligula malesuada leo ullamcorper tempus. Nam nulla elit, faucibus a magna eu, dapibus pellentesque velit. Duis sodales nisl vel egestas ullamcorper. Proin placerat lorem mollis lacus sodales dapibus. Aenean vehicula elit suscipit aliquam semper. Nullam sollicitudin euismod purus, nec placerat est convallis sit amet. Proin aliquet maximus erat, quis feugiat neque facilisis et.",
         "tags": ["national", "cumbria", "south-lakeland-district-council", "outdoors", "swimming", "exercise", "wellbeing"],
         "jurisdiction": ["grange-over-sands-town-council", "south-lakeland-district-council", "cumbria-county-council"],
+        "media": {
+            "youtube": "zCOW-AbRHmQ"
+        },
+        "news": [
+            "https://www.theguardian.com/uk-news/2018/sep/02/no-one-wants-it-there-just-rotting-away-fate-of-art-deco-grange-lido-hangs-in-balance",
+            "https://www.thewestmorlandgazette.co.uk/news/15063431.support-growing-for-a-restored-pool-at-grange-over-sands-lido/"
+        ],
+        "location": {
+            "lat": "54.199008",
+            "lng": "-2.905937"
+        },
         "createdBy": {
             "name": "Glenda Gross",
             "email": "glenda.gross@gmail.com"

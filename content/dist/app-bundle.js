@@ -377,7 +377,89 @@ define('campaigns/campaigns',["exports", "aurelia-http-client"], function (expor
         return Campaigns;
     }();
 });
-define('text!campaigns/campaigns.html', ['module'], function(module) { module.exports = "<template>\n    <h2>Find a campaign</h2>\n\n    <ul class=\"nav nav-tabs nav-fill\" id=\"myTab\" role=\"tablist\">\n        <li class=\"nav-item\">\n            <a class=\"nav-link active\" \n                id=\"national-tab\" \n                data-toggle=\"tab\" \n                href=\"#national\" \n                role=\"tab\" \n                aria-controls=\"national\" \n                aria-selected=\"true\">National</a>\n        </li>\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" \n                id=\"where-you-are-tab\" \n                data-toggle=\"tab\" \n                href=\"#where-you-are\" \n                role=\"tab\" \n                aria-controls=\"where-you-are\" \n                aria-selected=\"false\">Where you are</a>\n        </li>\n    </ul>\n    \n    <div class=\"tab-content\" id=\"myTabContent\">\n        <div class=\"tab-pane fade show active\" id=\"national\" role=\"tabpanel\" aria-labelledby=\"national-tab\">\n            <div repeat.for=\"campaign of campaigns\">\n                <h3>${campaign.name}</h3>\n        \n                <p>${campaign.description}</p>\n        \n                <p style=\"background-color:orange;\"><em>${campaign.tags}</em></p>\n        \n                <p style=\"background-color:greenyellow;\"><em>${campaign.jurisdiction}</em></p>\n        \n                <p>\n                    ${campaign.createdBy.name}<br>\n                    <a href=\"mailto:${campaign.createdBy.email}?subject=${campaign.name}\">${campaign.createdBy.email}</a>\n                </p>\n\n                <p>\n                    <a href=\"#\" click.delegate=\"shareOnTwitter(campaign)\">Share on twitter</a><br>\n                    <a href=\"#\" click.delegate=\"shareOnFacebook(campaign)\">Share on facebook</a><br>\n                </p>\n        \n                <hr>\n            </div>\n        </div>\n        <div class=\"tab-pane fade\" id=\"where-you-are\" role=\"tabpanel\" aria-labelledby=\"where-you-are-tab\">\n\n        </div>\n    </div>              \n</template>"; });
+define('text!campaigns/campaigns.html', ['module'], function(module) { module.exports = "<template>\n    <h2>Find a campaign</h2>\n\n    <ul class=\"nav nav-tabs nav-fill\" id=\"myTab\" role=\"tablist\">\n        <li class=\"nav-item\">\n            <a class=\"nav-link active\" \n                id=\"national-tab\" \n                data-toggle=\"tab\" \n                href=\"#national\" \n                role=\"tab\" \n                aria-controls=\"national\" \n                aria-selected=\"true\">National</a>\n        </li>\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" \n                id=\"where-you-are-tab\" \n                data-toggle=\"tab\" \n                href=\"#where-you-are\" \n                role=\"tab\" \n                aria-controls=\"where-you-are\" \n                aria-selected=\"false\">Where you are</a>\n        </li>\n    </ul>\n    \n    <div class=\"tab-content\" id=\"myTabContent\">\n        <div class=\"tab-pane fade show active\" id=\"national\" role=\"tabpanel\" aria-labelledby=\"national-tab\">\n            <div repeat.for=\"campaign of campaigns\">\n                <h3><a href=\"#/campaign/${campaign.id}\">${campaign.name}</a></h3>\n        \n                <p>${campaign.description}</p>\n        \n                <p style=\"background-color:orange;\"><em>${campaign.tags}</em></p>\n        \n                <p style=\"background-color:greenyellow;\"><em>${campaign.jurisdiction}</em></p>\n        \n                <p>\n                    ${campaign.createdBy.name}<br>\n                    <a href=\"mailto:${campaign.createdBy.email}?subject=${campaign.name}\">${campaign.createdBy.email}</a>\n                </p>\n\n                <p>\n                    <a href=\"#\" click.delegate=\"shareOnTwitter(campaign)\">Share on twitter</a><br>\n                    <a href=\"#\" click.delegate=\"shareOnFacebook(campaign)\">Share on facebook</a><br>\n                </p>\n        \n                <hr>\n            </div>\n        </div>\n        <div class=\"tab-pane fade\" id=\"where-you-are\" role=\"tabpanel\" aria-labelledby=\"where-you-are-tab\">\n\n        </div>\n    </div>              \n</template>"; });
+define('campaigns/campaign',["exports", "aurelia-http-client"], function (exports, _aureliaHttpClient) {
+    "use strict";
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.Campaign = undefined;
+
+    function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+            throw new TypeError("Cannot call a class as a function");
+        }
+    }
+
+    var Campaign = exports.Campaign = function () {
+        function Campaign() {
+            _classCallCheck(this, Campaign);
+        }
+
+        Campaign.prototype.activate = function activate(args) {
+            var _this = this;
+
+            console.log(args);
+
+            return new Promise(function (resolve) {
+                var client = new _aureliaHttpClient.HttpClient();
+
+                client.get("/api/campaign/" + args.id).then(function (data) {
+                    _this.campaign = JSON.parse(data.response);
+
+                    console.log(_this.campaign);
+
+                    resolve();
+                });
+            });
+        };
+
+        Campaign.prototype.attached = function attached() {
+            console.log("attached!");
+
+            if (this.campaign.location) {
+                var mymap = L.map('mapid').setView([parseFloat(this.campaign.location.lat), parseFloat(this.campaign.location.lng)], 13);
+
+                L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoicm9iZXJ0LXdhZ2dvdHQiLCJhIjoiMmRlMmI0MTIzYjJkYWU4YTQ5MzRhOTFkMWNhZWY1ZWEifQ.5uVZ6P4XGNC4gnmbNS5OLQ', {
+                    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                    maxZoom: 18,
+                    id: 'mapbox.streets',
+                    accessToken: 'your.mapbox.access.token'
+                }).addTo(mymap);
+
+                L.marker([parseFloat(this.campaign.location.lat), parseFloat(this.campaign.location.lng)]).addTo(mymap);
+            }
+        };
+
+        Campaign.prototype.deactivate = function deactivate() {};
+
+        Campaign.prototype.joinCampaign = function joinCampaign() {};
+
+        Campaign.prototype.shareOnTwitter = function shareOnTwitter(campaign) {
+            var twitterWindow = window.open('https://twitter.com/share?url=' + document.URL, 'twitter-popup', 'height=350,width=600');
+
+            if (twitterWindow.focus) {
+                twitterWindow.focus();
+            }
+
+            return false;
+        };
+
+        Campaign.prototype.shareOnFacebook = function shareOnFacebook(campaign) {
+            var facebookWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + document.URL, 'facebook-popup', 'height=350,width=600');
+
+            if (facebookWindow.focus) {
+                facebookWindow.focus();
+            }
+
+            return false;
+        };
+
+        return Campaign;
+    }();
+});
+define('text!campaigns/campaign.html', ['module'], function(module) { module.exports = "<template>\n    <div class=\"row\">\n        <div class=\"col-md-8\">\n            <div if.bind=\"campaign.media && campaign.media.youtube\">\n                <iframe width=\"100%\" height=\"315\" src=\"https://www.youtube.com/embed/${campaign.media.youtube}\" frameBorder=\"0\"></iframe>\n            </div>\n\n            <h3>${campaign.name}</h3>\n\n            <p>${campaign.description}</p>\n        \n            <p style=\"background-color:orange;\"><em>${campaign.tags}</em></p>\n        \n            <p style=\"background-color:greenyellow;\"><em>${campaign.jurisdiction}</em></p>\n        \n            <p>\n                ${campaign.createdBy.name}<br>\n                <a href=\"mailto:${campaign.createdBy.email}?subject=${campaign.name}\">${campaign.createdBy.email}</a>\n            </p>\n\n            <div if.bind=\"campaign.location\">\n                <div id=\"mapid\" style=\"height: 180px;width:100%;\"></div>\n            </div>\n        \n            <p>\n                <a href=\"#\" click.delegate=\"shareOnTwitter(campaign)\">Share on twitter</a><br>\n                <a href=\"#\" click.delegate=\"shareOnFacebook(campaign)\">Share on facebook</a><br>\n            </p> \n        </div>\n        <div class=\"col-md-4\">\n            <h3>Join</h3>\n\n            <button type=\"button\" class=\"btn btn-primary\" click.delegate=\"joinCampaign()\">Join this campaign now</button>\n\n            <!-- <form>\n                <div class=\"form-group\">\n                    <input type=\"text\" class=\"form-control\" id=\"name\" aria-describedby=\"name-help\" placeholder=\"Name\">\n                    <small id=\"email-help\" class=\"form-text text-muted\">We'll never share your name with anyone else.</small>\n                </div>\n        \n                <div class=\"form-group\">\n                    <input type=\"email\" class=\"form-control\" id=\"email\" aria-describedby=\"email-help\" placeholder=\"Email address\">\n                    <small id=\"email-help\" class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\n                </div>\n\n                <div class=\"form-check\">\n                    <input type=\"checkbox\" class=\"form-check-input\" id=\"keep-me-updated\">\n                    <label class=\"form-check-label\" for=\"keep-me-updated\">Keep updated with the campaign?</label>\n                </div>\n\n                <div class=\"form-group text-right\">\n                    <button type=\"submit\" class=\"btn btn-primary pull-right\">Join this campaign now</button>\n                </div>\n            </form> -->\n        </div>        \n    </div>   \n</template>"; });
 define('base-view-model',["exports"], function (exports) {
     "use strict";
 
@@ -445,6 +527,13 @@ define('app',["exports", "aurelia-framework", "aurelia-event-aggregator", "aurel
                 route: "",
                 moduleId: _aureliaPal.PLATFORM.moduleName("campaigns/campaigns"),
                 title: "Campaigns",
+                auth: false,
+                includeInBreadcrumbs: true
+            }, {
+                name: "campaigns",
+                route: "campaign/:id",
+                moduleId: _aureliaPal.PLATFORM.moduleName("campaigns/campaign"),
+                title: "Campaign",
                 auth: false,
                 includeInBreadcrumbs: true
             }]);

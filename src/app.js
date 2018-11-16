@@ -28,6 +28,14 @@ export class App {
                 title: "Campaigns",
                 auth: false,
                 includeInBreadcrumbs: true
+            },
+            { 
+                name: "campaigns",
+                route: "campaign/:id",
+                moduleId: PLATFORM.moduleName("campaigns/campaign"),
+                title: "Campaign",
+                auth: false,
+                includeInBreadcrumbs: true
             }
         ]);
 

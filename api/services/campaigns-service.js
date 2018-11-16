@@ -1,5 +1,6 @@
 const path = require("path");
 const fs = require("fs");
+const ogs = require("open-graph-scraper");
 
 module.exports = class CampaignsService {
     campaigns() {
@@ -28,8 +29,15 @@ module.exports = class CampaignsService {
         return campaigns;
     }
 
-    get(id) {
+    async get(id) {
         let campaigns = this.campaigns();
+
+        
+        // let response = await ogs({
+        //     url: 'https://www.thewestmorlandgazette.co.uk/news/15063431.support-growing-for-a-restored-pool-at-grange-over-sands-lido/'
+        // });
+        
+        // console.log(response);
 
         return campaigns.find(x => x.id === id);
     }
