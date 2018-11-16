@@ -12,6 +12,23 @@ ux-dialog {
         margin-left: 70px !important;
         margin-right: 70px !important;
 
+        &.no-border {
+            border-bottom: none !important;
+        }
+
+        .wizard-steps {
+            text-align: center;
+            margin-top: 50px;
+
+            img:first-child {
+                margin-right: 25px;
+            }
+
+            img:last-child {
+                margin-left: 25px;
+            }            
+        }
+
         h5 {
             font-family: 'Roboto Slab', serif;
             font-size: 35px;

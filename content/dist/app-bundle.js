@@ -360,6 +360,37 @@ define('environment',["exports"], function (exports) {
     testing: true
   };
 });
+define('campaigns/share-modal',["exports", "aurelia-framework", "aurelia-dialog"], function (exports, _aureliaFramework, _aureliaDialog) {
+    "use strict";
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.ShareModal = undefined;
+
+    function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+            throw new TypeError("Cannot call a class as a function");
+        }
+    }
+
+    var _dec, _class;
+
+    var ShareModal = exports.ShareModal = (_dec = (0, _aureliaFramework.inject)(_aureliaDialog.DialogController), _dec(_class = function () {
+        function ShareModal(dialogController) {
+            _classCallCheck(this, ShareModal);
+
+            this.dialogController = dialogController;
+        }
+
+        ShareModal.prototype.activate = function activate(campaign) {
+            this.campaign = campaign;
+        };
+
+        return ShareModal;
+    }()) || _class);
+});
+define('text!campaigns/share-modal.html', ['module'], function(module) { module.exports = "<template>\n        <ux-dialog>\n            <ux-dialog-header class=\"no-border\">\n                <div class=\"container-fluid\">\n                    <div class=\"row\">\n                        <div class=\"col-sm-12\">\n                            <div class=\"wizard-steps\">\n                                <img src=\"/content/images/modal/1-unselected.png\">\n    \n                                <img src=\"/content/images/modal/2-unselected.png\">\n    \n                                <img src=\"/content/images/modal/3-selected.png\">\n                            </div>\n    \n                            <h5>Tell everybody \u2028about your pledge</h5>\n                        </div>\n                    </div>\n                </div>\n            </ux-dialog-header>\n            <ux-dialog-body>\n                <div class=\"container-fluid\">\n                    <div class=\"row\">\n                        <div class=\"col-sm-12\">\n                            \n    \n    \n                            <button>Finish</button>\n    \n                        </div>\n                    </div>\n                </div>\n            </ux-dialog-body>\n        </ux-dialog>\n    </template>"; });
 define('campaigns/pledge-modal',["exports", "aurelia-framework", "aurelia-dialog"], function (exports, _aureliaFramework, _aureliaDialog) {
     "use strict";
 
@@ -390,7 +421,7 @@ define('campaigns/pledge-modal',["exports", "aurelia-framework", "aurelia-dialog
         return PledgeModal;
     }()) || _class);
 });
-define('text!campaigns/pledge-modal.html', ['module'], function(module) { module.exports = "<template>\n    <ux-dialog>\n        <ux-dialog-header>\n            <div class=\"container-fluid\">\n                <div class=\"row\">\n                    <div class=\"col-sm-12\">\n                        <h5>Select your pledge level</h5>\n                    </div>\n                </div>\n            </div>\n        </ux-dialog-header>\n        <ux-dialog-body>\n            <div class=\"container-fluid\">\n                <div class=\"row\">\n                    <div class=\"col-sm-12\">\n\n                        \n\n                        <button>Continue</button>\n\n                    </div>\n                </div>\n            </div>\n        </ux-dialog-body>\n    </ux-dialog>\n</template>"; });
+define('text!campaigns/pledge-modal.html', ['module'], function(module) { module.exports = "<template>\n    <ux-dialog>\n        <ux-dialog-header>\n            <div class=\"container-fluid\">\n                <div class=\"row\">\n                    <div class=\"col-sm-12\">\n                        <div class=\"wizard-steps\">\n                            <img src=\"/content/images/modal/1-selected.png\">\n\n                            <img src=\"/content/images/modal/2-unselected.png\">\n\n                            <img src=\"/content/images/modal/3-unselected.png\">\n                        </div>\n\n                        <h5>Select your pledge level</h5>\n                    </div>\n                </div>\n            </div>\n        </ux-dialog-header>\n        <ux-dialog-body>\n            <div class=\"container-fluid\">\n                <div class=\"row\">\n                    <div class=\"col-sm-12\">\n\n\n\n                        <button>Continue</button>\n\n                    </div>\n                </div>\n            </div>\n        </ux-dialog-body>\n    </ux-dialog>\n</template>"; });
 define('campaigns/confirmation',["exports", "aurelia-http-client"], function (exports, _aureliaHttpClient) {
     "use strict";
 
@@ -432,6 +463,37 @@ define('campaigns/confirmation',["exports", "aurelia-http-client"], function (ex
     }();
 });
 define('text!campaigns/confirmation.html', ['module'], function(module) { module.exports = "<template>\n    <div class=\"confirmation\">\n        <div class=\"container\">\n            <div class=\"row\">\n                <div class=\"col-sm-12\">\n                    <h3>Thank you</h3>\n\n                    <p>${this.campaign.thanks}</p>\n\n                    <p>\n                        <a href=\"#\" click.delegate=\"shareOnTwitter()\">Share on twitter</a>\n                    </p>\n\n                    <p>\n                        <a href=\"#\" click.delegate=\"shareOnFacebook()\">Share on facebook</a>\n                    </p>\n\n                    <p>\n                        <a href=\"#\" click.delegate=\"shareOnGoogle()\">Share on google+</a>\n                    </p>\n\n                    <p>\n                        <a href=\"#\" click.delegate=\"shareByEmail()\">Share by email</a>\n                    </p>                    \n                </div>\n            </div>\n        </div>\n    </div>\n</template>"; });
+define('campaigns/confirm-modal',["exports", "aurelia-framework", "aurelia-dialog"], function (exports, _aureliaFramework, _aureliaDialog) {
+    "use strict";
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.ConfirmModal = undefined;
+
+    function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+            throw new TypeError("Cannot call a class as a function");
+        }
+    }
+
+    var _dec, _class;
+
+    var ConfirmModal = exports.ConfirmModal = (_dec = (0, _aureliaFramework.inject)(_aureliaDialog.DialogController), _dec(_class = function () {
+        function ConfirmModal(dialogController) {
+            _classCallCheck(this, ConfirmModal);
+
+            this.dialogController = dialogController;
+        }
+
+        ConfirmModal.prototype.activate = function activate(campaign) {
+            this.campaign = campaign;
+        };
+
+        return ConfirmModal;
+    }()) || _class);
+});
+define('text!campaigns/confirm-modal.html', ['module'], function(module) { module.exports = "<template>\n        <ux-dialog>\n            <ux-dialog-header class=\"no-border\">\n                <div class=\"container-fluid\">\n                    <div class=\"row\">\n                        <div class=\"col-sm-12\">\n                            <div class=\"wizard-steps\">\n                                <img src=\"/content/images/modal/1-unselected.png\">\n    \n                                <img src=\"/content/images/modal/2-selected.png\">\n    \n                                <img src=\"/content/images/modal/3-unselected.png\">\n                            </div>\n    \n                            <h5>Confirm your pledge</h5>\n                        </div>\n                    </div>\n                </div>\n            </ux-dialog-header>\n            <ux-dialog-body>\n                <div class=\"container-fluid\">\n                    <div class=\"row\">\n                        <div class=\"col-sm-12\">\n    \n    \n    \n                            <button>Confirm</button>\n    \n                        </div>\n                    </div>\n                </div>\n            </ux-dialog-body>\n        </ux-dialog>\n    </template>"; });
 define('campaigns/campaigns',["exports", "aurelia-http-client"], function (exports, _aureliaHttpClient) {
     "use strict";
 
@@ -490,7 +552,7 @@ define('campaigns/campaigns',["exports", "aurelia-http-client"], function (expor
         return Campaigns;
     }();
 });
-define('text!campaigns/campaigns.html', ['module'], function(module) { module.exports = "<template>\n    <div class=\"campaigns container\">\n        <div class=\"heading-text\">\n            <div class=\"row\">\n                <div class=\"col-md-12\">\n                    <h2>Find a campaign</h2>\n                </div>\n            </div>\n            <div class=\"row\">\n                <div class=\"col-md-6\" style=\"display: block; margin: 0 auto;\">\n                    <button class=\"btn btn-outline-info header-button\">National</button>\n                    <button class=\"btn btn-outline-info header-button\">Local</button>\n                </div>\n            </div>\n        </div>\n    </div>\n    \n    <div class=\"tab-content\" id=\"myTabContent\">\n        <div class=\"tab-pane fade show active\" id=\"national\" role=\"tabpanel\" aria-labelledby=\"national-tab\">\n            <div repeat.for=\"campaign of campaigns\">\n                <div class=\"campaign-box\">\n                        <h3><a href=\"#/campaign/${campaign.id}\">${campaign.name}</a></h3>\n        \n                        <p>${campaign.description}</p>\n                \n                        <p style=\"background-color:orange;\"><em>${campaign.tags}</em></p>\n                \n                        <p style=\"background-color:greenyellow;\"><em>${campaign.jurisdiction}</em></p>\n                \n                        <p>\n                            ${campaign.createdBy.name}<br>\n                            <a href=\"mailto:${campaign.createdBy.email}?subject=${campaign.name}\">${campaign.createdBy.email}</a>\n                        </p>\n        \n                        <p>\n                            <a href=\"#\" click.delegate=\"shareOnTwitter(campaign)\">Share on twitter</a><br>\n                            <a href=\"#\" click.delegate=\"shareOnFacebook(campaign)\">Share on facebook</a><br>\n                        </p>        \n                </div>\n            </div>\n        </div>\n        <div class=\"tab-pane fade\" id=\"where-you-are\" role=\"tabpanel\" aria-labelledby=\"where-you-are-tab\">\n\n        </div>\n    </div>\n</template>"; });
+define('text!campaigns/campaigns.html', ['module'], function(module) { module.exports = "<template>\n    <div class=\"campaigns\">\n        <div class=\"container\">\n            <div class=\"heading-text\">\n                <div class=\"row\">\n                    <div class=\"col-md-12\">\n                        <h2>Find a campaign</h2>\n                    </div>\n                </div>\n                <div class=\"row\">\n                    <div class=\"col-md-6\" style=\"display: block; margin: 0 auto;\">\n                        <button class=\"btn btn-outline-info header-button\">National</button>\n                        <button class=\"btn btn-outline-info header-button\">Local</button>\n                    </div>\n                </div>\n            </div>\n        </div>\n        \n        <div class=\"tab-content\" id=\"myTabContent\">\n            <div class=\"tab-pane fade show active\" id=\"national\" role=\"tabpanel\" aria-labelledby=\"national-tab\">\n                <div repeat.for=\"campaign of campaigns\">\n                    <div class=\"campaign-box\">\n                        <div class=\"campaign-box-text\">\n                            <h3>${campaign.name}</h3>\n                            <button class=\"btn btn-primary\">Join this campaign</button>\n                        </div>\n                        <div class=\"campaign-box-image\">\n                            <img src=\"${campaign.promoImage}\" />\n                        </div>\n                            <!-- <p>${campaign.description}</p>                      \n                            <p style=\"background-color:orange;\"><em>${campaign.tags}</em></p>\n                            <p style=\"background-color:greenyellow;\"><em>${campaign.jurisdiction}</em></p>\n                            <p>\n                                ${campaign.createdBy.name}<br>\n                                <a href=\"mailto:${campaign.createdBy.email}?subject=${campaign.name}\">${campaign.createdBy.email}</a>\n                            </p>\n            \n                            <p>\n                                <a href=\"#\" click.delegate=\"shareOnTwitter(campaign)\">Share on twitter</a><br>\n                                <a href=\"#\" click.delegate=\"shareOnFacebook(campaign)\">Share on facebook</a><br>\n                            </p>         -->\n                    </div>\n                </div>\n            </div>\n            <div class=\"tab-pane fade\" id=\"where-you-are\" role=\"tabpanel\" aria-labelledby=\"where-you-are-tab\">\n\n            </div>\n        </div>\n    </div>\n</template>"; });
 define('campaigns/campaign',["exports", "aurelia-framework", "aurelia-http-client", "aurelia-router", "aurelia-dialog", "./pledge-modal"], function (exports, _aureliaFramework, _aureliaHttpClient, _aureliaRouter, _aureliaDialog, _pledgeModal) {
     "use strict";
 
