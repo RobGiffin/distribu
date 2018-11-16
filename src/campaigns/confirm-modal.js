@@ -1,6 +1,7 @@
 import { inject } from "aurelia-framework";
 import { DialogController } from "aurelia-dialog";
 import { CurrentState } from "../current-state";
+import { HttpClient } from "aurelia-http-client";
 
 @inject(DialogController)
 export class ConfirmModal {
@@ -21,6 +22,8 @@ export class ConfirmModal {
             image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
             locale: 'auto',
             token: (token) => {
+                this.sendConfirmationEmail();
+
                 this.dialogController.ok();
             }
         });
@@ -33,8 +36,6 @@ export class ConfirmModal {
     }
 
     confirm() {
-        console.log(this.state);
-
         this.handler.open({
             name: 'Distribu',
             description: `Subscription to support the ${this.state.campaign.name} campaign`,
@@ -45,5 +46,15 @@ export class ConfirmModal {
             allowRememberMe: false,
             panelLabel: "Pay {{amount}} monthly"
         });      
+    }
+
+    sendConfirmationEmail() {
+        let client = new HttpClient();
+        let data = {
+            email: CurrentState.state.email,
+            campaign: this.state.campaign
+        };
+
+        client.post("/api/campaign/confirmation", data);
     }
 }
