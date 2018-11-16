@@ -37,6 +37,11 @@
                     ${campaign.createdBy.name}<br>
                     <a href="mailto:${campaign.createdBy.email}?subject=${campaign.name}">${campaign.createdBy.email}</a>
                 </p>
+
+                <p>
+                    <a href="#" click.delegate="shareOnTwitter(campaign)">Share on twitter</a><br>
+                    <a href="#" click.delegate="shareOnFacebook(campaign)">Share on facebook</a><br>
+                </p>
         
                 <hr>
             </div>
