@@ -1,4 +1,17 @@
 .make-my-pledge {
     background-color: $primary-color;
     height: 315px;
+
+    button {
+        width: 284px;
+        height: 70px;
+        border: solid 1px #ffffff;
+        background-color: $secondary-color;
+        color: $text-color;
+        font-size: 24px;
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-weight: bold;
+        border-radius: 3px;
+        margin-top: 121px;    
+    }
 }

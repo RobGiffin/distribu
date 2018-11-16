@@ -3,17 +3,7 @@ $secondary-color: #ffec00;
 $text-color: #4c8783;
 
 @import "partials/base";
-@import "partials/cards";
-@import "partials/typography";
-@import "partials/form";
-@import "partials/buttons";
-@import "partials/modal";
-@import "partials/tabs";
-@import "partials/navbar";
-@import "partials/tables";
-@import "partials/progress-bar";
-@import "partials/utilities";
-@import "partials/splash";
+@import "partials/make-my-pledge";
 
 @import "lib/nprogress";
 @import "lib/parsley";

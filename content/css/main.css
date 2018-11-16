@@ -36,101 +36,20 @@ body.api-calls-open {
 .card-body {
   background-color: white !important; }
 
-.card.bg-light {
-  margin-bottom: 40px; }
-  .card.bg-light .card-header {
-    padding-top: 20px; }
-    .card.bg-light .card-header h6 {
-      font-size: 18px; }
-
-h4:not(.modal-title) {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-bottom: solid 1px #e9ecef;
-  padding-bottom: 5px;
-  color: #6c757d; }
-
-form {
-  padding-bottom: 30px; }
-  form span.intro {
-    display: block;
-    font-size: 17px;
-    margin-top: 5px;
-    margin-bottom: 15px; }
-  form span.notes {
-    display: block;
-    font-size: 13px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    color: #6c757d; }
-    form span.notes a {
-      color: #6c757d;
-      text-decoration: underline; }
-  form div.form-check {
-    margin-top: 20px;
-    margin-bottom: 20px; }
-  form input.initials, form input.title {
-    width: 80px; }
-
-a.btn {
-  color: white !important; }
-
-a.btn-default {
-  background-color: #dcdcdc;
-  color: #000000 !important; }
-
-.btn-link {
-  border: none; }
-  .btn-link:active {
-    background: none;
-    background-color: white !important; }
-  .btn-link.btn-primary {
-    color: #007bff !important; }
-  .btn-link.btn-danger {
-    color: #dc3545 !important; }
-  .btn-link.btn-default-for-ae {
-    display: block;
-    margin-bottom: 10px; }
-
-.status .btn-outline-secondary {
-  float: right;
-  margin-top: -2px; }
-
-ux-dialog-overlay.active {
-  background-color: black;
-  opacity: 0.75 !important; }
-
-ux-dialog {
-  min-width: 700px !important; }
-
-.tab-pane {
-  padding-top: 20px; }
-
-.navbar img {
-  height: 60px; }
-
-th {
-  vertical-align: top !important; }
-
-.th-subheader {
-  color: #6c757d;
-  font-weight: normal;
-  font-size: 12px; }
-
-.progress {
-  height: 30px; }
-
-.display-block {
-  display: block; }
-
-.display-none {
-  display: none; }
-
-.splash {
-  font-size: 100px;
-  position: absolute;
-  top: calc(50% - 50px);
-  left: calc(50% - 50px); }
+.make-my-pledge {
+  background-color: #14e2d5;
+  height: 315px; }
+  .make-my-pledge button {
+    width: 284px;
+    height: 70px;
+    border: solid 1px #ffffff;
+    background-color: #ffec00;
+    color: #4c8783;
+    font-size: 24px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: bold;
+    border-radius: 3px;
+    margin-top: 121px; }
 
 /* Make clicks pass-through */
 #nprogress {
