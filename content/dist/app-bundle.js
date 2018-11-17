@@ -614,7 +614,7 @@ define('campaigns/confirm-modal',["exports", "aurelia-framework", "aurelia-dialo
                 currency: "gbp",
                 billingAddress: false,
                 allowRememberMe: false,
-                panelLabel: "Pay {{amount}} yearly"
+                panelLabel: "Pay {{amount}} weekly"
             });
         };
 
@@ -989,7 +989,7 @@ define('app',["exports", "aurelia-framework", "aurelia-event-aggregator", "aurel
     }();
 });
 define('text!app.html', ['module'], function(module) { module.exports = "<template>\n\t<require from=\"./header/header\"></require>\t\n\t<require from=\"./footer/footer\"></require>\n\t<require from=\"./resources/elements/router-progress-indicator/router-progress-indicator\"></require>\n\t<require from=\"./resources/elements/breadcrumbs/breadcrumbs\"></require>\n\t<require from=\"./resources/elements/request-indicator/request-indicator\"></require>\n\n\t<router-progress-indicator></router-progress-indicator>\n\n\t<header></header>\n\n\t<router-view></router-view>\n\n\t<footer></footer> \n\n\t<request-indicator></request-indicator>\n</template>"; });
-define('account/subscriptions',["exports", "aurelia-framework"], function (exports, _aureliaFramework) {
+define('account/subscriptions',["exports", "aurelia-http-client"], function (exports, _aureliaHttpClient) {
     "use strict";
 
     Object.defineProperty(exports, "__esModule", {
@@ -1008,10 +1008,24 @@ define('account/subscriptions',["exports", "aurelia-framework"], function (expor
             _classCallCheck(this, Subscriptions);
         }
 
-        Subscriptions.prototype.activate = function activate() {};
+        Subscriptions.prototype.activate = function activate() {
+            var _this = this;
+
+            return new Promise(function (resolve) {
+                var client = new _aureliaHttpClient.HttpClient();
+
+                client.get("/api/campaigns").then(function (data) {
+                    _this.campaigns = JSON.parse(data.response).filter(function (x) {
+                        return x.subscribed;
+                    });
+
+                    resolve();
+                });
+            });
+        };
 
         return Subscriptions;
     }();
 });
-define('text!account/subscriptions.html', ['module'], function(module) { module.exports = "<template>\n    \n</template>"; });
+define('text!account/subscriptions.html', ['module'], function(module) { module.exports = "<template>\n    <div class=\"container\">\n        <div class=\"row\" repeat.for=\"campaign of campaigns\">\n            <div class=\"campaign\">\n                <div class=\"col-sm-12\">\n                    <h3>${campaign.name}</h3>\n\n                    <p>Pay £1 weekly (£52)</p>\n\n                    <div class=\"buttons\">\n                        <button type=\"button\">View campaign progress</button>\n    \n                        <button type=\"button\">Change my subscription</button>\n                    </div>                    \n                </div>\n            </div>\n        </div>\n    </div>\n</template>"; });
 //# sourceMappingURL=app-bundle.js.map

@@ -1,3 +1,19 @@
 <template>
+    <div class="container">
+        <div class="row" repeat.for="campaign of campaigns">
+            <div class="campaign">
+                <div class="col-sm-12">
+                    <h3>${campaign.name}</h3>
+
+                    <p>Pay £1 weekly (£52)</p>
+
+                    <div class="buttons">
+                        <button type="button">View campaign progress</button>
     
+                        <button type="button">Change my subscription</button>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
 </template>

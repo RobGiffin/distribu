@@ -126,6 +126,7 @@ ux-dialog {
       font-size: 18px; }
 
 ux-dialog-overlay.active {
+  z-index: 10 !important;
   background-color: black !important;
   opacity: 0.8 !important; }
 
@@ -299,7 +300,8 @@ textarea.parsley-error {
   .campaign .map {
     margin-top: 20px;
     height: 256px;
-    width: 100%; }
+    width: 100%;
+    z-index: 1 !important; }
   .campaign .social-media a {
     font-size: 70px;
     color: #14e2d5; }
