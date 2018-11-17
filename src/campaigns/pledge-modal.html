@@ -32,14 +32,14 @@
                             <img src="/content/images/modal/selected-radial.png" if.bind="paymentSchedule === 'monthly'">
                             <img src="/content/images/modal/radial.png" if.bind="paymentSchedule !== 'monthly'">
 
-                            £1 per month (£12)
+                            £1 per month (£12 a year)
                         </div>
 
                         <div class="payment-schedule" click.delegate="switchPaymentSchedule('daily')">
                             <img src="/content/images/modal/selected-radial.png" if.bind="paymentSchedule === 'daily'">
                             <img src="/content/images/modal/radial.png" if.bind="paymentSchedule !== 'daily'">
 
-                            £1 per week (£52)
+                            £1 per week (£52 a year)
                         </div>                        
 
                         <button click.delegate="continue()">Continue</button>
