@@ -118,7 +118,7 @@
             "lat": "54.199008",
             "lng": "-2.905937"
         },
-        "promoImage": "/content/images/fundingPlaceholder.png",
+        "promoImage": "/content/images/potholes.PNG",
         "url": "http://distribu.azurewebsites.net/#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3",
         "area": "local",
         "noPledges": "45",
@@ -218,7 +218,7 @@
             "monthly-plan-id": "plan_Dz72WHeyy6EpI2",
             "yearly-plan-id": "plan_Dz72dxAxsNVNUM"
         },
-        "promoImage" : "/content/images/fundingPlaceholder.png",
+        "promoImage" : "/content/images/Grange_Lido.PNG",
         "url": "http://distribu.azurewebsites.net/#/campaign/cfa9396f-2ed9-4190-bafe-3f9c448e17c3",
         "area" : "local",
         "noPledges" : "45",
