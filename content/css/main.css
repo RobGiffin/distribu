@@ -94,11 +94,13 @@ ux-dialog {
         margin-right: 45px;
         margin-top: 25px; }
     ux-dialog ux-dialog-body img.share {
-      height: 80px;
+      height: 60px;
       margin: 0 auto;
       display: block;
-      margin-bottom: 50px;
+      margin-bottom: 30px;
       cursor: pointer; }
+    ux-dialog ux-dialog-body form-check.share {
+      margin-bottom: 30px; }
     ux-dialog ux-dialog-body button {
       font-family: 'IBM Plex Sans', sans-serif;
       display: block;
@@ -358,6 +360,18 @@ textarea.parsley-error {
     border-radius: 3px;
     position: absolute;
     bottom: 30px; }
+  .campaigns .campaign-box .council-name {
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #fff;
+    margin-top: 24px;
+    position: absolute;
+    bottom: 80px; }
 
 .campaigns h2 {
   font-size: 54px;
