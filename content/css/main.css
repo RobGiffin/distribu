@@ -121,6 +121,11 @@ ux-dialog {
       color: #4c8783; }
       ux-dialog ux-dialog-body button:disabled {
         opacity: 0.5; }
+    ux-dialog ux-dialog-body p.confirm-description {
+      font-family: 'Roboto Slab', serif;
+      text-align: center;
+      color: white;
+      font-size: 24px; }
     ux-dialog ux-dialog-body .form-check {
       font-family: 'Roboto Slab', serif;
       text-align: center;
