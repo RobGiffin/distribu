@@ -83,6 +83,8 @@ app
     .use(router.routes())
     .use(router.allowedMethods());
 
-app.listen(port, () => {
+let server = app.listen(port, () => {
     console.log(`up and listing on port ${port}`); // eslint-disable-line no-console
 });
+
+module.exports = server;
