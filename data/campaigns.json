@@ -153,7 +153,7 @@
         "url": "http://distribu.azurewebsites.net/#/campaign/f9677c7b-1fc7-4e26-b49c-d0c859eb8cad",
         "area" : "local",
         "noPledges" : "5",
-        "totalPledged" : "150",
+        "totalPledged" : "260",
         "closeDate" : "31st August 2019",
         "subscribed": true
     },
@@ -224,5 +224,36 @@
         "noPledges" : "45",
         "totalPledged" : "500",
         "closeDate" : "1st May 2019"
+    },
+    {
+        "id": "fc5e5fcd-3c51-44e1-a4c7-54f8616cc57f",
+        "name": "Papworth Hospital Heart Transplantation",
+        "description": "Leading the world with a new transplant programme: DCD Transplantation<br/><br/>In response to the worldwide shortage of donor hearts for transplantation, a research team at Royal Papworth Hospital, supported by Royal Papworth Hospital Charity has developed a new technique that significantly increases the number of hearts available for transplantation.<br/><br/>Unfortunately every year, hundreds of patients still die through the lack of available organs for transplantation. This new procedure has enabled Royal Papworth Hospital to increase the number of people receiving a heart transplant at Royal Papworth Hospital by 40% in the first year alone. Each and every life saved through this ground-breaking procedure has been made possible through the generous donations of Royal Papworth Hospital supporters and we can only continue with further charitable support.<br/><br/><strong>With your help, Royal Papworth Hospital can give the 'gift of life' to more people waiting for a donor heart</strong>",
+        "tags": ["Hospital", "Papworth", "Transplantion"],
+        "location": {
+            "country": "England",
+            "nhs_ha": "East of England",
+            "european_electoral_region": "Eastern",
+            "primary_care_trust": "West Essex",
+            "region": "East of England",
+            "parliamentary_constituency": "Saffron Walden",
+            "admin_district": "Uttlesford",
+            "parish": "Newport",
+            "admin_county": "Essex",
+            "admin_ward": "Newport",
+            "ccg": "NHS West Essex",
+            "lat": "52.246689",
+            "lng": "-0.116805"
+        },
+        "createdBy": {
+            "name": "Glenda Gross",
+            "email": "glenda.gross@gmail.com"
+        },
+        "promoImage" : "/content/images/Papworth-Hospital.jpg",
+        "url": "http://distribu.azurewebsites.net/#/campaign/fc5e5fcd-3c51-44e1-a4c7-54f8616cc57f",
+        "area" : "local",
+        "noPledges" : "125",
+        "totalPledged" : "6,500",
+        "closeDate" : "1st June 2019"
     }
 ]

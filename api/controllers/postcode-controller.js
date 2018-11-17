@@ -16,15 +16,17 @@ module.exports = class PostcodeController extends BaseController {
                 return false;
             }
 
-            return location.ccg === result.ccg 
-                || location.admin_ward === result.admin_ward
-                || location.admin_county === result.admin_county
-                || location.parish === result.parish
-                || location.admin_district === result.admin_district
-                || location.parliamentary_constituency === result.parliamentary_constituency
-                || location.region === result.region
-                || location.primary_care_trust === result.primary_care_trust
-                || location.nhs_ha === result.nhs_ha;
+            return location.parliamentary_constituency === result.parliamentary_constituency;
+
+            // return location.ccg === result.ccg 
+            //     || location.admin_ward === result.admin_ward
+            //     || location.admin_county === result.admin_county
+            //     || location.parish === result.parish
+            //     || location.admin_district === result.admin_district
+            //     || location.parliamentary_constituency === result.parliamentary_constituency
+            //     || location.region === result.region
+            //     || location.primary_care_trust === result.primary_care_trust
+            //     || location.nhs_ha === result.nhs_ha;
         });
 
         ctx.body = filteredCampaigns;
