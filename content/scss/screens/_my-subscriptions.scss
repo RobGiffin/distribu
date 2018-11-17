@@ -34,6 +34,28 @@
                 color: #fff;
                 margin-top: 24px;    
             }
+
+            span.pound-icon {
+                width: 30px;
+                height: 30px;
+                background-color: white;
+                border-radius: 15px;
+                display: block;
+                float: left;
+                padding-left: 9px;
+                position: relative;
+                color: #14e2d5;
+                line-height: 29px;
+            }
+
+            span.text {
+                display: block;
+                float: left;
+                display: block;
+                float: left;
+                margin-left: 10px;
+                line-height: 29px;                
+            }
         }
 
         .campaign-box-image {
@@ -53,6 +75,7 @@
             bottom: 30px;
             width: 230px;
             margin-right: 20px;
+            margin-top: 60px;
         }
     }
 }

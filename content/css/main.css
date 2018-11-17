@@ -561,6 +561,24 @@ textarea.parsley-error {
         letter-spacing: normal;
         color: #fff;
         margin-top: 24px; }
+      .my-subscriptions .campaign-box .campaign-box-text span.pound-icon {
+        width: 30px;
+        height: 30px;
+        background-color: white;
+        border-radius: 15px;
+        display: block;
+        float: left;
+        padding-left: 9px;
+        position: relative;
+        color: #14e2d5;
+        line-height: 29px; }
+      .my-subscriptions .campaign-box .campaign-box-text span.text {
+        display: block;
+        float: left;
+        display: block;
+        float: left;
+        margin-left: 10px;
+        line-height: 29px; }
     .my-subscriptions .campaign-box .campaign-box-image {
       height: 260px;
       float: right; }
@@ -575,7 +593,8 @@ textarea.parsley-error {
       border-radius: 3px;
       bottom: 30px;
       width: 230px;
-      margin-right: 20px; }
+      margin-right: 20px;
+      margin-top: 60px; }
 
 .reports {
   margin-top: 100px;
