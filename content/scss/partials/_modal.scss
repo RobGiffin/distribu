@@ -80,11 +80,15 @@ ux-dialog {
         }
 
         img.share {
-            height: 80px;
+            height: 60px;
             margin: 0 auto;
             display: block;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             cursor: pointer;
+        }
+
+        form-check.share {
+            margin-bottom: 30px;
         }
 
         button {
