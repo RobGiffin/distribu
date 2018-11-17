@@ -7,7 +7,14 @@
 
                     <h3>Closing date: ${campaign.closeDate}</h3>
 
-                    <p>${campaign.description}</p>
+                    <!-- <p>${campaign.description}</p> -->
+                    <div class="campaign-text" innerhtml.bind="campaign.description"></div>
+
+                    <div repeat.for="tag of campaign.tags">
+                        <p class="campaign-tags">    
+                            ${tag}
+                        </p>
+                    </div>
                 
                     <!-- <p style="background-color:orange;"><em>${campaign.tags}</em></p>
                 
