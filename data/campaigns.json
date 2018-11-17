@@ -154,7 +154,8 @@
         "area" : "local",
         "noPledges" : "5",
         "totalPledged" : "150",
-        "closeDate" : "31st August 2018"
+        "closeDate" : "31st August 2018",
+        "subscribed": true
     },
     {
         "id": "2ef07c09-54ad-4833-95ba-14c26430b5e0",
