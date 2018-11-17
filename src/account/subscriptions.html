@@ -1,17 +1,22 @@
 <template>
-    <div class="container">
-        <div class="row" repeat.for="campaign of campaigns">
-            <div class="campaign">
+    <div class="my-subscriptions">
+        <div class="container">
+            <div class="row" repeat.for="campaign of campaigns">
                 <div class="col-sm-12">
-                    <h3>${campaign.name}</h3>
+                    <div class="campaign-box">
+                        <div class="campaign-box-text">
+                            <h3>${campaign.name}</h3>
 
-                    <p>Pay £1 weekly (£52)</p>
+                            <p>Pay £1 weekly (£52)</p>
 
-                    <div class="buttons">
-                        <button type="button">View campaign progress</button>
-    
-                        <button type="button">Change my subscription</button>
-                    </div>                    
+                            <a class="btn btn-primary" href="#/campaign/${campaign.id}">View campaign</a>
+
+                            <a class="btn btn-primary" href="#/campaign/${campaign.id}">Change my subscription</a>
+                        </div>
+                        <div class="campaign-box-image">
+                            <img src="${campaign.promoImage}" />
+                        </div>
+                    </div>                   
                 </div>
             </div>
         </div>
